@@ -1,14 +1,168 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".DailyPortionsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <ImageButton
+        android:id="@+id/btnVegetables"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="centerCrop"
+        android:background="@drawable/image_square_vegetables"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="30dp"
+         />
+
+    <ImageButton
+        android:id="@+id/btnFruits"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="centerCrop"
+        android:background="@drawable/image_square_fruits"
+        app:layout_constraintRight_toLeftOf="@id/btnProteins"
+        app:layout_constraintTop_toTopOf="@id/btnVegetables"
+        android:layout_marginRight="30dp"
+
+        />
+    <ImageButton
+        android:id="@+id/btnProteins"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="centerCrop"
+        android:background="@drawable/image_square_proteins"
+        app:layout_constraintRight_toLeftOf="@id/btnCarbohydrates"
+        app:layout_constraintTop_toTopOf="@id/btnFruits"
+        android:layout_marginRight="30dp"
+        />
+    <ImageButton
+        android:id="@+id/btnCarbohydrates"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="centerCrop"
+        android:background="@drawable/image_square_carbohydrates"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="30dp"
+        app:layout_constraintTop_toTopOf="@id/btnProteins"
+        />
+
+    <ImageButton
+        android:id="@+id/btnSeeds"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="centerCrop"
+        android:background="@drawable/image_square_seeds"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnVegetables"
+        android:layout_marginTop="20dp"
+        />
+
+    <ImageButton
+        android:id="@+id/btnGoodFat"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="centerCrop"
+        android:background="@drawable/image_square_good_fat"
+        app:layout_constraintTop_toTopOf="@id/btnSeeds"
+        app:layout_constraintRight_toLeftOf="@id/btnSeeds"
+        android:layout_marginRight="30dp"
+        />
+
+    <ImageButton
+        android:id="@+id/btnOils"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="centerCrop"
+        android:background="@drawable/image_square_oils"
+        app:layout_constraintLeft_toRightOf="@id/btnSeeds"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintTop_toTopOf="@id/btnSeeds"
+        />
+
+    <TextView
+        android:id="@+id/tVQuantityVegetables"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3"
+        app:layout_constraintTop_toTopOf="@id/btnVegetables"
+        app:layout_constraintBottom_toBottomOf="@id/btnVegetables"
+        app:layout_constraintLeft_toLeftOf="@id/btnVegetables"
+        app:layout_constraintRight_toRightOf="@id/btnVegetables"
+        android:textSize="20dp"
+         />
+
+    <TextView
+        android:id="@+id/tVQuantityFruits"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2"
+        app:layout_constraintTop_toTopOf="@id/btnFruits"
+        app:layout_constraintBottom_toBottomOf="@id/btnFruits"
+        app:layout_constraintLeft_toLeftOf="@id/btnFruits"
+        app:layout_constraintRight_toRightOf="@id/btnFruits"
+        android:textSize="20dp"
+        />
+
+    <TextView
+        android:id="@+id/tVQuantityProteins"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4"
+        app:layout_constraintTop_toTopOf="@id/btnProteins"
+        app:layout_constraintBottom_toBottomOf="@id/btnProteins"
+        app:layout_constraintLeft_toLeftOf="@id/btnProteins"
+        app:layout_constraintRight_toRightOf="@id/btnProteins"
+        android:textSize="20dp"
+        />
+
+    <TextView
+        android:id="@+id/tVQuantityCarbohydrates"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2"
+        app:layout_constraintTop_toTopOf="@id/btnCarbohydrates"
+        app:layout_constraintBottom_toBottomOf="@id/btnCarbohydrates"
+        app:layout_constraintLeft_toLeftOf="@id/btnCarbohydrates"
+        app:layout_constraintRight_toRightOf="@id/btnCarbohydrates"
+        android:textSize="20dp"
+        />
+    <TextView
+        android:id="@+id/tVQuantityGoodFat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        app:layout_constraintTop_toTopOf="@id/btnGoodFat"
+        app:layout_constraintBottom_toBottomOf="@id/btnGoodFat"
+        app:layout_constraintLeft_toLeftOf="@id/btnGoodFat"
+        app:layout_constraintRight_toRightOf="@id/btnGoodFat"
+        android:textSize="20dp"
+        />
+    <TextView
+        android:id="@+id/tVQuantitySeeds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        app:layout_constraintTop_toTopOf="@id/btnSeeds"
+        app:layout_constraintBottom_toBottomOf="@id/btnSeeds"
+        app:layout_constraintLeft_toLeftOf="@id/btnSeeds"
+        app:layout_constraintRight_toRightOf="@id/btnSeeds"
+        android:textSize="20dp"
+        />
+    <TextView
+        android:id="@+id/tVQuantityOils"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2"
+        app:layout_constraintTop_toTopOf="@id/btnOils"
+        app:layout_constraintBottom_toBottomOf="@id/btnOils"
+        app:layout_constraintLeft_toLeftOf="@id/btnOils"
+        app:layout_constraintRight_toRightOf="@id/btnOils"
+        android:textSize="20dp"
+        />
+</android.support.constraint.ConstraintLayout>
