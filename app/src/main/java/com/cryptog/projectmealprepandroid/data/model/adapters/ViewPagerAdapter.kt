@@ -1,8 +1,9 @@
-package com.cryptog.projectmealprepandroid
+package com.cryptog.projectmealprepandroid.data.model.adapters
 
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
+import com.cryptog.projectmealprepandroid.DayFragment
 
 class ViewPagerAdapter(fm: FragmentManager?, val titlesTab: Array<String>) :
     FragmentPagerAdapter(fm) {
@@ -18,4 +19,5 @@ class ViewPagerAdapter(fm: FragmentManager?, val titlesTab: Array<String>) :
     override fun getPageTitle(position: Int): CharSequence? {
         return titlesTab[position]
     }
+
 }

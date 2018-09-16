@@ -39,12 +39,11 @@ class ListOfMealsFragment : Fragment() {
 
         val recyclerView = rootView.findViewById(R.id.recycleViewId) as RecyclerView
         var layoutManager = LinearLayoutManager(context)
-        recyclerView.layoutManager = layoutManager
+        recyclerView.layoutManager = layoutManager as RecyclerView.LayoutManager?
         var mealListAdapter = MealListAdapter()
         mealListAdapter.update(currentDay!!)
         recyclerView.adapter = mealListAdapter
 
-        Log.d("CurrentDay", resources.getText(currentDay.nameId).toString())
         return rootView
     }
 }
