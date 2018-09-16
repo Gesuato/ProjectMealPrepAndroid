@@ -8,7 +8,7 @@ class ViewPagerAdapter(fm: FragmentManager?, val titlesTab: Array<String>) :
     FragmentPagerAdapter(fm) {
 
     override fun getItem(p0: Int): Fragment {
-        return ListOfMealsFragment()
+        return DayFragment()
     }
 
     override fun getCount(): Int {
