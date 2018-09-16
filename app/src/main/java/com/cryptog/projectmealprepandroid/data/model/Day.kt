@@ -20,6 +20,7 @@ class Day() {
         for (index in 1..titlesOfMeals.size) {
             val meal = Meal()
             meal.nameId = titlesOfMeals[index]
+            meals!!.add(meal)
         }
     }
 }

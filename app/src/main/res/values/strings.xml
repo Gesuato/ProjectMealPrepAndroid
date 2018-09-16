@@ -30,4 +30,14 @@
     <string name="saturday">Saturday</string>
     <string name="sunday">Sunday</string>
 
+    <string-array name="pagerDayTitles">
+        <item>Mon</item>
+        <item>Tue</item>
+        <item>Wed</item>
+        <item>Thu</item>
+        <item>Fri</item>
+        <item>Sat</item>
+        <item>Sun</item>
+    </string-array>
+
 </resources>
