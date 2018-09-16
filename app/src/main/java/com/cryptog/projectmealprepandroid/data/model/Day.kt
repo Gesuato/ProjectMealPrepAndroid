@@ -5,7 +5,7 @@ import com.cryptog.projectmealprepandroid.R
 class Day() {
 
     var nameId: Int = 0
-    var meals: ArrayList<Meal>? = null
+    var meals = ArrayList<Meal>()
 
     init {
         val titlesOfMeals = arrayOf(
@@ -17,7 +17,7 @@ class Day() {
             R.string.snack3
         )
 
-        for (index in 1..titlesOfMeals.size) {
+        for (index in 0..5) {
             val meal = Meal()
             meal.nameId = titlesOfMeals[index]
             meals!!.add(meal)

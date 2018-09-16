@@ -6,7 +6,7 @@
     android:layout_height="100dp">
 
     <TextView
-        android:id="@+id/textViewId"
+        android:id="@+id/titleMealId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Breakfast"
@@ -15,6 +15,5 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="15dp"
          />
-
 
 </android.support.constraint.ConstraintLayout>

@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.cryptog.projectmealprepandroid.data.model.Day
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -19,13 +20,23 @@ private const val ARG_PARAM2 = "param2"
  */
 class DayFragment : Fragment() {
 
+    private var currentDay: Day? = null
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        currentDay = (activity as MainActivity).getCurrentDay()
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_day, container, false)
+        val rootView = inflater.inflate(R.layout.fragment_day, container, false)
+
+        return rootView
     }
 
+    fun getCurrentDay(): Day {
+        return this.currentDay!!
+    }
 
 }

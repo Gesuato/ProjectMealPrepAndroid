@@ -4,7 +4,7 @@ import com.cryptog.projectmealprepandroid.R
 
 class Meal() {
     var nameId: Int = 0
-    var nutriments: ArrayList<Nutriment>? = null
+    var nutriments = ArrayList<Nutriment>()
 
     init {
         val nutrimentTitles = arrayOf(
@@ -17,7 +17,7 @@ class Meal() {
             R.string.oilsAndNutButters
         )
 
-        for (index in 1..nutrimentTitles.size) {
+        for (index in 0..6) {
             val nutriment = Nutriment()
             nutriment.nameId = nutrimentTitles[index]
             nutriment.items = ""

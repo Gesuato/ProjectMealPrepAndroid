@@ -11,15 +11,13 @@
         android:id="@+id/dailyPortionsFragmentId"
         android:name="com.cryptog.projectmealprepandroid.DailyPortionsFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_height="200dp"
         />
 
     <fragment
         android:id="@+id/listOfMealsFragmentId"
         android:name="com.cryptog.projectmealprepandroid.ListOfMealsFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="2"
+        android:layout_height="match_parent"
         />
 </LinearLayout>
