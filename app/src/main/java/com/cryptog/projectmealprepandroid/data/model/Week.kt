@@ -1,9 +1,10 @@
 package com.cryptog.projectmealprepandroid.data.model
 
 import com.cryptog.projectmealprepandroid.R
+import java.io.Serializable
 
-class Week() {
-    var days = ArrayList<Day>()
+class Week() : Serializable {
+    var days = ArrayList<DailyMealPlan>()
 
     init {
         val titlesDay = arrayOf(
@@ -17,8 +18,8 @@ class Week() {
         )
 
         for (index in 0..6) {
-            val day = Day()
-            day.nameId = titlesDay[index]
+            val day = DailyMealPlan()
+            day.day = titlesDay[index]
             days!!.add(day)
         }
     }

@@ -1,8 +1,9 @@
 package com.cryptog.projectmealprepandroid.data.model
 
 import com.cryptog.projectmealprepandroid.R
+import java.io.Serializable
 
-class Meal() {
+class Meal() : Serializable{
     var nameId: Int = 0
     var nutriments = ArrayList<Nutriment>()
 

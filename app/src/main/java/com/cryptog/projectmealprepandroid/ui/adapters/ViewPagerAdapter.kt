@@ -5,10 +5,10 @@ import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 import com.cryptog.projectmealprepandroid.DayFragment
 
-class ViewPagerAdapter(fm: FragmentManager?, val titlesTab: Array<String>) :
+class ViewPagerAdapter(fm: FragmentManager?, private val titlesTab: Array<String>) :
     FragmentPagerAdapter(fm) {
 
-    override fun getItem(p0: Int): Fragment {
+    override fun getItem(position: Int): Fragment {
         return DayFragment()
     }
 

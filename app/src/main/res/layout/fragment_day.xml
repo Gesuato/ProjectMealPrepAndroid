@@ -3,21 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".DayFragment">
+    tools:context=".ui.DayFragment">
 
 
-    <fragment
-        android:id="@+id/dailyPortionsFragmentId"
-        android:name="com.cryptog.projectmealprepandroid.DailyPortionsFragment"
+    <com.cryptog.projectmealprepandroid.ui.DailyPortionView
+        android:id="@+id/daily_portion"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        />
+        android:layout_height="wrap_content"/>
 
-    <fragment
-        android:id="@+id/listOfMealsFragmentId"
-        android:name="com.cryptog.projectmealprepandroid.ListOfMealsFragment"
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycleViewId"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
+        android:layout_height="0dp"
+        android:layout_weight="1.5" />
+
 </LinearLayout>

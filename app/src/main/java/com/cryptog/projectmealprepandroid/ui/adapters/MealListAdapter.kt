@@ -7,15 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.cryptog.projectmealprepandroid.R
-import com.cryptog.projectmealprepandroid.data.model.Day
+import com.cryptog.projectmealprepandroid.data.model.DailyMealPlan
 
 class MealListAdapter : RecyclerView.Adapter<MealListAdapter.MealViewHolder>() {
 
-    private var currentDay = Day()
-    private var resources : Resources? = null
+    private var currentDay = DailyMealPlan()
+    private lateinit var resources: Resources
 
-    fun update(currentDay: Day) {
-        this.currentDay = currentDay
+    fun update(currentDailyMealPlan: DailyMealPlan) {
+        this.currentDay = currentDailyMealPlan
         notifyDataSetChanged()
     }
 
@@ -30,21 +30,18 @@ class MealListAdapter : RecyclerView.Adapter<MealListAdapter.MealViewHolder>() {
     }
 
     override fun getItemCount(): Int {
-        return if (currentDay != null && !currentDay.meals!!.isEmpty()) {
-            currentDay.meals!!.size
+        return if (!currentDay.meals.isEmpty()) {
+            currentDay.meals.size
         } else {
             0
         }
     }
 
     override fun onBindViewHolder(holder: MealViewHolder, p1: Int) {
-        holder.titleMeal.text = resources!!.getText(currentDay.meals!![p1].nameId)
+        holder.titleMeal.text = resources.getText(currentDay.meals[p1].nameId)
     }
 
-
     class MealViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
-        val titleMeal = itemView.findViewById<TextView>(R.id.titleMealId)
-
+        val titleMeal = itemView.findViewById<TextView>(R.id.titleMealId)!!
     }
 }
