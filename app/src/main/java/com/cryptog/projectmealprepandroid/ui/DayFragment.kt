@@ -5,11 +5,13 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.cryptog.projectmealprepandroid.R
 import com.cryptog.projectmealprepandroid.data.model.DailyMealPlan
+import com.cryptog.projectmealprepandroid.data.model.Meal
 import com.cryptog.projectmealprepandroid.ui.adapters.MealListAdapter
 
 
@@ -54,12 +56,18 @@ class DayFragment : Fragment() {
         recyclerView.adapter = mealListAdapter
         dailyPortionView.setValuesInPortionList(currentDailyMealPlan)
 
+        mealListAdapter.setOnCustomItemClickListener(object : CustomOnClickListener{
+            override fun onCustomItemClickListener(meal: Meal) {
+                val bundle : Bundle
+
+            }
+        })
+
         return rootView
     }
 
     override fun onResume() {
         super.onResume()
-
         currentDailyMealPlan = arguments!!.getSerializable(ARG_CAUGHT) as DailyMealPlan
         mealListAdapter.update(currentDailyMealPlan)
         dailyPortionView.setValuesInPortionList(currentDailyMealPlan)

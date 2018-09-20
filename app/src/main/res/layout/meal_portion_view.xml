@@ -11,6 +11,7 @@
         android:layout_gravity="bottom"
         android:layout_marginLeft="5dp"
         android:background="@drawable/background_circle_btn_vegetable"
+        android:visibility="gone"
         />
 
     <Button
@@ -20,6 +21,7 @@
         android:layout_gravity="bottom"
         android:layout_marginLeft="10dp"
         android:background="@drawable/background_circle_btn_fruit"
+        android:visibility="gone"
         />
     <Button
         android:id="@+id/nutrimentProtein"
@@ -28,6 +30,7 @@
         android:layout_gravity="bottom"
         android:layout_marginLeft="10dp"
         android:background="@drawable/background_circle_btn_protein"
+        android:visibility="gone"
         />
     <Button
         android:id="@+id/nutrimentCarbohydrate"
@@ -36,6 +39,7 @@
         android:layout_gravity="bottom"
         android:layout_marginLeft="10dp"
         android:background="@drawable/background_circle_btn_carbohydrate"
+        android:visibility="gone"
         />
 
     <Button
@@ -45,6 +49,7 @@
         android:layout_gravity="bottom"
         android:layout_marginLeft="5dp"
         android:background="@drawable/background_circle_btn_goodfat"
+        android:visibility="gone"
         />
     <Button
         android:id="@+id/nutrimentSeed"
@@ -53,6 +58,7 @@
         android:layout_gravity="bottom"
         android:layout_marginLeft="5dp"
         android:background="@drawable/background_circle_btn_seed"
+        android:visibility="gone"
         />
     <Button
         android:id="@+id/nutrimentOil"
@@ -61,6 +67,6 @@
         android:layout_gravity="bottom"
         android:layout_marginLeft="5dp"
         android:background="@drawable/background_circle_btn_oil"
+        android:visibility="gone"
         />
-
 </LinearLayout>

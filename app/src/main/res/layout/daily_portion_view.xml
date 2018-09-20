@@ -6,7 +6,7 @@
     android:layout_weight="1"
     android:orientation="vertical">
 
-    <ImageButton
+    <Button
         android:id="@+id/btnVegetables"
         app:layout_constraintRight_toLeftOf="@id/btnFruits"
         app:layout_constraintTop_toTopOf="parent"
@@ -14,22 +14,10 @@
         android:layout_height="60dp"
         android:layout_marginRight="25dp"
         android:layout_marginTop="40dp"
-        android:background="@drawable/image_square_vegetables"
+        android:background="@drawable/background_square_btn_vegetable"
         android:scaleType="centerCrop" />
 
-    <TextView
-        android:id="@+id/tVQuantityVegetables"
-        app:layout_constraintBottom_toBottomOf="@id/btnVegetables"
-        app:layout_constraintLeft_toLeftOf="@id/btnVegetables"
-        app:layout_constraintRight_toRightOf="@id/btnVegetables"
-        app:layout_constraintTop_toTopOf="@id/btnVegetables"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#000"
-        android:textSize="20dp" />
-
-
-    <ImageButton
+    <Button
         android:id="@+id/btnFruits"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -37,22 +25,10 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginRight="90dp"
-        android:background="@drawable/image_square_fruits"
+        android:background="@drawable/background_square_btn_fruit"
         android:scaleType="centerCrop" />
 
-    <TextView
-        android:id="@+id/tVQuantityFruits"
-        app:layout_constraintBottom_toBottomOf="@id/btnFruits"
-        app:layout_constraintLeft_toLeftOf="@id/btnFruits"
-        app:layout_constraintRight_toRightOf="@id/btnFruits"
-        app:layout_constraintTop_toTopOf="@id/btnFruits"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#000"
-        android:textSize="20dp" />
-
-
-    <ImageButton
+    <Button
         android:id="@+id/btnProteins"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -60,43 +36,20 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginLeft="90dp"
-        android:background="@drawable/image_square_proteins"
+        android:background="@drawable/background_square_btn_protein"
         android:scaleType="centerCrop" />
 
-    <TextView
-        android:id="@+id/tVQuantityProteins"
-        app:layout_constraintBottom_toBottomOf="@id/btnProteins"
-        app:layout_constraintLeft_toLeftOf="@id/btnProteins"
-        app:layout_constraintRight_toRightOf="@id/btnProteins"
-        app:layout_constraintTop_toTopOf="@id/btnProteins"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#000"
-        android:textSize="20dp" />
-
-
-    <ImageButton
+    <Button
         android:id="@+id/btnCarbohydrates"
         app:layout_constraintLeft_toRightOf="@id/btnProteins"
         app:layout_constraintTop_toTopOf="@id/btnProteins"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginLeft="25dp"
-        android:background="@drawable/image_square_carbohydrates"
+        android:background="@drawable/background_square_btn_carbohydrate"
         android:scaleType="centerCrop" />
 
-    <TextView
-        android:id="@+id/tVQuantityCarbohydrates"
-        app:layout_constraintBottom_toBottomOf="@id/btnCarbohydrates"
-        app:layout_constraintLeft_toLeftOf="@id/btnCarbohydrates"
-        app:layout_constraintRight_toRightOf="@id/btnCarbohydrates"
-        app:layout_constraintTop_toTopOf="@id/btnCarbohydrates"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#000"
-        android:textSize="20dp" />
-
-    <ImageButton
+    <Button
         android:id="@+id/btnSeeds"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -104,60 +57,27 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/image_square_seeds"
+        android:background="@drawable/background_square_btn_seed"
         android:scaleType="centerCrop" />
 
-    <TextView
-        android:id="@+id/tVQuantitySeeds"
-        app:layout_constraintBottom_toBottomOf="@id/btnSeeds"
-        app:layout_constraintLeft_toLeftOf="@id/btnSeeds"
-        app:layout_constraintRight_toRightOf="@id/btnSeeds"
-        app:layout_constraintTop_toTopOf="@id/btnSeeds"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#000"
-        android:textSize="20dp" />
-
-    <ImageButton
+    <Button
         android:id="@+id/btnGoodFat"
         app:layout_constraintRight_toLeftOf="@id/btnSeeds"
         app:layout_constraintTop_toTopOf="@id/btnSeeds"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginRight="25dp"
-        android:background="@drawable/image_square_good_fat"
+        android:background="@drawable/background_square_btn_goodfat"
         android:scaleType="centerCrop" />
 
-    <TextView
-        android:id="@+id/tVQuantityGoodFat"
-        app:layout_constraintBottom_toBottomOf="@id/btnGoodFat"
-        app:layout_constraintLeft_toLeftOf="@id/btnGoodFat"
-        app:layout_constraintRight_toRightOf="@id/btnGoodFat"
-        app:layout_constraintTop_toTopOf="@id/btnGoodFat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#000"
-        android:textSize="20dp" />
-
-    <ImageButton
+    <Button
         android:id="@+id/btnOils"
         app:layout_constraintLeft_toRightOf="@id/btnSeeds"
         app:layout_constraintTop_toTopOf="@id/btnSeeds"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginLeft="25dp"
-        android:background="@drawable/image_square_oils"
+        android:background="@drawable/background_square_btn_oil"
         android:scaleType="centerCrop" />
-
-    <TextView
-        android:id="@+id/tVQuantityOils"
-        app:layout_constraintBottom_toBottomOf="@id/btnOils"
-        app:layout_constraintLeft_toLeftOf="@id/btnOils"
-        app:layout_constraintRight_toRightOf="@id/btnOils"
-        app:layout_constraintTop_toTopOf="@id/btnOils"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#000"
-        android:textSize="20dp" />
 
 </android.support.constraint.ConstraintLayout>
