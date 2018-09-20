@@ -8,8 +8,8 @@ import android.widget.TextView
 import com.cryptog.projectmealprepandroid.R
 import com.cryptog.projectmealprepandroid.data.model.DailyMealPlan
 
-class DailyPortionView(context: Context, attributes: AttributeSet) :
-    ConstraintLayout(context, attributes) {
+class DailyPortionView(context: Context, attributeSet: AttributeSet) :
+    ConstraintLayout(context, attributeSet) {
 
     private var textViewIdDailyPortionList = arrayListOf(
         R.id.tVQuantityVegetables,

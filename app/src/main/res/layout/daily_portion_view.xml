@@ -25,6 +25,7 @@
         app:layout_constraintTop_toTopOf="@id/btnVegetables"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#000"
         android:textSize="20dp" />
 
 
@@ -47,6 +48,7 @@
         app:layout_constraintTop_toTopOf="@id/btnFruits"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#000"
         android:textSize="20dp" />
 
 
@@ -69,6 +71,7 @@
         app:layout_constraintTop_toTopOf="@id/btnProteins"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#000"
         android:textSize="20dp" />
 
 
@@ -90,6 +93,7 @@
         app:layout_constraintTop_toTopOf="@id/btnCarbohydrates"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#000"
         android:textSize="20dp" />
 
     <ImageButton
@@ -111,6 +115,7 @@
         app:layout_constraintTop_toTopOf="@id/btnSeeds"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#000"
         android:textSize="20dp" />
 
     <ImageButton
@@ -131,6 +136,7 @@
         app:layout_constraintTop_toTopOf="@id/btnGoodFat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#000"
         android:textSize="20dp" />
 
     <ImageButton
@@ -151,6 +157,7 @@
         app:layout_constraintTop_toTopOf="@id/btnOils"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#000"
         android:textSize="20dp" />
 
 </android.support.constraint.ConstraintLayout>

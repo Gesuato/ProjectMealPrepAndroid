@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <Button
+        android:id="@+id/nutrimentVegetable"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="5dp"
+        android:background="@drawable/background_circle_btn_vegetable"
+        />
+
+    <Button
+        android:id="@+id/nutrimentFruit"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/background_circle_btn_fruit"
+        />
+    <Button
+        android:id="@+id/nutrimentProtein"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/background_circle_btn_protein"
+        />
+    <Button
+        android:id="@+id/nutrimentCarbohydrate"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/background_circle_btn_carbohydrate"
+        />
+
+    <Button
+        android:id="@+id/nutrimentGoodFat"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="5dp"
+        android:background="@drawable/background_circle_btn_goodfat"
+        />
+    <Button
+        android:id="@+id/nutrimentSeed"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="5dp"
+        android:background="@drawable/background_circle_btn_seed"
+        />
+    <Button
+        android:id="@+id/nutrimentOil"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="5dp"
+        android:background="@drawable/background_circle_btn_oil"
+        />
+
+</LinearLayout>

@@ -1,4 +1,4 @@
-package com.cryptog.projectmealprepandroid.data.model.adapters
+package com.cryptog.projectmealprepandroid.ui.adapters
 
 import android.content.res.Resources
 import android.support.v7.widget.RecyclerView
@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.cryptog.projectmealprepandroid.R
 import com.cryptog.projectmealprepandroid.data.model.DailyMealPlan
+import com.cryptog.projectmealprepandroid.ui.MealPortionView
 
 class MealListAdapter : RecyclerView.Adapter<MealListAdapter.MealViewHolder>() {
 
@@ -22,7 +23,10 @@ class MealListAdapter : RecyclerView.Adapter<MealListAdapter.MealViewHolder>() {
     override fun onCreateViewHolder(viewGroup: ViewGroup, p1: Int): MealViewHolder {
         val layoutInflater = LayoutInflater.from(viewGroup.context)
         val itemView = layoutInflater.inflate(R.layout.meal_view_holder, viewGroup, false)
-        val viewHolder = MealViewHolder(itemView)
+        val mealPortionView = itemView.findViewById<MealPortionView>(R.id.mealPortionViewId)
+
+        val viewHolder =
+            MealViewHolder(itemView)
 
         resources = layoutInflater.context.resources
 

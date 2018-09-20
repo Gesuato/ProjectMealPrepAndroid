@@ -3,4 +3,12 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="vegetableColor">#427314</color>
+    <color name="fruitColor">#902cfa</color>
+    <color name="proteinColor">#ce0b24</color>
+    <color name="carbohydrateColor">#f7e53b</color>
+    <color name="goodFatColor">#4d92df</color>
+    <color name="seedColor">#f3a636</color>
+    <color name="oilColor">#9b9b9b</color>
 </resources>
