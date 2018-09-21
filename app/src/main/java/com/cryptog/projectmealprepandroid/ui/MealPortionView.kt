@@ -2,7 +2,6 @@ package com.cryptog.projectmealprepandroid.ui
 
 import android.content.Context
 import android.util.AttributeSet
-import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.LinearLayout
@@ -12,19 +11,34 @@ import com.cryptog.projectmealprepandroid.data.model.Meal
 class MealPortionView(context: Context, attributeSet: AttributeSet) :
     LinearLayout(context, attributeSet) {
 
-    private var btnVege: Button
+    private var btnNutrimentIds = arrayListOf(
+        R.id.nutrimentVegetable,
+        R.id.nutrimentFruit,
+        R.id.nutrimentProtein,
+        R.id.nutrimentCarbohydrate,
+        R.id.nutrimentGoodFat,
+        R.id.nutrimentSeed,
+        R.id.nutrimentOil
+    )
+    private var btnNutrimentList = ArrayList<Button>()
 
     init {
         View.inflate(context, R.layout.meal_portion_view, this)
-        btnVege = findViewById(R.id.nutrimentVegetable)
+        for (currentId in btnNutrimentIds) {
+            val button = findViewById<Button>(currentId)
+            btnNutrimentList.add(button)
+        }
     }
 
-    fun setValue(meal: Meal) {
-        btnVege.visibility = View.GONE
-        if (meal.nutriments[0].quantity > 0) {
-            btnVege.visibility = View.VISIBLE
-            btnVege.text = meal.nutriments[0].quantity.toString()
-            Log.d("Teste","teste")
+    fun setValues(meal: Meal) {
+        for ((key, currentButton) in btnNutrimentList.withIndex()) {
+            currentButton.visibility = View.GONE
+
+            if (meal.nutriments[key].quantity > 0) {
+                val quantity = meal.nutriments[key].quantity.toString()
+                currentButton.text = quantity
+                currentButton.visibility = View.VISIBLE
+            }
         }
     }
 }

@@ -26,9 +26,9 @@ class DailyPortionView(context: Context, attributeSet: AttributeSet) :
     init {
         View.inflate(context, R.layout.daily_portion_view, this)
 
-        for (currentTextView in btnIdDailyPortionList) {
-            val button = findViewById<Button>(currentTextView)
-            btnsDailyPortion.add(button)
+        for (currentId in btnIdDailyPortionList) {
+            val textView = findViewById<Button>(currentId)
+            btnsDailyPortion.add(textView)
         }
     }
 

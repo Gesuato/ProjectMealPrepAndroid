@@ -52,7 +52,7 @@ class MealListAdapter : RecyclerView.Adapter<MealListAdapter.MealViewHolder>() {
         holder.imageButtonEdit.setOnClickListener {
             onCustomClickListener.onCustomItemClickListener(currentDay.meals[holder.adapterPosition])
         }
-        mealPortionView.setValue(currentDay.meals[holder.adapterPosition])
+        mealPortionView.setValues(currentDay.meals[holder.adapterPosition])
     }
 
     fun setOnCustomItemClickListener(onItemClickListener: CustomOnClickListener) {

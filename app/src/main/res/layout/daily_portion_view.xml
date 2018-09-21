@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -79,5 +80,15 @@
         android:layout_marginLeft="25dp"
         android:background="@drawable/background_square_btn_oil"
         android:scaleType="centerCrop" />
+
+    <ImageButton
+        android:id="@+id/imgBtnDetailEdit"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:scaleType="centerCrop"
+        android:background="@drawable/icon_edit"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="10dp"
+        />
 
 </android.support.constraint.ConstraintLayout>

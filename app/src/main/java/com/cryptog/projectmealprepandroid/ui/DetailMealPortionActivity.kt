@@ -35,7 +35,7 @@ class DetailMealPortionActivity : AppCompatActivity() {
         btnSave.setOnClickListener {
             val intent = Intent()
             intent.putExtra(DayFragment.EXTRA_MEAL, currentMeal)
-            setResult(Activity.RESULT_OK,intent)
+            setResult(Activity.RESULT_OK, intent)
             finish()
         }
     }

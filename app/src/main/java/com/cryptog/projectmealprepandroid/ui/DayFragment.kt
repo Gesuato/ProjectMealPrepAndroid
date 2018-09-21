@@ -87,7 +87,7 @@ class DayFragment : Fragment() {
             if (meal != null) {
                 currentDailyMealPlan.meals[index] = meal
                 mealListAdapter.updateItemChanged(currentDailyMealPlan,index)
-//                recyclerView.adapter = mealListAdapter
+                recyclerView.adapter = mealListAdapter
             }
         }
     }

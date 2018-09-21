@@ -13,12 +13,23 @@ import com.cryptog.projectmealprepandroid.data.model.Meal
 class MealDetailAdapter : RecyclerView.Adapter<MealDetailAdapter.MealDetailHolder>() {
 
     private lateinit var currentMeal: Meal
-    private lateinit var resources : Resources
+    private lateinit var resources: Resources
+    private val backgroundBtns =
+        arrayOf(
+            R.drawable.background_circle_btn_vegetable,
+            R.drawable.background_circle_btn_fruit,
+            R.drawable.background_circle_btn_protein,
+            R.drawable.background_circle_btn_carbohydrate,
+            R.drawable.background_circle_btn_goodfat,
+            R.drawable.background_circle_btn_seed,
+            R.drawable.background_circle_btn_oil
+        )
 
-    fun update(currentMeal: Meal){
+    fun update(currentMeal: Meal) {
         this.currentMeal = currentMeal
         notifyDataSetChanged()
     }
+
     override fun onCreateViewHolder(viewGroup: ViewGroup, p1: Int): MealDetailHolder {
         val layoutInflater = LayoutInflater.from(viewGroup.context)
         val itemView = layoutInflater.inflate(R.layout.meal_detail_view_holder, viewGroup, false)
@@ -34,20 +45,24 @@ class MealDetailAdapter : RecyclerView.Adapter<MealDetailAdapter.MealDetailHolde
     }
 
     override fun onBindViewHolder(holder: MealDetailHolder, position: Int) {
-
         var currentQuantity = currentMeal.nutriments[position].quantity
-        holder.textViewNutrimentName.text = resources.getText(currentMeal.nutriments[position].nameId)
+        val quantityChanged = 0.5f
+
+        holder.btnQuantityNutriment.setBackgroundResource(backgroundBtns[position])
+
+        holder.textViewNutrimentName.text =
+                resources.getText(currentMeal.nutriments[position].nameId)
+
         holder.btnQuantityNutriment.text = currentMeal.nutriments[position].quantity.toString()
 
         holder.btnPlus.setOnClickListener {
-            currentQuantity += 0.5f
+            currentQuantity += quantityChanged
             currentMeal.nutriments[position].quantity = currentQuantity
             holder.btnQuantityNutriment.text = setQuantity(position)
         }
-
-        holder.btnLess.setOnClickListener{
-            if(currentQuantity > 0){
-                currentQuantity -= 0.5f
+        holder.btnLess.setOnClickListener {
+            if (currentQuantity > 0) {
+                currentQuantity -= quantityChanged
                 currentMeal.nutriments[position].quantity = currentQuantity
                 holder.btnQuantityNutriment.text = setQuantity(position)
             }
@@ -61,7 +76,7 @@ class MealDetailAdapter : RecyclerView.Adapter<MealDetailAdapter.MealDetailHolde
         val textViewNutrimentName = itemView.findViewById<TextView>(R.id.textViewNutriment)!!
     }
 
-    private fun setQuantity(position: Int) : String{
+    private fun setQuantity(position: Int): String {
         return currentMeal.nutriments[position].quantity.toString()
     }
 }
