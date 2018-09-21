@@ -14,6 +14,7 @@
         android:layout_height="wrap_content"
         app:tabGravity="center"
         app:tabTextColor="#000"
+        app:tabIndicatorColor="#000"
         app:tabMode="scrollable"
 
         >

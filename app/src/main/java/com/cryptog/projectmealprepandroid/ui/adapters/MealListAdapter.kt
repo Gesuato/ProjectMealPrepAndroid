@@ -17,20 +17,25 @@ class MealListAdapter : RecyclerView.Adapter<MealListAdapter.MealViewHolder>() {
     private var currentDay = DailyMealPlan()
     private lateinit var resources: Resources
     private lateinit var onCustomClickListener: CustomOnClickListener
+    private lateinit var mealPortionView: MealPortionView
 
     fun update(currentDailyMealPlan: DailyMealPlan) {
         this.currentDay = currentDailyMealPlan
         notifyDataSetChanged()
     }
 
+    fun updateItemChanged(currentDailyMealPlan: DailyMealPlan, index: Int) {
+        this.currentDay = currentDailyMealPlan
+        notifyItemChanged(index)
+    }
+
     override fun onCreateViewHolder(viewGroup: ViewGroup, p1: Int): MealViewHolder {
         val layoutInflater = LayoutInflater.from(viewGroup.context)
         val itemView = layoutInflater.inflate(R.layout.meal_view_holder, viewGroup, false)
-        val mealPortionView = itemView.findViewById<MealPortionView>(R.id.mealPortionViewId)
+        mealPortionView = itemView.findViewById(R.id.mealPortionViewId)
         val viewHolder = MealViewHolder(itemView)
 
         resources = layoutInflater.context.resources
-
         return viewHolder
     }
 
@@ -44,16 +49,18 @@ class MealListAdapter : RecyclerView.Adapter<MealListAdapter.MealViewHolder>() {
 
     override fun onBindViewHolder(holder: MealViewHolder, p1: Int) {
         holder.titleMeal.text = resources.getText(currentDay.meals[p1].nameId)
-        holder.imageButtonEdit.setOnClickListener{
+        holder.imageButtonEdit.setOnClickListener {
             onCustomClickListener.onCustomItemClickListener(currentDay.meals[holder.adapterPosition])
         }
+        mealPortionView.setValue(currentDay.meals[holder.adapterPosition])
     }
+
     fun setOnCustomItemClickListener(onItemClickListener: CustomOnClickListener) {
         onCustomClickListener = onItemClickListener
     }
 
     class MealViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val titleMeal = itemView.findViewById<TextView>(R.id.titleMealId)!!
-        val imageButtonEdit = itemView.findViewById<ImageButton>(R.id.imageButtonEdit)
+        val imageButtonEdit = itemView.findViewById<ImageButton>(R.id.imageButtonEdit)!!
     }
 }

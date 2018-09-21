@@ -3,7 +3,8 @@ package com.cryptog.projectmealprepandroid.data.model
 import com.cryptog.projectmealprepandroid.R
 import java.io.Serializable
 
-class Meal() : Serializable{
+class Meal : Serializable{
+    var id: Int = 0
     var nameId: Int = 0
     var nutriments = ArrayList<Nutriment>()
 

@@ -6,51 +6,27 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="Teste" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0c140808-ff5c-4e2d-991d-90cebcfb461e" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/CustomOnClickListener.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/DetailMealPortionActivity.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/adapters/MealDetailAdapter.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/background_square_btn_carbohydrate.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/background_square_btn_fruit.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/background_square_btn_goodfat.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/background_square_btn_oil.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/background_square_btn_protein.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/background_square_btn_seed.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/icon_less.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/icon_plus.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_detail_meal_portion.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/meal_detail_view_holder.xml" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/resourceHashesCache.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/resourceHashesCache.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskHistory.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/DailyPortionView.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/DailyPortionView.kt" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/data/model/DailyMealPlan.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/data/model/DailyMealPlan.kt" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/data/model/Meal.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/data/model/Meal.kt" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/DayFragment.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/DayFragment.kt" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/DetailMealPortionActivity.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/DetailMealPortionActivity.kt" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/MealPortionView.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/MealPortionView.kt" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/adapters/MealDetailAdapter.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/adapters/MealDetailAdapter.kt" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/adapters/MealListAdapter.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/adapters/MealListAdapter.kt" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/background_square_btn_vegetable.xml" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/background_square_btn_vegetable.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/image_square_carbohydrates.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/image_square_fruits.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/image_square_good_fat.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/image_square_oils.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/image_square_proteins.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/image_square_seeds.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/image_square_vegetables.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/daily_portion_view.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/daily_portion_view.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_day.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_day.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/meal_portion_view.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/meal_portion_view.xml" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/meal_view_holder.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/meal_view_holder.xml" />
     </list>
@@ -88,8 +64,8 @@
       <file leaf-file-name="MealListAdapter.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/adapters/MealListAdapter.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="434">
-              <caret line="47" column="100" lean-forward="false" selection-start-line="47" selection-start-column="100" selection-end-line="47" selection-end-column="100" />
+            <state relative-caret-position="64">
+              <caret line="34" column="19" lean-forward="false" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
               <folding>
                 <element signature="e#56#532#0" expanded="true" />
               </folding>
@@ -97,11 +73,85 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DayFragment.kt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainActivity.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/MainActivity.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="29" column="1" lean-forward="false" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="daily_portion_view.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/daily_portion_view.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="444">
+              <caret line="72" column="11" lean-forward="false" selection-start-line="72" selection-start-column="11" selection-end-line="72" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="35" lean-forward="false" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fragment_day.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_day.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="26" lean-forward="false" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="meal_view_holder.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/meal_view_holder.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="392">
+              <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MealPortionView.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/MealPortionView.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="26" column="32" lean-forward="false" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+              <folding>
+                <element signature="e#47#325#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DayFragment.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/DayFragment.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="62" column="13" lean-forward="false" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
+            <state relative-caret-position="557">
+              <caret line="90" column="13" lean-forward="false" selection-start-line="90" selection-start-column="13" selection-end-line="90" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -2258,19 +2308,16 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/data/model/adapters/MealListAdapter.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/MainActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/data/model/Meal.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/data/model/Nutriment.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/data/model/Week.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/data/model/DailyPortions.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/data/model/adapters/ViewPagerAdapter.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/data/model/Day.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/data/model/DailyMealPlan.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/DailyPortionsFragment.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ListOfMealsFragment.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/DayFragment.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/MainActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/adapters/ViewPagerAdapter.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/background_btn_nutriment.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/background_btn_vegetable.xml" />
@@ -2280,7 +2327,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/background_btn_goodfat.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/background_btn_fruit.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/background_btn_carbohydrate.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/MealPortionView.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/background_square_btn_vegetable.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/background_square_btn_seed.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/background_square_btn_protein.xml" />
@@ -2290,26 +2336,28 @@
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/background_square_btn_carbohydrate.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/daily_portion_view.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/DailyPortionView.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/meal_portion_view.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_detail_meal_portion.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/meal_detail_view_holder.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_day.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/adapters/MealDetailAdapter.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/DetailMealPortionActivity.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/meal_view_holder.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/CustomOnClickListener.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/CustomOnClickListener.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/data/model/DailyMealPlan.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/DetailMealPortionActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/data/model/Meal.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/meal_portion_view.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/adapters/MealDetailAdapter.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/adapters/MealListAdapter.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/MealPortionView.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/DayFragment.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/meal_view_holder.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="146" />
-    <option name="y" value="52" />
-    <option name="width" value="1380" />
-    <option name="height" value="1073" />
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+    <option name="width" value="1920" />
+    <option name="height" value="1200" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -2365,6 +2413,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -2420,10 +2471,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2639,8 +2687,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1920" height="1200" extended-state="6" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32971016" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32971016" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -2649,8 +2696,8 @@
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22417465" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32971016" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22417465" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32971016" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32971016" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2724,16 +2771,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/data/model/Meal.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="27" lean-forward="false" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
-          <folding>
-            <element signature="e#55#126#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-28/android.jar!/java/time/DayOfWeek.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="213">
@@ -2753,16 +2790,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="106" column="0" lean-forward="false" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/data/model/DailyMealPlan.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="11" lean-forward="false" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-          <folding>
-            <element signature="e#55#126#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2805,25 +2832,25 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/image_circle_carbohydrates.png" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/image_circle_vegetable.png" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/background_circle_btn_oil.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="42" lean-forward="false" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/background_circle_btn_goodfat.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/background_circle_btn_goodfat.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="46" lean-forward="false" selection-start-line="3" selection-start-column="46" selection-end-line="3" selection-end-column="46" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_launcher_foreground.xml">
@@ -2835,113 +2862,113 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/background_circle_btn_protein.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="46" lean-forward="false" selection-start-line="3" selection-start-column="46" selection-end-line="3" selection-end-column="46" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/background_circle_btn_seed.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/background_circle_btn_seed.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="43" lean-forward="false" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/background_circle_btn_vegetable.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/background_circle_btn_vegetable.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="3" lean-forward="false" selection-start-line="2" selection-start-column="3" selection-end-line="5" selection-end-column="60" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/background_circle_btn_fruit.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/background_circle_btn_fruit.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="24" lean-forward="false" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/background_square_btn_vegetable.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/background_square_btn_vegetable.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="4" lean-forward="false" selection-start-line="2" selection-start-column="4" selection-end-line="4" selection-end-column="60" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/background_square_btn_seed.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/background_square_btn_seed.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="43" lean-forward="false" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/background_square_btn_protein.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/background_square_btn_protein.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="46" lean-forward="false" selection-start-line="2" selection-start-column="46" selection-end-line="2" selection-end-column="46" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/background_square_btn_oil.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/background_square_btn_oil.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="42" lean-forward="false" selection-start-line="2" selection-start-column="42" selection-end-line="2" selection-end-column="42" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/background_square_btn_goodfat.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/background_square_btn_goodfat.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="46" lean-forward="false" selection-start-line="2" selection-start-column="46" selection-end-line="2" selection-end-column="46" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/background_square_btn_fruit.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/background_square_btn_fruit.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="44" lean-forward="false" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
@@ -2953,148 +2980,50 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/background_square_btn_carbohydrate.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="8" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/background_circle_btn_carbohydrate.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/background_circle_btn_carbohydrate.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="51" lean-forward="false" selection-start-line="3" selection-start-column="51" selection-end-line="3" selection-end-column="51" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/DailyPortionView.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="30" column="39" lean-forward="false" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
-          <folding>
-            <element signature="e#517#713#0" expanded="false" />
-          </folding>
-        </state>
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="68" lean-forward="false" selection-start-line="15" selection-start-column="68" selection-end-line="15" selection-end-column="68" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_detail_meal_portion.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="29" column="31" lean-forward="true" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="30" lean-forward="false" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/meal_detail_view_holder.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="820">
-          <caret line="52" column="57" lean-forward="false" selection-start-line="52" selection-start-column="57" selection-end-line="52" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/adapters/MealDetailAdapter.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="1" lean-forward="true" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
-          <folding>
-            <element signature="e#56#235#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/MealPortionView.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/meal_portion_view.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="35" lean-forward="true" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/daily_portion_view.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="72" column="11" lean-forward="false" selection-start-line="72" selection-start-column="11" selection-end-line="72" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/MainActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/CustomOnClickListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="9" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/meal_view_holder.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="35" lean-forward="false" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/CustomOnClickListener.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/CustomOnClickListener.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -3103,43 +3032,160 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/DetailMealPortionActivity.kt">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/data/model/DailyMealPlan.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="10" lean-forward="true" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
-          <folding>
-            <element signature="e#47#382#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_day.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="26" lean-forward="false" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+        <state relative-caret-position="439">
+          <caret line="34" column="19" lean-forward="true" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/adapters/MealListAdapter.kt">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/DetailMealPortionActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="47" column="100" lean-forward="false" selection-start-line="47" selection-start-column="100" selection-end-line="47" selection-end-column="100" />
+        <state relative-caret-position="438">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
-            <element signature="e#56#532#0" expanded="true" />
+            <element signature="e#47#497#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/adapters/MealDetailAdapter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="64" column="67" lean-forward="true" selection-start-line="64" selection-start-column="67" selection-end-line="64" selection-end-column="67" />
+          <folding>
+            <element signature="e#56#390#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/meal_detail_view_holder.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/meal_portion_view.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="11" column="33" lean-forward="false" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/data/model/Meal.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="10" lean-forward="false" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+          <folding>
+            <element signature="e#306#322#1" expanded="false" />
+            <element signature="e#336#351#1" expanded="false" />
+            <element signature="e#365#382#1" expanded="false" />
+            <element signature="e#396#418#1" expanded="false" />
+            <element signature="e#432#452#1" expanded="false" />
+            <element signature="e#466#492#1" expanded="false" />
+            <element signature="e#506#532#1" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/DailyPortionView.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="34" column="8" lean-forward="false" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
+          <folding>
+            <element signature="e#517#713#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/DayFragment.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="62" column="13" lean-forward="false" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
+        <state relative-caret-position="557">
+          <caret line="90" column="13" lean-forward="false" selection-start-line="90" selection-start-column="13" selection-end-line="90" selection-end-column="13" />
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/MealPortionView.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="32" lean-forward="false" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+          <folding>
+            <element signature="e#47#325#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/adapters/MealListAdapter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="34" column="19" lean-forward="false" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
+          <folding>
+            <element signature="e#56#532#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/MainActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="29" column="1" lean-forward="false" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/daily_portion_view.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="72" column="11" lean-forward="false" selection-start-line="72" selection-start-column="11" selection-end-line="72" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="35" lean-forward="false" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_day.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="26" lean-forward="false" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/meal_view_holder.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
   </component>

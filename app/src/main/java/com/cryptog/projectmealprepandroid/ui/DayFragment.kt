@@ -1,6 +1,8 @@
 package com.cryptog.projectmealprepandroid.ui
 
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
@@ -30,6 +32,8 @@ class DayFragment : Fragment() {
 
     companion object {
         private const val ARG_CAUGHT = "DayFragment"
+        val REQUEST_INSERT = 0
+        val EXTRA_MEAL = "CURRENT_MEAL"
 
         fun newInstance(dailyMealPlan: DailyMealPlan): DayFragment {
             val args = Bundle()
@@ -54,15 +58,15 @@ class DayFragment : Fragment() {
         recyclerView.layoutManager = layoutManager
         mealListAdapter.update(currentDailyMealPlan)
         recyclerView.adapter = mealListAdapter
+
         dailyPortionView.setValuesInPortionList(currentDailyMealPlan)
-
-        mealListAdapter.setOnCustomItemClickListener(object : CustomOnClickListener{
+        mealListAdapter.setOnCustomItemClickListener(object : CustomOnClickListener {
             override fun onCustomItemClickListener(meal: Meal) {
-                val bundle : Bundle
-
+                val intent = Intent(context, DetailMealPortionActivity::class.java)
+                intent.putExtra(EXTRA_MEAL, meal)
+                startActivityForResult(intent, REQUEST_INSERT)
             }
         })
-
         return rootView
     }
 
@@ -71,5 +75,20 @@ class DayFragment : Fragment() {
         currentDailyMealPlan = arguments!!.getSerializable(ARG_CAUGHT) as DailyMealPlan
         mealListAdapter.update(currentDailyMealPlan)
         dailyPortionView.setValuesInPortionList(currentDailyMealPlan)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == REQUEST_INSERT && resultCode == Activity.RESULT_OK) {
+            val meal = data?.getSerializableExtra(EXTRA_MEAL) as Meal
+            val index = meal.id
+            Log.d("Index",index.toString())
+            if (meal != null) {
+                currentDailyMealPlan.meals[index] = meal
+                mealListAdapter.updateItemChanged(currentDailyMealPlan,index)
+//                recyclerView.adapter = mealListAdapter
+            }
+        }
     }
 }
