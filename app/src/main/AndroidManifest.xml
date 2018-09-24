@@ -18,7 +18,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.DetailMealPortionActivity"></activity>
+        <activity android:name=".ui.DetailMealPortionActivity" />
+        <activity android:name=".ui.DetailDailyPortionActivity"></activity>
     </application>
 
 </manifest>

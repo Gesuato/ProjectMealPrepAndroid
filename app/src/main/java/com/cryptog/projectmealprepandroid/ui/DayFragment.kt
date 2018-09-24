@@ -14,6 +14,7 @@ import com.cryptog.projectmealprepandroid.R
 import com.cryptog.projectmealprepandroid.data.model.DailyMealPlan
 import com.cryptog.projectmealprepandroid.data.model.Meal
 import com.cryptog.projectmealprepandroid.ui.adapters.MealListAdapter
+import kotlinx.android.synthetic.main.daily_portion_view.view.*
 
 
 class DayFragment : Fragment() {
@@ -57,6 +58,10 @@ class DayFragment : Fragment() {
         this.recyclerView.adapter = mealListAdapter
 
         this.dailyPortionView.setValuesInPortionList(this.currentDailyMealPlan)
+        this.dailyPortionView.imgBtnDetailEdit.setOnClickListener {
+            val intent = Intent(context,DetailDailyPortionActivity::class.java)
+            startActivity(intent)
+        }
         this.mealListAdapter.setOnCustomItemClickListener(object : CustomOnClickListener {
             override fun onCustomItemClickListener(meal: Meal) {
                 val intent = Intent(context, DetailMealPortionActivity::class.java)

@@ -24,7 +24,7 @@ class Meal : Serializable {
             nutriment.nameId = nutrimentTitles[index]
             nutriment.items = ""
             nutriment.quantity = 0.0f
-            nutriments!!.add(nutriment)
+            nutriments.add(nutriment)
         }
     }
 }

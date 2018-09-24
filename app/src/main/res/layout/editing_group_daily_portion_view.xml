@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Button
+        android:id="@+id/btnNutrimentDetail"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/background_square_btn_vegetable"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <Button
+        android:id="@+id/btnPlusDetail"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/icon_plus"
+        app:layout_constraintLeft_toRightOf="@id/btnNutrimentDetail"
+        app:layout_constraintTop_toTopOf="@id/btnNutrimentDetail"
+
+        />
+
+    <Button
+        android:id="@+id/btnLessDetail"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/icon_less"
+        app:layout_constraintRight_toRightOf="@id/btnPlusDetail"
+        app:layout_constraintTop_toBottomOf="@id/btnPlusDetail" />
+
+</android.support.constraint.ConstraintLayout>

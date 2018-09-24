@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.DetailDailyPortionActivity">
+
+    <com.cryptog.projectmealprepandroid.ui.EditingGroupDailyPortionView
+        android:id="@+id/editingGroupVegetable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:nutrimentBackground="@drawable/background_square_btn_vegetable"/>
+
+    <com.cryptog.projectmealprepandroid.ui.EditingGroupDailyPortionView
+        android:id="@+id/editingGroupFruit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/editingGroupVegetable"
+        app:nutrimentBackground="@drawable/background_square_btn_fruit"/>
+
+    <com.cryptog.projectmealprepandroid.ui.EditingGroupDailyPortionView
+        android:id="@+id/editingGroupProtein"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/editingGroupFruit"
+        app:nutrimentBackground="@drawable/background_square_btn_protein"/>
+
+    <com.cryptog.projectmealprepandroid.ui.EditingGroupDailyPortionView
+        android:id="@+id/editingGroupCarbohydrates"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:nutrimentBackground="@drawable/background_square_btn_carbohydrate"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/editingGroupProtein" />
+
+    <com.cryptog.projectmealprepandroid.ui.EditingGroupDailyPortionView
+        android:id="@+id/editingGroupGoodFat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:nutrimentBackground="@drawable/background_square_btn_goodfat"/>
+
+    <com.cryptog.projectmealprepandroid.ui.EditingGroupDailyPortionView
+        android:id="@+id/editingGroupSeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editingGroupGoodFat"
+        app:nutrimentBackground="@drawable/background_square_btn_seed"/>
+
+    <com.cryptog.projectmealprepandroid.ui.EditingGroupDailyPortionView
+        android:id="@+id/editingGroupOil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editingGroupSeed"
+        app:nutrimentBackground="@drawable/background_square_btn_oil"/>
+</android.support.constraint.ConstraintLayout>

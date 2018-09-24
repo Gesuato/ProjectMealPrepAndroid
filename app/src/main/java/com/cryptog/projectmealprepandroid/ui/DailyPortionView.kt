@@ -5,6 +5,7 @@ import android.support.constraint.ConstraintLayout
 import android.util.AttributeSet
 import android.view.View
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import com.cryptog.projectmealprepandroid.R
 import com.cryptog.projectmealprepandroid.data.model.DailyMealPlan
@@ -21,6 +22,7 @@ class DailyPortionView(context: Context, attributeSet: AttributeSet) :
         R.id.btnSeeds,
         R.id.btnOils
     )
+    private var imgBtnDetailEdit : ImageButton
     private var btnsDailyPortion = ArrayList<TextView>()
 
     init {
@@ -30,6 +32,8 @@ class DailyPortionView(context: Context, attributeSet: AttributeSet) :
             val currentButton = findViewById<Button>(currentId)
             btnsDailyPortion.add(currentButton)
         }
+        imgBtnDetailEdit = findViewById(R.id.imgBtnDetailEdit)
+
     }
 
     fun setValuesInPortionList(currentDailyMealPlan: DailyMealPlan) {

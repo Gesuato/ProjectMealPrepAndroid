@@ -2,7 +2,6 @@ package com.cryptog.projectmealprepandroid.ui.adapters
 
 import android.content.res.Resources
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -63,6 +62,6 @@ class MealListAdapter : RecyclerView.Adapter<MealListAdapter.MealViewHolder>() {
     class MealViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val titleMeal = itemView.findViewById<TextView>(R.id.titleMealId)!!
         val imageButtonEdit = itemView.findViewById<ImageButton>(R.id.imageButtonEdit)!!
-        val mealPortionView = itemView.findViewById<MealPortionView>(R.id.mealPortionViewId)
+        val mealPortionView = itemView.findViewById<MealPortionView>(R.id.mealPortionViewId)!!
     }
 }
