@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,19 +20,13 @@ class DayFragment : Fragment() {
 
     private lateinit var currentDailyMealPlan: DailyMealPlan
     private lateinit var recyclerView: RecyclerView
-    private var mealListAdapter = MealListAdapter()
+    private val mealListAdapter = MealListAdapter()
     private lateinit var dailyPortionView: DailyPortionView
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        currentDailyMealPlan = arguments!!.getSerializable(ARG_CAUGHT) as DailyMealPlan
-    }
-
     companion object {
-        private const val ARG_CAUGHT = "DayFragment"
-        val REQUEST_INSERT = 0
-        val EXTRA_MEAL = "CURRENT_MEAL"
+        const val ARG_CAUGHT = "DayFragment"
+        const val REQUEST_INSERT = 0
+        const val EXTRA_MEAL = "CURRENT_MEAL"
 
         fun newInstance(dailyMealPlan: DailyMealPlan): DayFragment {
             val args = Bundle()
@@ -52,15 +45,19 @@ class DayFragment : Fragment() {
         val rootView = inflater.inflate(R.layout.fragment_day, container, false)
         val layoutManager = LinearLayoutManager(context)
 
-        recyclerView = rootView.findViewById(R.id.recycleViewId) as RecyclerView
-        dailyPortionView = rootView.findViewById(R.id.daily_portion)
+        if (!::currentDailyMealPlan.isInitialized) {
+            currentDailyMealPlan = arguments!!.getSerializable(ARG_CAUGHT) as DailyMealPlan
+        }
 
-        recyclerView.layoutManager = layoutManager
-        mealListAdapter.update(currentDailyMealPlan)
-        recyclerView.adapter = mealListAdapter
+        this.recyclerView = rootView.findViewById(R.id.recycleViewId) as RecyclerView
+        this.dailyPortionView = rootView.findViewById(R.id.daily_portion)
 
-        dailyPortionView.setValuesInPortionList(currentDailyMealPlan)
-        mealListAdapter.setOnCustomItemClickListener(object : CustomOnClickListener {
+        this.recyclerView.layoutManager = layoutManager
+        this.mealListAdapter.update(this.currentDailyMealPlan)
+        this.recyclerView.adapter = mealListAdapter
+
+        this.dailyPortionView.setValuesInPortionList(this.currentDailyMealPlan)
+        this.mealListAdapter.setOnCustomItemClickListener(object : CustomOnClickListener {
             override fun onCustomItemClickListener(meal: Meal) {
                 val intent = Intent(context, DetailMealPortionActivity::class.java)
                 intent.putExtra(EXTRA_MEAL, meal)
@@ -72,9 +69,8 @@ class DayFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        currentDailyMealPlan = arguments!!.getSerializable(ARG_CAUGHT) as DailyMealPlan
-        mealListAdapter.update(currentDailyMealPlan)
-        dailyPortionView.setValuesInPortionList(currentDailyMealPlan)
+        this.mealListAdapter.update(this.currentDailyMealPlan)
+        this.dailyPortionView.setValuesInPortionList(this.currentDailyMealPlan)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -83,12 +79,8 @@ class DayFragment : Fragment() {
         if (requestCode == REQUEST_INSERT && resultCode == Activity.RESULT_OK) {
             val meal = data?.getSerializableExtra(EXTRA_MEAL) as Meal
             val index = meal.id
-            Log.d("Index",index.toString())
-            if (meal != null) {
-                currentDailyMealPlan.meals[index] = meal
-                mealListAdapter.updateItemChanged(currentDailyMealPlan,index)
-                recyclerView.adapter = mealListAdapter
-            }
+            this.currentDailyMealPlan.meals[index] = meal
+            this.mealListAdapter.updateItemChanged(this.currentDailyMealPlan, index)
         }
     }
 }

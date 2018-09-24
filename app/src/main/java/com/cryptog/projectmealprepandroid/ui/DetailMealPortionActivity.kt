@@ -20,12 +20,12 @@ class DetailMealPortionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_meal_portion)
 
-        currentMeal = intent.getSerializableExtra(DayFragment.EXTRA_MEAL) as Meal
+        this.currentMeal = intent.getSerializableExtra(DayFragment.EXTRA_MEAL) as Meal
         Log.d("MealDetail", resources.getText(currentMeal.nameId).toString())
 
         val layoutManager = LinearLayoutManager(this)
         recycleViewDetailId.layoutManager = layoutManager
-        metalDetailAdapter.update(currentMeal)
+        this.metalDetailAdapter.update(currentMeal)
         recycleViewDetailId.adapter = metalDetailAdapter
 
 

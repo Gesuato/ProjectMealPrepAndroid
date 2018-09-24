@@ -34,7 +34,7 @@ class DailyMealPlan : Serializable {
             val meal = Meal()
             meal.id = index
             meal.nameId = titlesOfMeals[index]
-            meals!!.add(meal)
+            this.meals.add(meal)
         }
 
         for (index in 0..6) {
@@ -42,7 +42,7 @@ class DailyMealPlan : Serializable {
             nutriment.nameId = nutrimentTitles[index]
             nutriment.items = ""
             nutriment.quantity = quantityDefault[index]
-            dailyPortions!!.add(nutriment)
+            this.dailyPortions.add(nutriment)
         }
     }
 }

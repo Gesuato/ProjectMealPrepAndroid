@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal">
 
@@ -11,36 +11,34 @@
         android:layout_gravity="bottom"
         android:layout_marginLeft="5dp"
         android:background="@drawable/background_circle_btn_vegetable"
-
-        />
+        android:visibility="gone" />
 
     <Button
         android:id="@+id/nutrimentFruit"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_gravity="bottom"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="5dp"
         android:background="@drawable/background_circle_btn_fruit"
-        android:visibility="gone"
-        />
+        android:visibility="gone" />
+
     <Button
         android:id="@+id/nutrimentProtein"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_gravity="bottom"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="5dp"
         android:background="@drawable/background_circle_btn_protein"
-        android:visibility="gone"
-        />
+        android:visibility="gone" />
+
     <Button
         android:id="@+id/nutrimentCarbohydrate"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_gravity="bottom"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="5dp"
         android:background="@drawable/background_circle_btn_carbohydrate"
-        android:visibility="gone"
-        />
+        android:visibility="gone" />
 
     <Button
         android:id="@+id/nutrimentGoodFat"
@@ -49,8 +47,8 @@
         android:layout_gravity="bottom"
         android:layout_marginLeft="5dp"
         android:background="@drawable/background_circle_btn_goodfat"
-        android:visibility="gone"
-        />
+        android:visibility="gone" />
+
     <Button
         android:id="@+id/nutrimentSeed"
         android:layout_width="40dp"
@@ -58,8 +56,8 @@
         android:layout_gravity="bottom"
         android:layout_marginLeft="5dp"
         android:background="@drawable/background_circle_btn_seed"
-        android:visibility="gone"
-        />
+        android:visibility="gone" />
+
     <Button
         android:id="@+id/nutrimentOil"
         android:layout_width="40dp"
@@ -67,6 +65,5 @@
         android:layout_gravity="bottom"
         android:layout_marginLeft="5dp"
         android:background="@drawable/background_circle_btn_oil"
-        android:visibility="gone"
-        />
+        android:visibility="gone" />
 </LinearLayout>
