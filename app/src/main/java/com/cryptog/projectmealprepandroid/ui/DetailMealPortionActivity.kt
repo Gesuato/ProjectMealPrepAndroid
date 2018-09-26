@@ -5,7 +5,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
-import android.util.Log
 import com.cryptog.projectmealprepandroid.R
 import com.cryptog.projectmealprepandroid.data.model.Meal
 import com.cryptog.projectmealprepandroid.ui.adapters.MealDetailAdapter
@@ -20,8 +19,9 @@ class DetailMealPortionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_meal_portion)
 
-        this.currentMeal = intent.getSerializableExtra(DayFragment.EXTRA_MEAL) as Meal
-        Log.d("MealDetail", resources.getText(currentMeal.nameId).toString())
+        if (intent.getSerializableExtra(DayFragment.EXTRA_MEAL) != null) {
+            this.currentMeal = intent.getSerializableExtra(DayFragment.EXTRA_MEAL) as Meal
+        }
 
         val layoutManager = LinearLayoutManager(this)
         recycleViewDetailId.layoutManager = layoutManager

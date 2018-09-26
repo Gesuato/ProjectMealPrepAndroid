@@ -9,22 +9,23 @@ import android.widget.ImageButton
 import android.widget.TextView
 import com.cryptog.projectmealprepandroid.R
 import com.cryptog.projectmealprepandroid.data.model.DailyMealPlan
+import com.cryptog.projectmealprepandroid.data.model.Meal
 import com.cryptog.projectmealprepandroid.ui.CustomOnClickListener
 import com.cryptog.projectmealprepandroid.ui.MealPortionView
 
 class MealListAdapter : RecyclerView.Adapter<MealListAdapter.MealViewHolder>() {
 
-    private var currentDailyMealPlan = DailyMealPlan()
+    private var currentMeals = ArrayList<Meal>()
     private lateinit var resources: Resources
     private lateinit var onCustomClickListener: CustomOnClickListener
 
-    fun update(currentDailyMealPlan: DailyMealPlan) {
-        this.currentDailyMealPlan = currentDailyMealPlan
+    fun update(currentMeals: ArrayList<Meal>) {
+        this.currentMeals = currentMeals
         notifyDataSetChanged()
     }
 
-    fun updateItemChanged(currentDailyMealPlan: DailyMealPlan, index: Int) {
-        this.currentDailyMealPlan = currentDailyMealPlan
+    fun updateItemChanged(currentMeals: ArrayList<Meal>, index: Int) {
+        this.currentMeals = currentMeals
         notifyItemChanged(index)
     }
 
@@ -34,7 +35,7 @@ class MealListAdapter : RecyclerView.Adapter<MealListAdapter.MealViewHolder>() {
         val viewHolder = MealViewHolder(itemView)
 
         viewHolder.imageButtonEdit.setOnClickListener{
-            onCustomClickListener.onCustomItemClickListener(currentDailyMealPlan.meals[viewHolder.adapterPosition])
+            onCustomClickListener.onCustomItemClickListener(currentMeals[viewHolder.adapterPosition])
         }
 
         resources = layoutInflater.context.resources
@@ -42,15 +43,15 @@ class MealListAdapter : RecyclerView.Adapter<MealListAdapter.MealViewHolder>() {
     }
 
     override fun getItemCount(): Int {
-        return if (!currentDailyMealPlan.meals.isEmpty()) {
-            currentDailyMealPlan.meals.size
+        return if (!currentMeals.isEmpty()) {
+            currentMeals.size
         } else {
             0
         }
     }
 
     override fun onBindViewHolder(holder: MealViewHolder, position: Int) {
-        val currentMeal = currentDailyMealPlan.meals[position]
+        val currentMeal = currentMeals[position]
         holder.titleMeal.text = resources.getText(currentMeal.nameId)
         holder.mealPortionView.setValues(currentMeal)
     }
