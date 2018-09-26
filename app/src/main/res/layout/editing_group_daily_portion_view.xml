@@ -1,18 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Seeds and Dressings"
+        android:textColor="#000"
+        android:textSize="13sp"
+        app:layout_constraintLeft_toLeftOf="@id/btnNutrimentDetail"
+        app:layout_constraintRight_toRightOf="@id/btnNutrimentDetail" />
 
     <Button
         android:id="@+id/btnNutrimentDetail"
         android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="15dp"
+        android:layout_height="77dp"
+        android:layout_marginLeft="20dp"
         android:background="@drawable/background_square_btn_vegetable"
         app:layout_constraintLeft_toLeftOf="parent"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitle"
+        android:layout_marginTop="5dp"/>
 
     <Button
         android:id="@+id/btnPlusDetail"

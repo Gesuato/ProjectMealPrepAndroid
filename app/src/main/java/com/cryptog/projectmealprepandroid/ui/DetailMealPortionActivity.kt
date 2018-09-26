@@ -41,7 +41,7 @@ class DetailMealPortionActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         val intent = Intent()
-        intent.putExtra(DayFragment.EXTRA_MEAL, currentMeal)
+        intent.putExtra(DayFragment.EXTRA_MEAL, this.currentMeal)
         setResult(Activity.RESULT_OK, intent)
         finish()
         return super.onOptionsItemSelected(item)

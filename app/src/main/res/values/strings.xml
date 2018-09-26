@@ -40,4 +40,7 @@
         <item>Sun</item>
     </string-array>
 
+    <!-- String of ActionBar DetailDailyPortionActivity -->
+    <string name="portionsOf">Portions of</string>
+
 </resources>

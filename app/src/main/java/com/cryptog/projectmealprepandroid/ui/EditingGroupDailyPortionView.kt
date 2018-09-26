@@ -73,4 +73,8 @@ class EditingGroupDailyPortionView(context: Context, attributeSet: AttributeSet)
     fun setValueInButtonNutriment(value: Float) {
         this.buttonNutriment.text = value.toString()
     }
+
+    fun setNutrimentTitle(title: String) {
+        textViewTitle.text = title
+    }
 }

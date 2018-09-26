@@ -13,6 +13,7 @@ import android.view.ViewGroup
 import com.cryptog.projectmealprepandroid.R
 import com.cryptog.projectmealprepandroid.data.model.DailyMealPlan
 import com.cryptog.projectmealprepandroid.data.model.Meal
+import com.cryptog.projectmealprepandroid.data.model.Nutriment
 import com.cryptog.projectmealprepandroid.ui.adapters.MealListAdapter
 import kotlinx.android.synthetic.main.daily_portion_view.view.*
 
@@ -64,6 +65,7 @@ class DayFragment : Fragment() {
             val intent = Intent(context, DetailDailyPortionActivity::class.java)
             val curentDailyPotion = this.currentDailyMealPlan.dailyPortions
             intent.putExtra(EXTRA_DAILYPORTION, curentDailyPotion)
+            intent.putExtra("currentDay", currentDailyMealPlan.day)
             startActivityForResult(intent, REQUEST_DAILYPORTION)
         }
         this.mealListAdapter.setOnCustomItemClickListener(object : CustomOnClickListener {
@@ -87,13 +89,20 @@ class DayFragment : Fragment() {
 
         if (requestCode == REQUEST_INSERT && resultCode == Activity.RESULT_OK) {
             val meal = data?.getSerializableExtra(EXTRA_MEAL) as Meal
-            val index = meal.id
-            this.currentDailyMealPlan.meals[index] = meal
-            this.mealListAdapter.updateItemChanged(this.currentDailyMealPlan.meals, index)
+            meal.run {
+                val index = meal.id
+                currentDailyMealPlan.meals[index] = meal
+                mealListAdapter.updateItemChanged(currentDailyMealPlan.meals, index)
+            }
         }
 
-        if(requestCode == REQUEST_DAILYPORTION && resultCode == Activity.RESULT_OK){
-
+        if (requestCode == REQUEST_DAILYPORTION && resultCode == Activity.RESULT_OK) {
+            val dailyPortions =
+                data?.getSerializableExtra(EXTRA_DAILYPORTION) as ArrayList<Nutriment>
+            dailyPortions.run {
+                currentDailyMealPlan.dailyPortions = dailyPortions
+                dailyPortionView.setValuesInPortionList(dailyPortions)
+            }
         }
     }
 }
