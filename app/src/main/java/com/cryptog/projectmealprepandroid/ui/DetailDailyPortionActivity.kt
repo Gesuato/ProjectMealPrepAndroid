@@ -1,7 +1,10 @@
 package com.cryptog.projectmealprepandroid.ui
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.Menu
+import android.view.MenuItem
 import com.cryptog.projectmealprepandroid.R
 import com.cryptog.projectmealprepandroid.data.model.Nutriment
 import kotlinx.android.synthetic.main.activity_detail_daily_portion.*
@@ -10,9 +13,13 @@ class DetailDailyPortionActivity : AppCompatActivity() {
 
     private lateinit var currentDailyPotion: ArrayList<Nutriment>
 
+    @SuppressLint("RestrictedApi")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_daily_portion)
+        supportActionBar!!.setDefaultDisplayHomeAsUpEnabled(true)
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+
 
         val editingGroupDailyPotionList = arrayListOf(
             editingGroupVegetable,
@@ -80,5 +87,11 @@ class DetailDailyPortionActivity : AppCompatActivity() {
             val quantity = this.currentDailyPotion[key].quantity
             group.setValueInButtonNutriment(quantity)
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        finish()
+
+        return super.onOptionsItemSelected(item)
     }
 }
