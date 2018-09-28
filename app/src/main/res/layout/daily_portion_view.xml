@@ -91,4 +91,14 @@
         android:layout_marginRight="10dp"
         />
 
+    <ImageButton
+        android:id="@+id/imgBtnClone"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:scaleType="centerCrop"
+        android:background="@drawable/icon_copy"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="10dp"
+        />
+
 </android.support.constraint.ConstraintLayout>

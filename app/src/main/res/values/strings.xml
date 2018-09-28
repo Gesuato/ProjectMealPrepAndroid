@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ProjectMealPrepAndroid</string>
+    <string name="app_name">EasyPrep</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -42,5 +42,16 @@
 
     <!-- String of ActionBar DetailDailyPortionActivity -->
     <string name="portionsOf">Portions of</string>
+
+    <!-- Strings of ActionBar MainActivity -->
+    <string name="contact">Contact</string>
+    <string name="supermarketList">Supermarket list</string>
+    <string name="introduction">Introduction</string>
+
+    <!-- Strings of Toast Messages -->
+    <string name="updateSuccessful">Changes made successfully</string>
+
+
+
 
 </resources>

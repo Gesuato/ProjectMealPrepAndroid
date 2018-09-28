@@ -3,6 +3,8 @@ package com.cryptog.projectmealprepandroid.ui
 import android.os.Bundle
 import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.Toolbar
+import android.view.Menu
 import com.cryptog.projectmealprepandroid.R
 import com.cryptog.projectmealprepandroid.data.model.Week
 import com.cryptog.projectmealprepandroid.ui.adapters.ViewPagerAdapter
@@ -26,5 +28,10 @@ class MainActivity : AppCompatActivity() {
         )
         this.viewPager.adapter = viewPagerAdapter
         tabLayoutId.setupWithViewPager(viewPager)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main,menu)
+        return super.onCreateOptionsMenu(menu)
     }
 }

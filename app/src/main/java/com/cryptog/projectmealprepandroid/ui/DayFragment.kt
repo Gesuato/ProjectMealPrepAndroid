@@ -2,6 +2,7 @@ package com.cryptog.projectmealprepandroid.ui
 
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -10,6 +11,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.cryptog.projectmealprepandroid.R
 import com.cryptog.projectmealprepandroid.data.model.DailyMealPlan
 import com.cryptog.projectmealprepandroid.data.model.Meal
@@ -17,13 +19,13 @@ import com.cryptog.projectmealprepandroid.data.model.Nutriment
 import com.cryptog.projectmealprepandroid.ui.adapters.MealListAdapter
 import kotlinx.android.synthetic.main.daily_portion_view.view.*
 
-
 class DayFragment : Fragment() {
 
     private lateinit var currentDailyMealPlan: DailyMealPlan
     private lateinit var recyclerView: RecyclerView
     private val mealListAdapter = MealListAdapter()
     private lateinit var dailyPortionView: DailyPortionView
+    private var quantityList = arrayListOf(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f)
 
     companion object {
         const val ARG_CAUGHT = "DayFragment"
@@ -59,8 +61,8 @@ class DayFragment : Fragment() {
         this.recyclerView.layoutManager = layoutManager
         this.mealListAdapter.update(this.currentDailyMealPlan.meals)
         this.recyclerView.adapter = mealListAdapter
+        updateValuesInDailyPortionViewRemovingTheCurrentValuesOfMeals()
 
-        this.dailyPortionView.setValuesInPortionList(this.currentDailyMealPlan.dailyPortions)
         this.dailyPortionView.imgBtnDetailEdit.setOnClickListener {
             val intent = Intent(context, DetailDailyPortionActivity::class.java)
             val curentDailyPotion = this.currentDailyMealPlan.dailyPortions
@@ -81,7 +83,7 @@ class DayFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         this.mealListAdapter.update(this.currentDailyMealPlan.meals)
-        this.dailyPortionView.setValuesInPortionList(this.currentDailyMealPlan.dailyPortions)
+        updateValuesInDailyPortionViewRemovingTheCurrentValuesOfMeals()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -93,16 +95,43 @@ class DayFragment : Fragment() {
                 val index = meal.id
                 currentDailyMealPlan.meals[index] = meal
                 mealListAdapter.updateItemChanged(currentDailyMealPlan.meals, index)
+                context!!.toast(messageUpdate())
             }
         }
-
         if (requestCode == REQUEST_DAILYPORTION && resultCode == Activity.RESULT_OK) {
             val dailyPortions =
                 data?.getSerializableExtra(EXTRA_DAILYPORTION) as ArrayList<Nutriment>
             dailyPortions.run {
                 currentDailyMealPlan.dailyPortions = dailyPortions
-                dailyPortionView.setValuesInPortionList(dailyPortions)
+                context!!.toast(messageUpdate())
             }
         }
     }
+
+    private fun updateValuesInDailyPortionViewRemovingTheCurrentValuesOfMeals() {
+        setValueInQuantityList()
+
+        for (currentMeal in currentDailyMealPlan.meals) {
+            for ((key, currentNutriment) in currentMeal.nutriments.withIndex()) {
+                val currentQuantity =
+                    quantityList[key] - currentNutriment.quantity
+                this.quantityList[key] = currentQuantity
+            }
+        }
+        this.dailyPortionView.setValuesInPortionList(quantityList)
+    }
+
+    private fun setValueInQuantityList() {
+        for ((key, currentNutriment) in currentDailyMealPlan.dailyPortions.withIndex()) {
+            quantityList[key] = currentNutriment.quantity
+        }
+    }
+
+    private fun Context.toast(message: CharSequence) =
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+
+    private fun messageUpdate(): String {
+        return resources.getString(R.string.updateSuccessful)
+    }
+
 }

@@ -22,31 +22,11 @@ class EditingGroupDailyPortionView(context: Context, attributeSet: AttributeSet)
         setBackgroundInNutrimentButton(attributeSet)
 
         btnPlusDetail.setOnClickListener {
-            var quantityString = "0.0"
-            if (!buttonNutriment.text.isEmpty()) {
-                quantityString = buttonNutriment.text.toString()
-            }
-            this.quantity = quantityString.toFloat()
-            this.quantity += 0.5f
-            this.buttonNutriment.text = quantity.toString()
-            this.editingGroupDailyPortionOnClickListener.editingGroupDailyPortionOnClickListener(
-                quantity
-            )
+            btnPlusOrLessTouched("PLUS")
         }
 
         btnLessDetail.setOnClickListener {
-            var quantityString = "0.0"
-            if (!this.buttonNutriment.text.isEmpty()) {
-                quantityString = this.buttonNutriment.text.toString()
-            }
-            if (quantityString != "0.0") {
-                this.quantity = quantityString.toFloat()
-                this.quantity -= 0.5f
-                this.buttonNutriment.text = quantity.toString()
-                this.editingGroupDailyPortionOnClickListener.editingGroupDailyPortionOnClickListener(
-                    this.quantity
-                )
-            }
+            btnPlusOrLessTouched("LESS")
         }
     }
 
@@ -66,7 +46,7 @@ class EditingGroupDailyPortionView(context: Context, attributeSet: AttributeSet)
         editingGroupDailyPortionViewAttributes.recycle()
     }
 
-    fun setOnCustomItemClickListener(onClickListener: EditingGroupDailyPortionOnClickListener) {
+    fun setOnCustomClickListener(onClickListener: EditingGroupDailyPortionOnClickListener) {
         this.editingGroupDailyPortionOnClickListener = onClickListener
     }
 
@@ -75,6 +55,29 @@ class EditingGroupDailyPortionView(context: Context, attributeSet: AttributeSet)
     }
 
     fun setNutrimentTitle(title: String) {
-        textViewTitle.text = title
+        this.textViewTitle.text = title
+    }
+
+    private fun btnPlusOrLessTouched(type: String) {
+        val valueOfChange = 0.5f
+        var quantityString = "0.0"
+
+        if (!this.buttonNutriment.text.isEmpty()) {
+            quantityString = this.buttonNutriment.text.toString()
+        }
+        this.quantity = quantityString.toFloat()
+
+        if (type == "PLUS") {
+            this.quantity += valueOfChange
+        } else if (type == "LESS") {
+            if (this.quantity != 0.0f) {
+                this.quantity -= valueOfChange
+            }
+        }
+
+        this.buttonNutriment.text = quantity.toString()
+        this.editingGroupDailyPortionOnClickListener.editingGroupDailyPortionOnClickListener(
+            quantity
+        )
     }
 }

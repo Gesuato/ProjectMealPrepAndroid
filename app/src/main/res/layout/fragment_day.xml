@@ -10,12 +10,14 @@
     <com.cryptog.projectmealprepandroid.ui.DailyPortionView
         android:id="@+id/daily_portion"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycleViewId"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.5" />
+        android:layout_weight="1.5"
+        android:layout_marginTop="5dp"/>
 
 </LinearLayout>

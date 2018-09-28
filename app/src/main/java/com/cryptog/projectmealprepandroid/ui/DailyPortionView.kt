@@ -8,7 +8,6 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import com.cryptog.projectmealprepandroid.R
-import com.cryptog.projectmealprepandroid.data.model.Nutriment
 
 class DailyPortionView(context: Context, attributeSet: AttributeSet) :
     ConstraintLayout(context, attributeSet) {
@@ -22,7 +21,7 @@ class DailyPortionView(context: Context, attributeSet: AttributeSet) :
         R.id.btnSeeds,
         R.id.btnOils
     )
-    private var imgBtnDetailEdit : ImageButton
+    private var imgBtnDetailEdit: ImageButton
     private var btnsDailyPortion = ArrayList<TextView>()
 
     init {
@@ -35,9 +34,9 @@ class DailyPortionView(context: Context, attributeSet: AttributeSet) :
         imgBtnDetailEdit = findViewById(R.id.imgBtnDetailEdit)
     }
 
-    fun setValuesInPortionList(currentDailyPortions: ArrayList<Nutriment>) {
+    fun setValuesInPortionList(currentDailyPortions: ArrayList<Float>) {
         for ((key, value) in currentDailyPortions.withIndex()) {
-            btnsDailyPortion[key].text = value.quantity.toString()
+            btnsDailyPortion[key].text = value.toString()
         }
     }
 }
