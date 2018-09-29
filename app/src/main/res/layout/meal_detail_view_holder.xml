@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:focusable="true"
-    android:focusableInTouchMode="true"
-    >
+    android:focusableInTouchMode="true">
 
     <TextView
         android:id="@+id/textViewNutriment"
@@ -29,8 +28,7 @@
         android:inputType="textAutoComplete"
         android:textColor="#000"
         app:layout_constraintLeft_toLeftOf="@id/textViewNutriment"
-        app:layout_constraintTop_toTopOf="@id/btnLess"
-        />
+        app:layout_constraintTop_toTopOf="@id/btnLess" />
 
     <Button
         android:id="@+id/btnPlus"

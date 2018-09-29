@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.cryptog.projectmealprepandroid">
+    package="com.easyprep.easyprep">
 
     <application
         android:allowBackup="true"
@@ -19,7 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.DetailMealPortionActivity" />
-        <activity android:name=".ui.DetailDailyPortionActivity"></activity>
+        <activity android:name=".ui.DetailDailyPortionActivity" />
+        <activity android:name=".ui.SupermarketListActivity"></activity>
     </application>
 
 </manifest>

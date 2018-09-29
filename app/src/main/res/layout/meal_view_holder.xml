@@ -36,7 +36,7 @@
 
     </android.support.constraint.ConstraintLayout>
 
-    <com.cryptog.projectmealprepandroid.ui.MealPortionView
+    <com.easyprep.easyprep.ui.MealPortionView
         android:id="@+id/mealPortionViewId"
         android:layout_width="match_parent"
         android:layout_height="0dp"
