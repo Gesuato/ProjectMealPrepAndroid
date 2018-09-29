@@ -2,6 +2,7 @@ package com.easyprep.easyprep.ui
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import com.easyprep.easyprep.R
 import com.easyprep.easyprep.data.model.SupermarketItem
 import com.easyprep.easyprep.data.model.Week
@@ -29,6 +30,9 @@ class SupermarketListActivity : AppCompatActivity() {
             week = intent.getSerializableExtra("SUPERMARKETLIST") as Week
         }
         removeDuplicateItemsInSupermarketList()
+
+        Log.d("quantity",supermarketList[0][0].quantity.toString())
+        Log.d("quantity2",supermarketList[0].size.toString())
     }
 
     private fun organizingNutriments(): ArrayList<ArrayList<String>> {
@@ -90,12 +94,14 @@ class SupermarketListActivity : AppCompatActivity() {
                 var quantity = 1
                 for ((key, itemB) in supermarketItemsSplit[i].withIndex()) {
                     if (itemA.equals(itemB, true) && j != key) {
-                        list.removeAt(key)
+                        list[key] = null.toString()
                         quantity += 1
                     }
                 }
-                val supermarketItem = SupermarketItem(itemA, quantity)
-                this.supermarketList[i].add(supermarketItem)
+                if(itemA != "null") {
+                    val supermarketItem = SupermarketItem(itemA, quantity)
+                    this.supermarketList[i].add(supermarketItem)
+                }
             }
         }
     }

@@ -1,14 +1,17 @@
-package com.easyprep.projectmealprepandroid.ui.adapters
+package com.easyprep.easyprep.ui.adapters
 
 import android.content.res.Resources
 import android.support.v7.widget.RecyclerView
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
-import com.easyprep.projectmealprepandroid.R
-import com.easyprep.projectmealprepandroid.data.model.Meal
+import com.easyprep.easyprep.R
+import com.easyprep.easyprep.data.model.Meal
 
 class MealDetailAdapter : RecyclerView.Adapter<MealDetailAdapter.MealDetailHolder>() {
 
@@ -42,6 +45,7 @@ class MealDetailAdapter : RecyclerView.Adapter<MealDetailAdapter.MealDetailHolde
             currentQuantity += quantityChanged
             currentMeal.nutriments[viewHolder.adapterPosition].quantity = currentQuantity
             viewHolder.btnQuantityNutriment.text = setQuantity(viewHolder.adapterPosition)
+            valuesIsChanged()
         }
         viewHolder.btnLess.setOnClickListener {
             var currentQuantity = currentMeal.nutriments[viewHolder.adapterPosition].quantity
@@ -49,8 +53,28 @@ class MealDetailAdapter : RecyclerView.Adapter<MealDetailAdapter.MealDetailHolde
                 currentQuantity -= quantityChanged
                 currentMeal.nutriments[viewHolder.adapterPosition].quantity = currentQuantity
                 viewHolder.btnQuantityNutriment.text = setQuantity(viewHolder.adapterPosition)
+                valuesIsChanged()
             }
         }
+        viewHolder.editextNutriment.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(p0: Editable?) {
+                currentMeal.nutriments[viewHolder.adapterPosition].items =
+                        viewHolder.editextNutriment.text.toString()
+                valuesIsChanged()
+            }
+
+            override fun beforeTextChanged(
+                caracter: CharSequence?,
+                start: Int,
+                count: Int,
+                after: Int
+            ) {
+
+            }
+
+            override fun onTextChanged(p0: CharSequence?, start: Int, before: Int, count: Int) {
+            }
+        })
         return viewHolder
     }
 
@@ -63,7 +87,7 @@ class MealDetailAdapter : RecyclerView.Adapter<MealDetailAdapter.MealDetailHolde
         holder.textViewNutrimentName.text =
                 resources.getText(currentMeal.nutriments[position].nameId)
         holder.btnQuantityNutriment.text = currentMeal.nutriments[position].quantity.toString()
-
+        holder.editextNutriment.setText(currentMeal.nutriments[position].items)
     }
 
     class MealDetailHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -71,9 +95,16 @@ class MealDetailAdapter : RecyclerView.Adapter<MealDetailAdapter.MealDetailHolde
         val btnLess = itemView.findViewById<Button>(R.id.btnLess)!!
         val btnQuantityNutriment = itemView.findViewById<Button>(R.id.btnNutriment)!!
         val textViewNutrimentName = itemView.findViewById<TextView>(R.id.textViewNutriment)!!
+        val editextNutriment = itemView.findViewById<EditText>(R.id.editTextMarketList)!!
     }
 
     private fun setQuantity(position: Int): String {
         return currentMeal.nutriments[position].quantity.toString()
+    }
+
+    private fun valuesIsChanged() {
+        if (!currentMeal.valueIsChanged) {
+            currentMeal.valueIsChanged = true
+        }
     }
 }

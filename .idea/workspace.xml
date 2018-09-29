@@ -6,58 +6,23 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="QuantitySupList" />
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="quantity2" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0c140808-ff5c-4e2d-991d-90cebcfb461e" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_xwray_groupie_2_1_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_xwray_groupie_kotlin_android_extensions_2_1_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_android_extensions_runtime_1_2_61_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/data/model/SupermarketItem.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/ui/CustomOnClickListener.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/ui/SupermarketListActivity.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_supermarket_list.xml" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/resourceHashesCache.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/resourceHashesCache.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/jarAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/jarAnalysis.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskHistory.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskJars.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskJars.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/cryptog/projectmealprepandroid/ExampleInstrumentedTest.kt" afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/easyprep/easyprep/ExampleInstrumentedTest.kt" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/data/model/DailyMealPlan.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/data/model/DailyMealPlan.kt" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/data/model/Meal.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/data/model/Meal.kt" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/data/model/Nutriment.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/data/model/Nutriment.kt" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/data/model/Week.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/data/model/Week.kt" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/CustomOnClickListener.kt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/DailyPortionView.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/ui/DailyPortionView.kt" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/DayFragment.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/ui/DayFragment.kt" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/DetailDailyPortionActivity.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/ui/DetailDailyPortionActivity.kt" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/DetailMealPortionActivity.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/ui/DetailMealPortionActivity.kt" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/EditingGroupDailyPortionOnClickListener.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/ui/EditingGroupDailyPortionOnClickListener.kt" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/EditingGroupDailyPortionView.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/ui/EditingGroupDailyPortionView.kt" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/MainActivity.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/ui/MainActivity.kt" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/MealPortionView.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/ui/MealPortionView.kt" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/adapters/MealDetailAdapter.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/ui/adapters/MealDetailAdapter.kt" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/adapters/MealListAdapter.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/ui/adapters/MealListAdapter.kt" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cryptog/projectmealprepandroid/ui/adapters/ViewPagerAdapter.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/ui/adapters/ViewPagerAdapter.kt" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_detail_daily_portion.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_detail_daily_portion.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_day.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_day.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/meal_detail_view_holder.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/meal_detail_view_holder.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/meal_view_holder.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/meal_view_holder.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/cryptog/projectmealprepandroid/ExampleUnitTest.kt" afterPath="$PROJECT_DIR$/app/src/test/java/com/easyprep/easyprep/ExampleUnitTest.kt" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/ui/SupermarketListActivity.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/ui/SupermarketListActivity.kt" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/ui/adapters/MealDetailAdapter.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/ui/adapters/MealDetailAdapter.kt" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/ui/adapters/MealListAdapter.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/ui/adapters/MealListAdapter.kt" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/ui/adapters/ViewPagerAdapter.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/ui/adapters/ViewPagerAdapter.kt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -118,11 +83,12 @@
       <file leaf-file-name="SupermarketListActivity.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/ui/SupermarketListActivity.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="653">
-              <caret line="97" column="60" lean-forward="true" selection-start-line="97" selection-start-column="60" selection-end-line="97" selection-end-column="60" />
+            <state relative-caret-position="302">
+              <caret line="88" column="53" lean-forward="false" selection-start-line="88" selection-start-column="16" selection-end-line="88" selection-end-column="53" />
               <folding>
-                <element signature="e#34#238#0" expanded="true" />
-                <element signature="e#1038#1253#0" expanded="false" />
+                <element signature="e#34#262#0" expanded="true" />
+                <element signature="e#1160#1884#0" expanded="false" />
+                <element signature="e#1193#1408#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -2429,24 +2395,6 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
             </path>
-            <path>
-              <item name="ProjectMealPrepAndroid" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
-            <path>
-              <item name="ProjectMealPrepAndroid" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="menu" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
-            <path>
-              <item name="ProjectMealPrepAndroid" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -2746,10 +2694,10 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32971016" sideWeight="0.35623002" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22417465" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21195652" sideWeight="0.7651757" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21195652" sideWeight="0.7651757" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32971016" sideWeight="0.64377" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32971016" sideWeight="0.64377" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2807,7 +2755,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="56" />
+      <option name="time" value="69" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -3167,6 +3115,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-28/android.jar!/android/os/Handler.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="31" column="46" lean-forward="false" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/data/model/SupermarketItem.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="62" lean-forward="false" selection-start-line="2" selection-start-column="62" selection-end-line="2" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/ui/MainActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="704">
@@ -3181,14 +3145,45 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="28" column="31" lean-forward="false" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
-          <folding />
+          <folding>
+            <marker date="1536345204971" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1536345204971" expanded="false" signature="134:244" ph="..." />
+            <marker date="1536345204971" expanded="false" signature="305:316" ph=" { " />
+            <marker date="1536345204971" expanded="false" signature="352:358" ph=" }" />
+            <marker date="1536345204971" expanded="false" signature="392:403" ph=" { " />
+            <marker date="1536345204971" expanded="false" signature="439:445" ph=" }" />
+            <marker date="1536345204971" expanded="false" signature="489:500" ph=" { " />
+            <marker date="1536345204971" expanded="false" signature="536:542" ph=" }" />
+            <marker date="1536345204971" expanded="false" signature="584:595" ph=" { " />
+            <marker date="1536345204971" expanded="false" signature="631:637" ph=" }" />
+            <marker date="1536345204971" expanded="true" signature="668:679" ph=" { " />
+            <marker date="1536345204971" expanded="true" signature="715:721" ph=" }" />
+            <marker date="1536345204971" expanded="false" signature="780:791" ph=" { " />
+            <marker date="1536345204971" expanded="false" signature="827:833" ph=" }" />
+            <marker date="1536345204971" expanded="false" signature="896:907" ph=" { " />
+            <marker date="1536345204971" expanded="false" signature="943:949" ph=" }" />
+            <marker date="1536345204971" expanded="false" signature="987:998" ph=" { " />
+            <marker date="1536345204971" expanded="false" signature="1034:1040" ph=" }" />
+            <marker date="1536345204971" expanded="true" signature="1111:1163" ph="{...}" />
+            <marker date="1536345204971" expanded="false" signature="1187:1198" ph=" { " />
+            <marker date="1536345204971" expanded="false" signature="1234:1240" ph=" }" />
+            <marker date="1536345204971" expanded="false" signature="1270:1281" ph=" { " />
+            <marker date="1536345204971" expanded="false" signature="1317:1323" ph=" }" />
+            <marker date="1536345204971" expanded="false" signature="1375:1386" ph=" { " />
+            <marker date="1536345204971" expanded="false" signature="1422:1428" ph=" }" />
+            <marker date="1536345204971" expanded="false" signature="1485:1496" ph=" { " />
+            <marker date="1536345204971" expanded="false" signature="1532:1538" ph=" }" />
+            <marker date="1536345204971" expanded="true" signature="1622:1674" ph="{...}" />
+            <marker date="1536345204971" expanded="false" signature="1704:1715" ph=" { " />
+            <marker date="1536345204971" expanded="false" signature="1751:1757" ph=" }" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-28/android.jar!/android/os/Handler.class">
+    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-28/android.jar!/android/app/Activity.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="31" column="46" lean-forward="false" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="46" />
+        <state relative-caret-position="523">
+          <caret line="1153" column="0" lean-forward="false" selection-start-line="1153" selection-start-column="0" selection-end-line="1153" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -3201,29 +3196,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/data/model/SupermarketItem.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="62" lean-forward="false" selection-start-line="2" selection-start-column="62" selection-end-line="2" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-28/android.jar!/android/app/Activity.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="653">
-          <caret line="1153" column="0" lean-forward="false" selection-start-line="1153" selection-start-column="0" selection-end-line="1153" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/ui/SupermarketListActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="653">
-          <caret line="97" column="60" lean-forward="true" selection-start-line="97" selection-start-column="60" selection-end-line="97" selection-end-column="60" />
+        <state relative-caret-position="302">
+          <caret line="88" column="53" lean-forward="false" selection-start-line="88" selection-start-column="16" selection-end-line="88" selection-end-column="53" />
           <folding>
-            <element signature="e#34#238#0" expanded="true" />
-            <element signature="e#1038#1253#0" expanded="false" />
+            <element signature="e#34#262#0" expanded="true" />
+            <element signature="e#1160#1884#0" expanded="false" />
+            <element signature="e#1193#1408#0" expanded="false" />
           </folding>
         </state>
       </provider>

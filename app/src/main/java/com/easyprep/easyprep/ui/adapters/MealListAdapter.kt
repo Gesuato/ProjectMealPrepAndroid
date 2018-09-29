@@ -1,4 +1,4 @@
-package com.easyprep.projectmealprepandroid.ui.adapters
+package com.easyprep.easyprep.ui.adapters
 
 import android.content.res.Resources
 import android.support.v7.widget.RecyclerView
@@ -7,11 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
-import com.easyprep.projectmealprepandroid.R
-import com.easyprep.projectmealprepandroid.data.model.DailyMealPlan
-import com.easyprep.projectmealprepandroid.data.model.Meal
-import com.easyprep.projectmealprepandroid.ui.CustomOnClickListener
-import com.easyprep.projectmealprepandroid.ui.MealPortionView
+import com.easyprep.easyprep.R
+import com.easyprep.easyprep.data.model.DailyMealPlan
+import com.easyprep.easyprep.data.model.Meal
+import com.easyprep.easyprep.ui.CustomOnClickListener
+import com.easyprep.easyprep.ui.MealPortionView
 
 class MealListAdapter : RecyclerView.Adapter<MealListAdapter.MealViewHolder>() {
 
@@ -64,5 +64,6 @@ class MealListAdapter : RecyclerView.Adapter<MealListAdapter.MealViewHolder>() {
         val titleMeal = itemView.findViewById<TextView>(R.id.titleMealId)!!
         val imageButtonEdit = itemView.findViewById<ImageButton>(R.id.imageButtonEdit)!!
         val mealPortionView = itemView.findViewById<MealPortionView>(R.id.mealPortionViewId)!!
+
     }
 }

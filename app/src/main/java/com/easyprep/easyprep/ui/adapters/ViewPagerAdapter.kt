@@ -1,10 +1,10 @@
-package com.easyprep.projectmealprepandroid.ui.adapters
+package com.easyprep.easyprep.ui.adapters
 
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
-import com.easyprep.projectmealprepandroid.data.model.Week
-import com.easyprep.projectmealprepandroid.ui.DayFragment
+import com.easyprep.easyprep.data.model.Week
+import com.easyprep.easyprep.ui.DayFragment
 
 class ViewPagerAdapter(fm: FragmentManager?, private val titlesTab: Array<String>, private val week: Week) :
     FragmentPagerAdapter(fm) {
