@@ -7,11 +7,13 @@ import com.xwray.groupie.kotlinandroidextensions.Item
 import com.xwray.groupie.kotlinandroidextensions.ViewHolder
 import kotlinx.android.synthetic.main.item_expandable_header.*
 
-class ExpandableHeaderItem(private val title: String,private val color: Int) : Item(), ExpandableItem {
+class ExpandableHeaderItem(private val title: String) : Item(), ExpandableItem {
+
+    private lateinit var expandableGroup: ExpandableGroup
+
     override fun bind(viewHolder: ViewHolder, position: Int) {
         viewHolder.item_expandable_header_title.text = title
         viewHolder.item_expandable_header_icon.setImageResource(getRotatedIconResId())
-        viewHolder.item_expandable_header_root.setBackgroundResource(color)
 
         viewHolder.item_expandable_header_root.setOnClickListener {
             expandableGroup.onToggleExpanded()
@@ -19,7 +21,6 @@ class ExpandableHeaderItem(private val title: String,private val color: Int) : I
         }
     }
 
-    private lateinit var expandableGroup: ExpandableGroup
     override fun getLayout() = R.layout.item_expandable_header
 
     override fun setExpandableGroup(onToggleListener: ExpandableGroup) {
@@ -32,5 +33,4 @@ class ExpandableHeaderItem(private val title: String,private val color: Int) : I
         } else {
             R.drawable.ic_keyboard_arrow_down_black_24dp
         }
-
 }

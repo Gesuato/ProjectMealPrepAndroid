@@ -5,7 +5,6 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.Toolbar
 import android.view.MenuItem
 import com.easyprep.easyprep.R
 import com.easyprep.easyprep.data.model.Nutriment
@@ -42,11 +41,12 @@ class DetailDailyPortionActivity : AppCompatActivity() {
             this.currentDailyPotion =
                     intent.getSerializableExtra(DayFragment.EXTRA_DAILYPORTION) as ArrayList<Nutriment>
         }
-        if (intent.getIntExtra("currentDay", 0) != 0) {
-            currentDayId = intent.getIntExtra("currentDay", 0)
-            this.titleActionBar = resources.getString(R.string.portionsOf) + " " + resources.getString(
-                currentDayId
-            )
+        if (intent.getIntExtra("CURRENTDAY", 0) != 0) {
+            currentDayId = intent.getIntExtra("CURRENTDAY", 0)
+            this.titleActionBar = resources.getString(R.string.portionsOf) + " " +
+                    resources.getString(
+                        currentDayId
+                    )
             supportActionBar!!.title = titleActionBar
         }
 
@@ -60,6 +60,7 @@ class DetailDailyPortionActivity : AppCompatActivity() {
                 checkValueIsChanged()
             }
         })
+
         editingGroupFruit.setOnCustomClickListener(object :
             EditingGroupDailyPortionOnClickListener {
             override fun editingGroupDailyPortionOnClickListener(quantity: Float) {
@@ -67,6 +68,7 @@ class DetailDailyPortionActivity : AppCompatActivity() {
                 checkValueIsChanged()
             }
         })
+
         editingGroupProtein.setOnCustomClickListener(object :
             EditingGroupDailyPortionOnClickListener {
             override fun editingGroupDailyPortionOnClickListener(quantity: Float) {
@@ -74,6 +76,7 @@ class DetailDailyPortionActivity : AppCompatActivity() {
                 checkValueIsChanged()
             }
         })
+
         editingGroupCarbohydrates.setOnCustomClickListener(object :
             EditingGroupDailyPortionOnClickListener {
             override fun editingGroupDailyPortionOnClickListener(quantity: Float) {
@@ -81,6 +84,7 @@ class DetailDailyPortionActivity : AppCompatActivity() {
                 checkValueIsChanged()
             }
         })
+
         editingGroupGoodFat.setOnCustomClickListener(object :
             EditingGroupDailyPortionOnClickListener {
             override fun editingGroupDailyPortionOnClickListener(quantity: Float) {
@@ -88,6 +92,7 @@ class DetailDailyPortionActivity : AppCompatActivity() {
                 checkValueIsChanged()
             }
         })
+
         editingGroupSeed.setOnCustomClickListener(object :
             EditingGroupDailyPortionOnClickListener {
             override fun editingGroupDailyPortionOnClickListener(quantity: Float) {
@@ -95,6 +100,7 @@ class DetailDailyPortionActivity : AppCompatActivity() {
                 checkValueIsChanged()
             }
         })
+
         editingGroupOil.setOnCustomClickListener(object :
             EditingGroupDailyPortionOnClickListener {
             override fun editingGroupDailyPortionOnClickListener(quantity: Float) {
@@ -129,7 +135,7 @@ class DetailDailyPortionActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    private fun checkValueIsChanged(){
+    private fun checkValueIsChanged() {
         valuesIsChanged = true
     }
 }

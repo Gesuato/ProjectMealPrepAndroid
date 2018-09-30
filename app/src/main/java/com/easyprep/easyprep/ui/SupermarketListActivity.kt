@@ -1,9 +1,13 @@
 package com.easyprep.easyprep.ui
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import com.easyprep.easyprep.R
 import com.easyprep.easyprep.data.model.SupermarketItem
 import com.easyprep.easyprep.data.model.Week
@@ -28,18 +32,21 @@ class SupermarketListActivity : AppCompatActivity() {
             ArrayList()
         )
 
-    private val excitingSection = Section()
-
+    @SuppressLint("RestrictedApi")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_supermarket_list)
+        supportActionBar!!.run {
+            setDefaultDisplayHomeAsUpEnabled(true)
+            setDisplayHomeAsUpEnabled(true)
+            title = resources.getString(R.string.supermarketList)
+        }
 
         if (!::week.isInitialized) {
             week = intent.getSerializableExtra("SUPERMARKETLIST") as Week
         }
         removeDuplicateItemsInSupermarketList()
 
-        Log.d("Quantity",supermarketList[4].size.toString())
         val groupAdapter = GroupAdapter<ViewHolder>()
 
         recycleView_Supermarket.apply {
@@ -49,8 +56,7 @@ class SupermarketListActivity : AppCompatActivity() {
 
         ExpandableGroup(
             ExpandableHeaderItem(
-                resources.getString(R.string.veggies).capitalize(),
-                R.color.vegetableColor_expandable_header
+                resources.getString(R.string.veggies).capitalize()
             ), true
         ).apply {
             add(Section(generateItemSupermarketListViews(0)))
@@ -59,67 +65,57 @@ class SupermarketListActivity : AppCompatActivity() {
 
         ExpandableGroup(
             ExpandableHeaderItem(
-                resources.getString(R.string.fruits).capitalize(),
-                R.color.fruitColor_expandable_header
+                resources.getString(R.string.fruits).capitalize()
             ), false
         ).apply {
-            excitingSection.addAll(generateItemSupermarketListViews(1))
-            add(excitingSection)
+            add(Section(generateItemSupermarketListViews(1)))
             groupAdapter.add(this)
         }
 
         ExpandableGroup(
             ExpandableHeaderItem(
-                resources.getString(R.string.proteins).capitalize(),
-                R.color.proteinColor_expandable_header
+                resources.getString(R.string.proteins).capitalize()
             ), false
         ).apply {
-//            excitingSection.addAll()
+            //            excitingSection.addAll()
             add(Section(generateItemSupermarketListViews(2)))
             groupAdapter.add(this)
         }
 
         ExpandableGroup(
             ExpandableHeaderItem(
-                resources.getString(R.string.carbohydrates).capitalize(),
-                R.color.carbohydrateColor_expandable_header
+                resources.getString(R.string.carbohydrates).capitalize()
             ), false
         ).apply {
-            excitingSection.addAll(generateItemSupermarketListViews(3))
-            add(excitingSection)
+            add(Section(generateItemSupermarketListViews(3)))
             groupAdapter.add(this)
         }
 
         ExpandableGroup(
             ExpandableHeaderItem(
-                resources.getString(R.string.healthyFats).capitalize(),
-                R.color.goodFatColor_expandable_header
+                resources.getString(R.string.healthyFats).capitalize()
             ), false
         ).apply {
-            excitingSection.addAll(generateItemSupermarketListViews(4))
-            add(excitingSection)
+
+            add(Section(generateItemSupermarketListViews(4)))
             groupAdapter.add(this)
         }
 
         ExpandableGroup(
             ExpandableHeaderItem(
-                resources.getString(R.string.seedsAndDressings).capitalize(),
-                R.color.seedColor_expandable_header
+                resources.getString(R.string.seedsAndDressings).capitalize()
             ), false
         ).apply {
-            excitingSection.addAll(generateItemSupermarketListViews(5))
-            add(excitingSection)
+            add(Section(generateItemSupermarketListViews(5)))
             groupAdapter.add(this)
         }
 
         ExpandableGroup(
             ExpandableHeaderItem(
-                resources.getString(R.string.oilsAndNutButters).capitalize(),
-                R.color.oilColor_expandable_header
+                resources.getString(R.string.oilsAndNutButters).capitalize()
             ), false
         ).apply {
-            excitingSection.addAll(generateItemSupermarketListViews(6))
-            add(excitingSection)
+            add(Section(generateItemSupermarketListViews(6)))
             groupAdapter.add(this)
         }
     }
@@ -190,7 +186,7 @@ class SupermarketListActivity : AppCompatActivity() {
                     }
                 }
                 if (itemA != "null") {
-                    val supermarketItem = SupermarketItem(itemA, quantity, i)
+                    val supermarketItem = SupermarketItem(itemA, quantity)
                     this.supermarketList[i].add(supermarketItem)
                 }
             }
@@ -202,21 +198,33 @@ class SupermarketListActivity : AppCompatActivity() {
     }
 
     private fun generateItemSupermarketListViews(i: Int): MutableList<ItemSupermarketListView> {
-        val listColors = arrayOf(
-            R.color.vegetableColor_expandable_header,
-            R.color.fruitColor_expandable_header,
-            R.color.proteinColor_expandable_header,
-            R.color.carbohydrateColor_expandable_header,
-            R.color.goodFatColor_expandable_header,
-            R.color.seedColor_expandable_header,
-            R.color.oilColor_expandable_header
-        )
+
         val mutableList = mutableListOf<ItemSupermarketListView>()
         for (item in supermarketList[i]) {
-            val titleFormated = item.name + " (" + item.quantity.toString() + ")"
-            val currentColor = listColors[item.type]
-            mutableList.add(ItemSupermarketListView(titleFormated, currentColor))
+
+            val titleFormated = if (item.quantity > 1) {
+                item.name + " (" + item.quantity.toString() + ")"
+            } else {
+                item.name
+            }.capitalize()
+            mutableList.add(ItemSupermarketListView(titleFormated))
         }
         return mutableList
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.supermarket_list_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        if (item!!.itemId == R.id.shareSupermarketListMenu) {
+
+        } else {
+            val intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

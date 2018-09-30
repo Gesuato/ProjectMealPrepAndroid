@@ -48,8 +48,21 @@
     <string name="supermarketList">Supermarket list</string>
     <string name="introduction">Introduction</string>
 
+    <!-- Strings of ActionBar MainActivity -->
+    <string name="homepage">Home page</string>
+
     <!-- Strings of Toast Messages -->
     <string name="updateSuccessful">Changes made successfully</string>
 
+    <!-- Strings of Hints Meals Description -->
+    <string-array name="hintsMealDescription">
+        <item>Ex: Broccoli, carrot ... etc</item>
+        <item>Ex: Apple, banana ... etc</item>
+        <item>Ex: Chicken thigh, filet mignon ... etc</item>
+        <item>Ex: Bread, rice ... etc</item>
+        <item>Ex: Dark Chocolate, avocados ... etc</item>
+        <item>Ex: Sunflower Seeds, tahini garlic ... etc</item>
+        <item>Ex: Olive oil, chocolate sesame butter ... etc</item>
+    </string-array>
 
 </resources>

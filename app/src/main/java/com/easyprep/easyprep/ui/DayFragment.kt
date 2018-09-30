@@ -67,7 +67,7 @@ class DayFragment : Fragment() {
             val intent = Intent(context, DetailDailyPortionActivity::class.java)
             val curentDailyPotion = this.currentDailyMealPlan.dailyPortions
             intent.putExtra(EXTRA_DAILYPORTION, curentDailyPotion)
-            intent.putExtra("currentDay", currentDailyMealPlan.day)
+            intent.putExtra("CURRENTDAY", currentDailyMealPlan.day)
             startActivityForResult(intent, REQUEST_DAILYPORTION)
         }
         this.mealListAdapter.setOnCustomItemClickListener(object : CustomOnClickListener {

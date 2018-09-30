@@ -37,9 +37,22 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        val intent = Intent(this, SupermarketListActivity::class.java)
-        intent.putExtra("SUPERMARKETLIST", week)
-        startActivity(intent)
+        val intent: Intent
+
+        when(item!!.itemId){
+           R.id.supermarketListMenu -> {
+               intent = Intent(this,SupermarketListActivity::class.java)
+               intent.putExtra("SUPERMARKETLIST", week)
+               startActivity(intent)
+               finish()
+           }
+           R.id.introductionMenu -> {
+
+           }
+            R.id.contactMenu -> {
+
+            }
+        }
         return super.onOptionsItemSelected(item)
     }
 }
