@@ -7,9 +7,18 @@
     <color name="vegetableColor">#427314</color>
     <color name="fruitColor">#902cfa</color>
     <color name="proteinColor">#ce0b24</color>
-    <color name="carbohydrateColor">#f7e53b</color>
+    <color name="carbohydrateColor">#efdb21</color>
     <color name="goodFatColor">#4d92df</color>
     <color name="seedColor">#f3a636</color>
     <color name="oilColor">#9b9b9b</color>
     <color name="accent_material_light_1">#009688</color>
+
+
+    <color name="vegetableColor_expandable_header">#32427314</color>
+    <color name="fruitColor_expandable_header">#32902cfa</color>
+    <color name="proteinColor_expandable_header">#32ce0b24</color>
+    <color name="carbohydrateColor_expandable_header">#32efdb21</color>
+    <color name="goodFatColor_expandable_header">#324d92df</color>
+    <color name="seedColor_expandable_header">#32f3a636</color>
+    <color name="oilColor_expandable_header">#329b9b9b</color>
 </resources>
