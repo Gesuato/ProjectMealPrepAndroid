@@ -65,4 +65,9 @@
         <item>Ex: Olive oil, chocolate sesame butter ... etc</item>
     </string-array>
 
+    <!-- Strings of AlertDialog -->
+    <string name="copy">Copy %s\'s meal plan?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="alert_message">If you copy %s\'s meal plan, you will miss your current day\'s model. Do you wish to continue?</string>
 </resources>

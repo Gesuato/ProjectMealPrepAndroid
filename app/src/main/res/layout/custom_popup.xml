@@ -42,6 +42,6 @@
         android:layout_height="30dp"
         android:background="?android:selectableItemBackgroundBorderless"
         android:text="cancel"
-        android:textColor="@color/colorPrimary" />
+        android:textColor="@color/colorAccent" />
 
 </LinearLayout>

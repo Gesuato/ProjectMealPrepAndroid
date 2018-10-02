@@ -3,7 +3,7 @@ package com.easyprep.easyprep.data.model
 import com.easyprep.easyprep.R
 import java.io.Serializable
 
-class DailyMealPlan : Serializable {
+class DailyMealPlan : Serializable, Cloneable{
 
     var day: Int = 0
     var meals = ArrayList<Meal>()
@@ -44,5 +44,12 @@ class DailyMealPlan : Serializable {
             nutriment.quantity = quantityDefault[index]
             this.dailyPortions.add(nutriment)
         }
+    }
+
+     fun customClone(): DailyMealPlan {
+        val cloneDailyMealPlan = super.clone() as DailyMealPlan
+        cloneDailyMealPlan.meals = this.meals.clone() as ArrayList<Meal>
+        cloneDailyMealPlan.dailyPortions = this.dailyPortions.clone() as ArrayList<Nutriment>
+        return cloneDailyMealPlan
     }
 }

@@ -1,8 +1,10 @@
 package com.easyprep.easyprep.ui
 
 import android.app.Activity
+import android.app.AlertDialog
 import android.app.Dialog
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -132,7 +134,7 @@ class DayFragment : Fragment() {
         for (currentMeal in currentDailyMealPlan.meals) {
             for ((key, currentNutriment) in currentMeal.nutriments.withIndex()) {
                 val currentQuantity =
-                    quantityList[key] - currentNutriment.quantity
+                    this.quantityList[key] - currentNutriment.quantity
                 this.quantityList[key] = currentQuantity
             }
         }
@@ -154,7 +156,7 @@ class DayFragment : Fragment() {
 
     private fun showPopupCopy() {
         val week = (activity as MainActivity).getWeek()
-        val dailyMealPlansForCopy = getItemsToShowPopup(currentDailyMealPlan, week)
+        val dailyMealPlansForCopy = getItemsToShowPopup(week)
 
         popupCopy.setContentView(R.layout.custom_popup)
         val itemsPopup =
@@ -166,42 +168,32 @@ class DayFragment : Fragment() {
                 popupCopy.item_popup5,
                 popupCopy.item_popup6
             )
+
         popupCopy.btnCancelPopup.setOnClickListener {
             popupCopy.dismiss()
         }
-        for ((key, value) in dailyMealPlansForCopy.withIndex()) {
-            itemsPopup[key].setTitleItemPopup(resources.getString(value.day))
+        for ((key, dailyMealPlan) in dailyMealPlansForCopy.withIndex()) {
+            itemsPopup[key].setTitleItemPopup(resources.getString(dailyMealPlan.day))
         }
-        itemsPopup[0].imgBtnCopyDailyMealPlanId.setOnClickListener {
-            updateInfosByPopup(dailyMealPlansForCopy[0])
-        }
-        itemsPopup[1].imgBtnCopyDailyMealPlanId.setOnClickListener {
-            updateInfosByPopup(dailyMealPlansForCopy[1])
-        }
-        itemsPopup[2].imgBtnCopyDailyMealPlanId.setOnClickListener {
-            updateInfosByPopup(dailyMealPlansForCopy[2])
-        }
-        itemsPopup[3].imgBtnCopyDailyMealPlanId.setOnClickListener {
-            updateInfosByPopup(dailyMealPlansForCopy[3])
-        }
-        itemsPopup[4].imgBtnCopyDailyMealPlanId.setOnClickListener {
-            updateInfosByPopup(dailyMealPlansForCopy[4])
-        }
-        itemsPopup[5].imgBtnCopyDailyMealPlanId.setOnClickListener {
-            updateInfosByPopup(dailyMealPlansForCopy[5])
-        }
-        popupCopy.show()
 
+        (0..5).forEach { index ->
+            itemsPopup[index].imgBtnCopyDailyMealPlanId.setOnClickListener {
+                createAlert(dailyMealPlansForCopy[index])
+            }
+        }
+
+        popupCopy.show()
     }
 
     private fun getItemsToShowPopup(
-        currentDailyMealPlan: DailyMealPlan,
         week: Week
     ): ArrayList<DailyMealPlan> {
+
         val dailyMealPlans = ArrayList<DailyMealPlan>()
         for (dailyMealPlan in week.dailyMealPlanList) {
-            if (dailyMealPlan.day != currentDailyMealPlan.day) {
-                dailyMealPlans.add(dailyMealPlan)
+            if (dailyMealPlan.day != this.currentDailyMealPlan.day) {
+                val cloneDailyMealPlan = dailyMealPlan.customClone()
+                dailyMealPlans.add(cloneDailyMealPlan)
             }
         }
         return dailyMealPlans
@@ -213,5 +205,35 @@ class DayFragment : Fragment() {
         updateValuesInDailyPortionView()
         this.mealListAdapter.update(this.currentDailyMealPlan.meals)
         popupCopy.dismiss()
+    }
+
+    private fun createAlert(dayForCopy: DailyMealPlan) {
+        val alertDialog = AlertDialog.Builder(context)
+
+        alertDialog.setTitle(
+            resources.getString(
+                R.string.copy,
+                resources.getString(dayForCopy.day)
+            )
+        )
+        alertDialog.setMessage(
+            resources.getString(
+                R.string.alert_message,
+                resources.getString(dayForCopy.day)
+            )
+        )
+
+        alertDialog.setPositiveButton(
+            resources.getString(R.string.yes)
+        ) { _, _ ->
+            updateInfosByPopup(dayForCopy)
+            messageUpdate()
+        }
+
+        alertDialog.setNegativeButton(
+            resources.getString(R.string.no)
+        ) { _, _ -> }
+
+        alertDialog.show()
     }
 }
