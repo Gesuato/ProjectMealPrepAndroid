@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="200dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <com.easyprep.easyprep.ui.ItemPopupView
+        android:id="@+id/item_popup1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <com.easyprep.easyprep.ui.ItemPopupView
+        android:id="@+id/item_popup2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <com.easyprep.easyprep.ui.ItemPopupView
+        android:id="@+id/item_popup3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <com.easyprep.easyprep.ui.ItemPopupView
+        android:id="@+id/item_popup4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <com.easyprep.easyprep.ui.ItemPopupView
+        android:id="@+id/item_popup5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <com.easyprep.easyprep.ui.ItemPopupView
+        android:id="@+id/item_popup6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <Button
+        android:id="@+id/btnCancelPopup"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="?android:selectableItemBackgroundBorderless"
+        android:text="cancel"
+        android:textColor="@color/colorPrimary" />
+
+</LinearLayout>

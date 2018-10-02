@@ -1,6 +1,7 @@
 package com.easyprep.easyprep.ui
 
 import android.app.Activity
+import android.app.Dialog
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -15,8 +16,11 @@ import com.easyprep.easyprep.R
 import com.easyprep.easyprep.data.model.DailyMealPlan
 import com.easyprep.easyprep.data.model.Meal
 import com.easyprep.easyprep.data.model.Nutriment
+import com.easyprep.easyprep.data.model.Week
 import com.easyprep.easyprep.ui.adapters.MealListAdapter
+import kotlinx.android.synthetic.main.custom_popup.*
 import kotlinx.android.synthetic.main.daily_portion_view.view.*
+import kotlinx.android.synthetic.main.item_popup.view.*
 
 class DayFragment : Fragment() {
 
@@ -26,6 +30,7 @@ class DayFragment : Fragment() {
     private lateinit var dailyPortionView: DailyPortionView
     private var quantityList = arrayListOf(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f)
     private var valuesInCurrentDailyMealPlanIsChanged = false
+    private lateinit var popupCopy: Dialog
 
     companion object {
         const val ARG_CAUGHT = "DayFragment"
@@ -49,7 +54,8 @@ class DayFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val rootView = inflater.inflate(R.layout.fragment_day, container, false)
-        val layoutManager = LinearLayoutManager(context)
+        val layoutManager = LinearLayoutManager(this.context)
+        this.popupCopy = Dialog(this.context)
 
         if (!::currentDailyMealPlan.isInitialized) {
             this.currentDailyMealPlan = arguments!!.getSerializable(ARG_CAUGHT) as DailyMealPlan
@@ -70,6 +76,7 @@ class DayFragment : Fragment() {
             intent.putExtra("CURRENTDAY", currentDailyMealPlan.day)
             startActivityForResult(intent, REQUEST_DAILYPORTION)
         }
+
         this.mealListAdapter.setOnCustomItemClickListener(object : CustomOnClickListener {
             override fun onCustomItemClickListener(meal: Meal) {
                 val intent = Intent(context, DetailMealPortionActivity::class.java)
@@ -77,6 +84,11 @@ class DayFragment : Fragment() {
                 startActivityForResult(intent, REQUEST_INSERT)
             }
         })
+        this.dailyPortionView.imgBtnCopy.setOnClickListener {
+            showPopupCopy()
+        }
+
+
         return rootView
     }
 
@@ -138,5 +150,68 @@ class DayFragment : Fragment() {
 
     private fun messageUpdate() {
         return context!!.toast(resources.getString(R.string.updateSuccessful))
+    }
+
+    private fun showPopupCopy() {
+        val week = (activity as MainActivity).getWeek()
+        val dailyMealPlansForCopy = getItemsToShowPopup(currentDailyMealPlan, week)
+
+        popupCopy.setContentView(R.layout.custom_popup)
+        val itemsPopup =
+            arrayOf(
+                popupCopy.item_popup1,
+                popupCopy.item_popup2,
+                popupCopy.item_popup3,
+                popupCopy.item_popup4,
+                popupCopy.item_popup5,
+                popupCopy.item_popup6
+            )
+        popupCopy.btnCancelPopup.setOnClickListener {
+            popupCopy.dismiss()
+        }
+        for ((key, value) in dailyMealPlansForCopy.withIndex()) {
+            itemsPopup[key].setTitleItemPopup(resources.getString(value.day))
+        }
+        itemsPopup[0].imgBtnCopyDailyMealPlanId.setOnClickListener {
+            updateInfosByPopup(dailyMealPlansForCopy[0])
+        }
+        itemsPopup[1].imgBtnCopyDailyMealPlanId.setOnClickListener {
+            updateInfosByPopup(dailyMealPlansForCopy[1])
+        }
+        itemsPopup[2].imgBtnCopyDailyMealPlanId.setOnClickListener {
+            updateInfosByPopup(dailyMealPlansForCopy[2])
+        }
+        itemsPopup[3].imgBtnCopyDailyMealPlanId.setOnClickListener {
+            updateInfosByPopup(dailyMealPlansForCopy[3])
+        }
+        itemsPopup[4].imgBtnCopyDailyMealPlanId.setOnClickListener {
+            updateInfosByPopup(dailyMealPlansForCopy[4])
+        }
+        itemsPopup[5].imgBtnCopyDailyMealPlanId.setOnClickListener {
+            updateInfosByPopup(dailyMealPlansForCopy[5])
+        }
+        popupCopy.show()
+
+    }
+
+    private fun getItemsToShowPopup(
+        currentDailyMealPlan: DailyMealPlan,
+        week: Week
+    ): ArrayList<DailyMealPlan> {
+        val dailyMealPlans = ArrayList<DailyMealPlan>()
+        for (dailyMealPlan in week.dailyMealPlanList) {
+            if (dailyMealPlan.day != currentDailyMealPlan.day) {
+                dailyMealPlans.add(dailyMealPlan)
+            }
+        }
+        return dailyMealPlans
+    }
+
+    private fun updateInfosByPopup(dailyMealPlansForChange: DailyMealPlan) {
+        currentDailyMealPlan.meals = dailyMealPlansForChange.meals
+        currentDailyMealPlan.dailyPortions = dailyMealPlansForChange.dailyPortions
+        updateValuesInDailyPortionView()
+        this.mealListAdapter.update(this.currentDailyMealPlan.meals)
+        popupCopy.dismiss()
     }
 }

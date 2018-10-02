@@ -4,7 +4,7 @@
     android:id="@+id/item_supermarketlist_root"
     android:layout_width="match_parent"
     android:layout_height="50dp"
-    android:background="@color/colorPrimary"
+    android:background="#ffffff"
     >
 
     <TextView
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:text="Brócolis (2)"
-        android:textColor="#FFF"
+        android:textColor="#000"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

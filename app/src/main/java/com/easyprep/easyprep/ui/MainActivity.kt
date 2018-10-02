@@ -55,4 +55,6 @@ class MainActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
+
+    fun getWeek() : Week = week
 }

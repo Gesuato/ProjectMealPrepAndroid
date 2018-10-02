@@ -21,17 +21,18 @@ class DailyPortionView(context: Context, attributeSet: AttributeSet) :
         R.id.btnSeeds,
         R.id.btnOils
     )
+    private var btnCopy: ImageButton
     private var imgBtnDetailEdit: ImageButton
     private var btnsDailyPortion = ArrayList<TextView>()
 
     init {
         View.inflate(context, R.layout.daily_portion_view, this)
-
         for (currentId in btnIdDailyPortionList) {
             val currentButton = findViewById<Button>(currentId)
             btnsDailyPortion.add(currentButton)
         }
-        imgBtnDetailEdit = findViewById(R.id.imgBtnDetailEdit)
+        this.imgBtnDetailEdit = findViewById(R.id.imgBtnDetailEdit)
+        this.btnCopy = findViewById(R.id.imgBtnCopy)
     }
 
     fun setValuesInPortionList(currentDailyPortions: ArrayList<Float>) {

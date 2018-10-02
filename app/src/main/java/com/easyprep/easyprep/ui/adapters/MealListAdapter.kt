@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
 import com.easyprep.easyprep.R
-import com.easyprep.easyprep.data.model.DailyMealPlan
 import com.easyprep.easyprep.data.model.Meal
 import com.easyprep.easyprep.ui.CustomOnClickListener
 import com.easyprep.easyprep.ui.MealPortionView
@@ -34,7 +33,7 @@ class MealListAdapter : RecyclerView.Adapter<MealListAdapter.MealViewHolder>() {
         val itemView = layoutInflater.inflate(R.layout.meal_view_holder, viewGroup, false)
         val viewHolder = MealViewHolder(itemView)
 
-        viewHolder.imageButtonEdit.setOnClickListener{
+        viewHolder.imageButtonEdit.setOnClickListener {
             onCustomClickListener.onCustomItemClickListener(currentMeals[viewHolder.adapterPosition])
         }
 

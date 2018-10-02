@@ -21,9 +21,9 @@ class MealPortionView(context: Context, attributeSet: AttributeSet) :
         R.id.nutrimentOil
     )
     private var btnNutrimentList = ArrayList<Button>()
-
     init {
         View.inflate(context, R.layout.meal_portion_view, this)
+
         for (currentId in btnNutrimentIds) {
             val button = findViewById<Button>(currentId)
             btnNutrimentList.add(button)
