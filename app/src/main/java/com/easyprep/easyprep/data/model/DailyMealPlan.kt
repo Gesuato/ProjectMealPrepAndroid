@@ -1,52 +1,22 @@
 package com.easyprep.easyprep.data.model
 
-import com.easyprep.easyprep.R
+import android.arch.persistence.room.Embedded
+import android.arch.persistence.room.Entity
+import android.arch.persistence.room.PrimaryKey
 import java.io.Serializable
 
-class DailyMealPlan : Serializable, Cloneable{
+@Entity
+data class DailyMealPlan(
+    @PrimaryKey
+    val id: Long = 0,
+    var day: Int = 0,
+    @Embedded
+    var meals: ArrayList<Meal>,
+    @Embedded
+    var dailyPortions: ArrayList<Nutriment>
+) : Serializable, Cloneable {
 
-    var day: Int = 0
-    var meals = ArrayList<Meal>()
-    var dailyPortions = ArrayList<Nutriment>()
-
-
-    init {
-        val titlesOfMeals = arrayOf(
-            R.string.breakfast,
-            R.string.snack1,
-            R.string.lunch,
-            R.string.snack2,
-            R.string.dinner,
-            R.string.snack3
-        )
-        val nutrimentTitles = arrayOf(
-            R.string.veggies,
-            R.string.fruits,
-            R.string.proteins,
-            R.string.carbohydrates,
-            R.string.healthyFats,
-            R.string.seedsAndDressings,
-            R.string.oilsAndNutButters
-        )
-        val quantityDefault = arrayOf(3.0f, 2.0f, 4.0f, 2.0f, 1.0f, 1.0f, 2.0f)
-
-        for (index in 0..5) {
-            val meal = Meal()
-            meal.id = index
-            meal.nameId = titlesOfMeals[index]
-            this.meals.add(meal)
-        }
-
-        for (index in 0..6) {
-            val nutriment = Nutriment()
-            nutriment.nameId = nutrimentTitles[index]
-            nutriment.items = ""
-            nutriment.quantity = quantityDefault[index]
-            this.dailyPortions.add(nutriment)
-        }
-    }
-
-     fun customClone(): DailyMealPlan {
+    fun customClone(): DailyMealPlan {
         val cloneDailyMealPlan = super.clone() as DailyMealPlan
         cloneDailyMealPlan.meals = this.meals.clone() as ArrayList<Meal>
         cloneDailyMealPlan.dailyPortions = this.dailyPortions.clone() as ArrayList<Nutriment>
