@@ -4,14 +4,12 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import com.easyprep.easyprep.R
 import com.easyprep.easyprep.data.model.DailyMealPlanDefaultListBuilder
 import com.easyprep.easyprep.data.model.WeekMealPlan
 import com.easyprep.easyprep.ui.adapters.ViewPagerAdapter
-import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -19,26 +17,18 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var viewPagerAdapter: ViewPagerAdapter
     private lateinit var viewPager: ViewPager
-    private lateinit var week: WeekMealPlan
+    private var weekMealPlan = WeekMealPlan()
     private val db = FirebaseFirestore.getInstance()
-    private val weekRef = db.collection("WeekMealPlan")
+    val user = "victorgesuato3@gmail.com"
+    private val weekRef = db.collection("WeekMealPlan").document(user)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        week = WeekMealPlan(DailyMealPlanDefaultListBuilder().invoke())
-//        saveData()
-
-        loadData()
         this.viewPager = findViewById(R.id.viewPagerId)
-        this.viewPagerAdapter = ViewPagerAdapter(
-            supportFragmentManager,
-            resources.getStringArray(R.array.pagerDayTitles),
-            week
-        )
-        this.viewPager.adapter = viewPagerAdapter
-        tabLayoutId.setupWithViewPager(viewPager)
+        loadData()
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -52,7 +42,7 @@ class MainActivity : AppCompatActivity() {
         when (item!!.itemId) {
             R.id.supermarketListMenu -> {
                 intent = Intent(this, SupermarketListActivity::class.java)
-                intent.putExtra("SUPERMARKETLIST", week)
+                intent.putExtra("SUPERMARKETLIST", weekMealPlan)
                 startActivity(intent)
                 finish()
             }
@@ -66,18 +56,39 @@ class MainActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    fun getWeek(): WeekMealPlan = week
+    fun getWeek(): WeekMealPlan = weekMealPlan
 
-    private fun saveData() {
-        weekRef.add(week)
+    private fun saveData(weekMealPlan: WeekMealPlan) {
+        weekRef.set(weekMealPlan)
     }
 
-    private fun loadData(){
-        weekRef.whereEqualTo("WeekMealPlan","n1E9gjFsFdKVTAJFbGfj").get().addOnSuccessListener {querySnapshot ->
-            for(queryDocument in querySnapshot){
-              Log.d("WeekLoad",queryDocument.toObject(WeekMealPlan::class.java).toString())
-            }
-        }
+    private fun loadData() {
 
+        weekMealPlan.dailyMealPlanList = DailyMealPlanDefaultListBuilder().invoke()
+
+        weekRef.get().addOnSuccessListener { documentSnapshot ->
+            var saveData = false
+            if (documentSnapshot.exists()) {
+                weekMealPlan = documentSnapshot.toObject(WeekMealPlan::class.java)!!
+
+            } else {
+                saveData = true
+            }
+            if (weekMealPlan.dailyMealPlanList.isNotEmpty()) {
+                this.viewPagerAdapter = ViewPagerAdapter(
+                    supportFragmentManager,
+                    resources.getStringArray(R.array.pagerDayTitles),
+                    weekMealPlan
+                )
+                this.viewPager.adapter = this.viewPagerAdapter
+                tabLayoutId.setupWithViewPager(viewPager)
+            }
+
+            if (saveData) {
+                saveData(weekMealPlan)
+            }
+        }.addOnFailureListener {
+
+        }
     }
 }

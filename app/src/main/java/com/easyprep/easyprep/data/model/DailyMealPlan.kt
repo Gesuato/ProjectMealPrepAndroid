@@ -4,8 +4,8 @@ import java.io.Serializable
 
 data class DailyMealPlan(
     var day: Int = 0,
-    var meals: List<Meal>,
-    var dailyPortions: List<Nutriment>
+    var meals: List<Meal> = emptyList(),
+    var dailyPortions: List<Nutriment> = emptyList()
 ) : Serializable, Cloneable {
 
     fun customClone(): DailyMealPlan {
