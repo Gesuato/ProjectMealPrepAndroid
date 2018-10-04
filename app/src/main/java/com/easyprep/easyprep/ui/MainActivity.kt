@@ -6,6 +6,7 @@ import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import com.easyprep.easyprep.R
 import com.easyprep.easyprep.data.model.DailyMealPlanDefaultListBuilder
 import com.easyprep.easyprep.data.model.WeekMealPlan
@@ -19,8 +20,11 @@ class MainActivity : AppCompatActivity() {
     private lateinit var viewPager: ViewPager
     private var weekMealPlan = WeekMealPlan()
     private val db = FirebaseFirestore.getInstance()
-    val user = "victorgesuato3@gmail.com"
-    private val weekRef = db.collection("WeekMealPlan").document(user)
+    private val weekRef = db.collection("WeekMealPlan").document(USERID)
+
+    companion object {
+        const val USERID = "victorgesuato4@gmail.com"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +32,6 @@ class MainActivity : AppCompatActivity() {
 
         this.viewPager = findViewById(R.id.viewPagerId)
         loadData()
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -58,7 +61,7 @@ class MainActivity : AppCompatActivity() {
 
     fun getWeek(): WeekMealPlan = weekMealPlan
 
-    private fun saveData(weekMealPlan: WeekMealPlan) {
+    fun saveData(weekMealPlan: WeekMealPlan) {
         weekRef.set(weekMealPlan)
     }
 
@@ -83,6 +86,8 @@ class MainActivity : AppCompatActivity() {
                 this.viewPager.adapter = this.viewPagerAdapter
                 tabLayoutId.setupWithViewPager(viewPager)
             }
+
+            progressBarLoadData.visibility = View.GONE
 
             if (saveData) {
                 saveData(weekMealPlan)

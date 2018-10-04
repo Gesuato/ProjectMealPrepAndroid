@@ -114,6 +114,7 @@ class DayFragment : Fragment() {
             messageUpdate()
             this.mealListAdapter.updateItemChanged(currentDailyMealPlan.meals as ArrayList, index)
             updateValuesInDailyPortionView()
+            saveDataInCloudFirestore()
         }
 
         if (requestCode == REQUEST_DAILYPORTION && resultCode == Activity.RESULT_OK) {
@@ -124,6 +125,7 @@ class DayFragment : Fragment() {
             this.currentDailyMealPlan.dailyPortions = dailyPortions
             messageUpdate()
             updateValuesInDailyPortionView()
+            saveDataInCloudFirestore()
         }
     }
 
@@ -234,5 +236,10 @@ class DayFragment : Fragment() {
         ) { _, _ -> }
 
         alertDialog.show()
+    }
+
+    private fun saveDataInCloudFirestore(){
+       val weekMealPlan= (activity as MainActivity).getWeek()
+        (activity as MainActivity).saveData(weekMealPlan)
     }
 }
