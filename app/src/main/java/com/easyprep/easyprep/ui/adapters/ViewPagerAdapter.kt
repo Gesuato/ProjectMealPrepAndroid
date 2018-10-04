@@ -3,10 +3,10 @@ package com.easyprep.easyprep.ui.adapters
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
-import com.easyprep.easyprep.data.model.Week
+import com.easyprep.easyprep.data.model.WeekMealPlan
 import com.easyprep.easyprep.ui.DayFragment
 
-class ViewPagerAdapter(fm: FragmentManager?, private val titlesTab: Array<String>, private val week: Week) :
+class ViewPagerAdapter(fm: FragmentManager?, private val titlesTab: Array<String>, private val week: WeekMealPlan) :
     FragmentPagerAdapter(fm) {
 
     override fun getItem(position: Int): Fragment {

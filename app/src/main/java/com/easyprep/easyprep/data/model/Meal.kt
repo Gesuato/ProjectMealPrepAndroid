@@ -5,6 +5,6 @@ import java.io.Serializable
 data class Meal(
     var index: Int = 0,
     var nameId: Int = 0,
-    var nutriments: ArrayList<Nutriment>,
+    var nutriments: List<Nutriment>,
     var valueIsChanged: Boolean
 ) : Serializable

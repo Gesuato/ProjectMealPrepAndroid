@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "462475655972",
+    "firebase_url": "https://easyprep-4a0da.firebaseio.com",
+    "project_id": "easyprep-4a0da",
+    "storage_bucket": "easyprep-4a0da.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:462475655972:android:26707a3024964bde",
+        "android_client_info": {
+          "package_name": "com.easyprep.easyprep"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "462475655972-gu641hof91l7gleqgjha42g88t6qjkpi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.easyprep.easyprep",
+            "certificate_hash": "b48a3b9ed47eb742f0bf8e6e8105f816ad83230d"
+          }
+        },
+        {
+          "client_id": "462475655972-8qgspfd2dqal9gk0fbj6mgphceuklfsm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTHt3xsdv99iBaBZMT64jEPYwMWCnI4tI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "462475655972-8qgspfd2dqal9gk0fbj6mgphceuklfsm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

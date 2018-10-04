@@ -5,12 +5,11 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import com.easyprep.easyprep.R
 import com.easyprep.easyprep.data.model.SupermarketItem
-import com.easyprep.easyprep.data.model.Week
+import com.easyprep.easyprep.data.model.WeekMealPlan
 import com.xwray.groupie.ExpandableGroup
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.Section
@@ -20,7 +19,7 @@ import kotlinx.android.synthetic.main.activity_supermarket_list.*
 
 class SupermarketListActivity : AppCompatActivity() {
 
-    private lateinit var week: Week
+    private lateinit var week: WeekMealPlan
     private var supermarketList =
         arrayListOf<ArrayList<SupermarketItem>>(
             ArrayList(),
@@ -43,7 +42,7 @@ class SupermarketListActivity : AppCompatActivity() {
         }
 
         if (!::week.isInitialized) {
-            week = intent.getSerializableExtra("SUPERMARKETLIST") as Week
+            week = intent.getSerializableExtra("SUPERMARKETLIST") as WeekMealPlan
         }
         removeDuplicateItemsInSupermarketList()
 

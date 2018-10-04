@@ -14,11 +14,11 @@ import com.easyprep.easyprep.ui.MealPortionView
 
 class MealListAdapter : RecyclerView.Adapter<MealListAdapter.MealViewHolder>() {
 
-    private var currentMeals = ArrayList<Meal>()
+    private lateinit var currentMeals: List<Meal>
     private lateinit var resources: Resources
     private lateinit var onCustomClickListener: CustomOnClickListener
 
-    fun update(currentMeals: ArrayList<Meal>) {
+    fun update(currentMeals: List<Meal>) {
         this.currentMeals = currentMeals
         notifyDataSetChanged()
     }

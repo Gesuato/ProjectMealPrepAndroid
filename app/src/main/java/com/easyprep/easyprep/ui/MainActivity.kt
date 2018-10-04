@@ -9,25 +9,28 @@ import android.view.Menu
 import android.view.MenuItem
 import com.easyprep.easyprep.R
 import com.easyprep.easyprep.data.model.DailyMealPlanDefaultListBuilder
-import com.easyprep.easyprep.data.model.Week
+import com.easyprep.easyprep.data.model.WeekMealPlan
 import com.easyprep.easyprep.ui.adapters.ViewPagerAdapter
+import com.google.firebase.firestore.DocumentSnapshot
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_main.*
-
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var viewPagerAdapter: ViewPagerAdapter
     private lateinit var viewPager: ViewPager
-    private lateinit var week : Week
+    private lateinit var week: WeekMealPlan
+    private val db = FirebaseFirestore.getInstance()
+    private val weekRef = db.collection("WeekMealPlan")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        week = Week(DailyMealPlanDefaultListBuilder().invoke())
+        week = WeekMealPlan(DailyMealPlanDefaultListBuilder().invoke())
+//        saveData()
 
-        Log.d("SizeList", week.dailyMealPlanList[0].meals[0].toString())
-
+        loadData()
         this.viewPager = findViewById(R.id.viewPagerId)
         this.viewPagerAdapter = ViewPagerAdapter(
             supportFragmentManager,
@@ -63,5 +66,18 @@ class MainActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    fun getWeek(): Week = week
+    fun getWeek(): WeekMealPlan = week
+
+    private fun saveData() {
+        weekRef.add(week)
+    }
+
+    private fun loadData(){
+        weekRef.whereEqualTo("WeekMealPlan","n1E9gjFsFdKVTAJFbGfj").get().addOnSuccessListener {querySnapshot ->
+            for(queryDocument in querySnapshot){
+              Log.d("WeekLoad",queryDocument.toObject(WeekMealPlan::class.java).toString())
+            }
+        }
+
+    }
 }

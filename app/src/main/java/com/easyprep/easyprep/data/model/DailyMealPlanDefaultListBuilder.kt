@@ -57,7 +57,7 @@ class DailyMealPlanDefaultListBuilder : () -> List<DailyMealPlan> {
                 dailyPortions.add(nutriment)
             }
 
-            dailyMealPlan = DailyMealPlan(index.toLong(), titlesDay[index], meals,dailyPortions)
+            dailyMealPlan = DailyMealPlan(titlesDay[index], meals,dailyPortions)
             dailyPortionsList.add(dailyMealPlan)
         }
         return dailyPortionsList

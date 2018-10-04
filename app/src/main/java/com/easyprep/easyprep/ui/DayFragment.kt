@@ -17,8 +17,7 @@ import com.easyprep.easyprep.R
 import com.easyprep.easyprep.data.model.DailyMealPlan
 import com.easyprep.easyprep.data.model.Meal
 import com.easyprep.easyprep.data.model.Nutriment
-import com.easyprep.easyprep.data.model.Week
-import com.easyprep.easyprep.data.model.roomDB.DBHandler
+import com.easyprep.easyprep.data.model.WeekMealPlan
 import com.easyprep.easyprep.ui.adapters.MealListAdapter
 import kotlinx.android.synthetic.main.custom_popup.*
 import kotlinx.android.synthetic.main.daily_portion_view.view.*
@@ -33,7 +32,6 @@ class DayFragment : Fragment() {
     private var quantityList = arrayListOf(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f)
     private var valuesInCurrentDailyMealPlanIsChanged = false
     private lateinit var popupCopy: Dialog
-    private lateinit var dbHandler: DBHandler
 
     companion object {
         const val ARG_CAUGHT = "DayFragment"
@@ -57,25 +55,24 @@ class DayFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val rootView = inflater.inflate(R.layout.fragment_day, container, false)
-        dbHandler = DBHandler(rootView.context)
+
         val layoutManager = LinearLayoutManager(this.context)
         this.popupCopy = Dialog(this.context)
 
         if (!::currentDailyMealPlan.isInitialized) {
             this.currentDailyMealPlan = arguments!!.getSerializable(ARG_CAUGHT) as DailyMealPlan
         }
-
         this.recyclerView = rootView.findViewById(R.id.recycleViewId) as RecyclerView
         this.dailyPortionView = rootView.findViewById(R.id.daily_portion)
-
         this.recyclerView.layoutManager = layoutManager
+
         this.mealListAdapter.update(this.currentDailyMealPlan.meals)
         this.recyclerView.adapter = mealListAdapter
         updateValuesInDailyPortionView()
 
         this.dailyPortionView.imgBtnDetailEdit.setOnClickListener {
             val intent = Intent(context, DetailDailyPortionActivity::class.java)
-            val curentDailyPotion = this.currentDailyMealPlan.dailyPortions
+            val curentDailyPotion = this.currentDailyMealPlan.dailyPortions as ArrayList
             intent.putExtra(EXTRA_DAILYPORTION, curentDailyPotion)
             intent.putExtra("CURRENTDAY", currentDailyMealPlan.day)
             startActivityForResult(intent, REQUEST_DAILYPORTION)
@@ -97,7 +94,7 @@ class DayFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         if (!valuesInCurrentDailyMealPlanIsChanged) {
-            this.mealListAdapter.update(this.currentDailyMealPlan.meals)
+            this.mealListAdapter.update(this.currentDailyMealPlan.meals as ArrayList)
             updateValuesInDailyPortionView()
         }
     }
@@ -111,11 +108,12 @@ class DayFragment : Fragment() {
             this.valuesInCurrentDailyMealPlanIsChanged = meal.valueIsChanged
             meal.valueIsChanged = false
             index = meal.index
-            this.currentDailyMealPlan.meals[index] = meal
+            val currentDailyMealPlanMealsArrayList  = this.currentDailyMealPlan.meals as ArrayList
+            currentDailyMealPlanMealsArrayList[index] = meal
+            this.currentDailyMealPlan.meals = ArrayList(currentDailyMealPlanMealsArrayList)
             messageUpdate()
-            this.mealListAdapter.updateItemChanged(currentDailyMealPlan.meals, index)
+            this.mealListAdapter.updateItemChanged(currentDailyMealPlan.meals as ArrayList, index)
             updateValuesInDailyPortionView()
-//            saveData()
         }
 
         if (requestCode == REQUEST_DAILYPORTION && resultCode == Activity.RESULT_OK) {
@@ -126,7 +124,6 @@ class DayFragment : Fragment() {
             this.currentDailyMealPlan.dailyPortions = dailyPortions
             messageUpdate()
             updateValuesInDailyPortionView()
-//            saveData()
         }
     }
 
@@ -188,7 +185,7 @@ class DayFragment : Fragment() {
     }
 
     private fun getItemsToShowPopup(
-        week: Week
+        week: WeekMealPlan
     ): ArrayList<DailyMealPlan> {
 
         val dailyMealPlans = ArrayList<DailyMealPlan>()
@@ -238,9 +235,4 @@ class DayFragment : Fragment() {
 
         alertDialog.show()
     }
-
-//    private fun saveData() {
-//        val week = (activity as MainActivity).getWeek()
-//        dbHandler.saveData(week.dailyMealPlanList as List<DailyMealPlan>)
-//    }
 }
