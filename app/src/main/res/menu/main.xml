@@ -16,4 +16,9 @@
         android:id="@+id/contactMenu"
         android:title="@string/contact"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/singOutMenu"
+        android:title="@string/sing_out"
+        app:showAsAction="never" />
 </menu>
