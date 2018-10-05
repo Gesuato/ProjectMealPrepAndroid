@@ -19,7 +19,7 @@ import kotlinx.android.synthetic.main.activity_supermarket_list.*
 
 class SupermarketListActivity : AppCompatActivity() {
 
-    private lateinit var week: WeekMealPlan
+    private lateinit var weekMealPlan: WeekMealPlan
     private var supermarketList =
         arrayListOf<ArrayList<SupermarketItem>>(
             ArrayList(),
@@ -41,8 +41,8 @@ class SupermarketListActivity : AppCompatActivity() {
             title = resources.getString(R.string.supermarketList)
         }
 
-        if (!::week.isInitialized) {
-            week = intent.getSerializableExtra("SUPERMARKETLIST") as WeekMealPlan
+        if (!::weekMealPlan.isInitialized) {
+            weekMealPlan = intent.getSerializableExtra("SUPERMARKETLIST") as WeekMealPlan
         }
         removeDuplicateItemsInSupermarketList()
 
@@ -76,7 +76,6 @@ class SupermarketListActivity : AppCompatActivity() {
                 resources.getString(R.string.proteins).capitalize()
             ), false
         ).apply {
-            //            excitingSection.addAll()
             add(Section(generateItemSupermarketListViews(2)))
             groupAdapter.add(this)
         }
@@ -130,7 +129,7 @@ class SupermarketListActivity : AppCompatActivity() {
             ArrayList()
         )
 
-        for (dailyMealPlan in week.dailyMealPlanList) {
+        for (dailyMealPlan in weekMealPlan.dailyMealPlanList) {
             for (meal in dailyMealPlan.meals) {
                 for ((key, nutriment) in meal.nutriments.withIndex()) {
                     if (nutriment.items.isNotEmpty() && nutriment.items.isNotBlank()) {
@@ -221,6 +220,7 @@ class SupermarketListActivity : AppCompatActivity() {
 
         } else {
             val intent = Intent(this,MainActivity::class.java)
+            intent.putExtra(MainActivity.EXTRA_SUPERMARKETLIST,this.weekMealPlan)
             startActivity(intent)
             finish()
         }
