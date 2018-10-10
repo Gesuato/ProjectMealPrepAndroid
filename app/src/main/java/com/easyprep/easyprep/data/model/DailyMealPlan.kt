@@ -10,6 +10,7 @@ data class DailyMealPlan(
 
     fun customClone(): DailyMealPlan {
         val cloneDailyMealPlan = super.clone() as DailyMealPlan
+
         cloneDailyMealPlan.meals = ArrayList(meals)
         cloneDailyMealPlan.dailyPortions = ArrayList(dailyPortions)
         return cloneDailyMealPlan

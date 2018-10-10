@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import com.easyprep.easyprep.R
+import com.easyprep.easyprep.R.array.nutrimentTitles
 import com.easyprep.easyprep.data.model.Nutriment
 import kotlinx.android.synthetic.main.activity_detail_daily_portion.*
 
@@ -17,6 +18,7 @@ class DetailDailyPortionActivity : AppCompatActivity() {
     private var currentDayId: Int = 0
     private var valuesIsChanged = false
     private lateinit var nutrimentTitles : Array<String>
+    private lateinit var dayTitles : Array<String>
 
     @SuppressLint("RestrictedApi")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,6 +27,10 @@ class DetailDailyPortionActivity : AppCompatActivity() {
 
         if(!::nutrimentTitles.isInitialized){
             this.nutrimentTitles = resources.getStringArray(R.array.nutrimentTitles)
+        }
+
+        if(!::dayTitles.isInitialized){
+            this.dayTitles = resources.getStringArray(R.array.dayTitles)
         }
 
         supportActionBar!!.run {
@@ -46,14 +52,14 @@ class DetailDailyPortionActivity : AppCompatActivity() {
             this.currentDailyPotion =
                     intent.getSerializableExtra(DayFragment.EXTRA_DAILYPORTION) as ArrayList<Nutriment>
         }
-        if (intent.getIntExtra("CURRENTDAY", 0) != 0) {
+
+        intent.getIntExtra("CURRENTDAY",0).run {
             currentDayId = intent.getIntExtra("CURRENTDAY", 0)
-            this.titleActionBar = resources.getString(R.string.portionsOf) + " " +
-                    resources.getString(
-                        currentDayId
-                    )
+            titleActionBar = resources.getString(R.string.portionsOf) + " " +
+                    dayTitles[currentDayId]
             supportActionBar!!.title = titleActionBar
         }
+
 
         setValuesInNutrimentButtons(editingGroupDailyPotionList)
         setTitleInNutrimentButtons(editingGroupDailyPotionList)

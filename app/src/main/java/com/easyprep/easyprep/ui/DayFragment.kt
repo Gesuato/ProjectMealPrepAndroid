@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,6 +33,7 @@ class DayFragment : Fragment() {
     private var quantityList = arrayListOf(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f)
     private var valuesInCurrentDailyMealPlanIsChanged = false
     private lateinit var popupCopy: Dialog
+    private lateinit var dayTitles : Array<String>
 
     companion object {
         const val ARG_CAUGHT = "DayFragment"
@@ -62,6 +64,10 @@ class DayFragment : Fragment() {
         if (!::currentDailyMealPlan.isInitialized) {
             this.currentDailyMealPlan = arguments!!.getSerializable(ARG_CAUGHT) as DailyMealPlan
         }
+        if(!::dayTitles.isInitialized){
+            this.dayTitles = resources.getStringArray(R.array.dayTitles)
+        }
+
         this.recyclerView = rootView.findViewById(R.id.recycleViewId) as RecyclerView
         this.dailyPortionView = rootView.findViewById(R.id.daily_portion)
         this.recyclerView.layoutManager = layoutManager
@@ -172,7 +178,7 @@ class DayFragment : Fragment() {
             popupCopy.dismiss()
         }
         for ((key, dailyMealPlan) in dailyMealPlansForCopy.withIndex()) {
-            itemsPopup[key].setTitleItemPopup(resources.getString(dailyMealPlan.dayId))
+            itemsPopup[key].setTitleItemPopup(dayTitles[dailyMealPlan.dayId])
         }
 
         (0..5).forEach { index ->
@@ -201,6 +207,7 @@ class DayFragment : Fragment() {
     private fun updateInfosByPopup(dailyMealPlansForChange: DailyMealPlan) {
         currentDailyMealPlan.meals = dailyMealPlansForChange.meals
         currentDailyMealPlan.dailyPortions = dailyMealPlansForChange.dailyPortions
+        saveDataInCloudFirestore()
         updateValuesInDailyPortionView()
         this.mealListAdapter.update(this.currentDailyMealPlan.meals)
         popupCopy.dismiss()
@@ -212,13 +219,13 @@ class DayFragment : Fragment() {
         alertDialog.setTitle(
             resources.getString(
                 R.string.copy,
-                resources.getString(dayForCopy.dayId)
+                dayTitles[dayForCopy.dayId]
             )
         )
         alertDialog.setMessage(
             resources.getString(
                 R.string.alert_message,
-                resources.getString(dayForCopy.dayId)
+                dayTitles[dayForCopy.dayId]
             )
         )
 
