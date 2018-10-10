@@ -64,61 +64,15 @@ class DetailDailyPortionActivity : AppCompatActivity() {
         setValuesInNutrimentButtons(editingGroupDailyPotionList)
         setTitleInNutrimentButtons(editingGroupDailyPotionList)
 
-        editingGroupVegetable.setOnCustomClickListener(object :
-            EditingGroupDailyPortionOnClickListener {
-            override fun editingGroupDailyPortionOnClickListener(quantity: Float) {
-                currentDailyPotion[0].quantity = quantity
-                checkValueIsChanged()
-            }
-        })
-
-        editingGroupFruit.setOnCustomClickListener(object :
-            EditingGroupDailyPortionOnClickListener {
-            override fun editingGroupDailyPortionOnClickListener(quantity: Float) {
-                currentDailyPotion[1].quantity = quantity
-                checkValueIsChanged()
-            }
-        })
-
-        editingGroupProtein.setOnCustomClickListener(object :
-            EditingGroupDailyPortionOnClickListener {
-            override fun editingGroupDailyPortionOnClickListener(quantity: Float) {
-                currentDailyPotion[2].quantity = quantity
-                checkValueIsChanged()
-            }
-        })
-
-        editingGroupCarbohydrates.setOnCustomClickListener(object :
-            EditingGroupDailyPortionOnClickListener {
-            override fun editingGroupDailyPortionOnClickListener(quantity: Float) {
-                currentDailyPotion[3].quantity = quantity
-                checkValueIsChanged()
-            }
-        })
-
-        editingGroupGoodFat.setOnCustomClickListener(object :
-            EditingGroupDailyPortionOnClickListener {
-            override fun editingGroupDailyPortionOnClickListener(quantity: Float) {
-                currentDailyPotion[4].quantity = quantity
-                checkValueIsChanged()
-            }
-        })
-
-        editingGroupSeed.setOnCustomClickListener(object :
-            EditingGroupDailyPortionOnClickListener {
-            override fun editingGroupDailyPortionOnClickListener(quantity: Float) {
-                currentDailyPotion[5].quantity = quantity
-                checkValueIsChanged()
-            }
-        })
-
-        editingGroupOil.setOnCustomClickListener(object :
-            EditingGroupDailyPortionOnClickListener {
-            override fun editingGroupDailyPortionOnClickListener(quantity: Float) {
-                currentDailyPotion[6].quantity = quantity
-                checkValueIsChanged()
-            }
-        })
+        (0..6).forEach{ index ->
+            editingGroupDailyPotionList[index].setOnCustomClickListener(object :
+                EditingGroupDailyPortionOnClickListener {
+                override fun editingGroupDailyPortionOnClickListener(quantity: Float) {
+                    currentDailyPotion[index].quantity = quantity
+                    checkValueIsChanged()
+                }
+            })
+        }
     }
 
     private fun setValuesInNutrimentButtons(editingGroupDailyPotionList: ArrayList<EditingGroupDailyPortionView>) {

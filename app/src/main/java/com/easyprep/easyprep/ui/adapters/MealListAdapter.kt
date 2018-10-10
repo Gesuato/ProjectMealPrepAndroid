@@ -17,7 +17,7 @@ class MealListAdapter : RecyclerView.Adapter<MealListAdapter.MealViewHolder>() {
     private lateinit var currentMeals: List<Meal>
     private lateinit var resources: Resources
     private lateinit var onCustomClickListener: CustomOnClickListener
-    private lateinit var titlesOfMeals : Array<String>
+    private lateinit var titlesOfMeals: Array<String>
 
     fun update(currentMeals: List<Meal>) {
         this.currentMeals = currentMeals
@@ -34,7 +34,7 @@ class MealListAdapter : RecyclerView.Adapter<MealListAdapter.MealViewHolder>() {
         val itemView = layoutInflater.inflate(R.layout.meal_view_holder, viewGroup, false)
         val viewHolder = MealViewHolder(itemView)
         resources = layoutInflater.context.resources
-        if(!::titlesOfMeals.isInitialized){
+        if (!::titlesOfMeals.isInitialized) {
             this.titlesOfMeals = resources.getStringArray(R.array.mealTitles)
         }
 

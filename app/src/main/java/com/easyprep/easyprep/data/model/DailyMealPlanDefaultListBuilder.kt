@@ -1,19 +1,7 @@
 package com.easyprep.easyprep.data.model
 
-import com.easyprep.easyprep.R
-
 class DailyMealPlanDefaultListBuilder : () -> List<DailyMealPlan> {
     override operator fun invoke(): List<DailyMealPlan> {
-
-        val titlesDay = arrayOf(
-            R.string.monday,
-            R.string.tuesday,
-            R.string.wednesday,
-            R.string.thursday,
-            R.string.friday,
-            R.string.saturday,
-            R.string.sunday
-        )
 
         val dailyPortionsList = ArrayList<DailyMealPlan>()
 
@@ -24,7 +12,7 @@ class DailyMealPlanDefaultListBuilder : () -> List<DailyMealPlan> {
 
             for (j in 0..5) {
                 val nutriments = ArrayList<Nutriment>()
-                for(k in 0..6){
+                for (k in 0..6) {
                     val nutriment = Nutriment(k, 0.0f, "")
                     nutriments.add(nutriment)
                 }
@@ -39,7 +27,7 @@ class DailyMealPlanDefaultListBuilder : () -> List<DailyMealPlan> {
                 dailyPortions.add(nutriment)
             }
 
-            dailyMealPlan = DailyMealPlan(index, meals,dailyPortions)
+            dailyMealPlan = DailyMealPlan(index, meals, dailyPortions)
             dailyPortionsList.add(dailyMealPlan)
         }
         return dailyPortionsList

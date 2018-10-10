@@ -9,7 +9,6 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -33,7 +32,7 @@ class DayFragment : Fragment() {
     private var quantityList = arrayListOf(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f)
     private var valuesInCurrentDailyMealPlanIsChanged = false
     private lateinit var popupCopy: Dialog
-    private lateinit var dayTitles : Array<String>
+    private lateinit var dayTitles: Array<String>
 
     companion object {
         const val ARG_CAUGHT = "DayFragment"
@@ -64,7 +63,7 @@ class DayFragment : Fragment() {
         if (!::currentDailyMealPlan.isInitialized) {
             this.currentDailyMealPlan = arguments!!.getSerializable(ARG_CAUGHT) as DailyMealPlan
         }
-        if(!::dayTitles.isInitialized){
+        if (!::dayTitles.isInitialized) {
             this.dayTitles = resources.getStringArray(R.array.dayTitles)
         }
 
@@ -114,7 +113,7 @@ class DayFragment : Fragment() {
             this.valuesInCurrentDailyMealPlanIsChanged = meal.valueIsChanged
             meal.valueIsChanged = false
             index = meal.index
-            val currentDailyMealPlanMealsArrayList  = this.currentDailyMealPlan.meals as ArrayList
+            val currentDailyMealPlanMealsArrayList = this.currentDailyMealPlan.meals as ArrayList
             currentDailyMealPlanMealsArrayList[index] = meal
             this.currentDailyMealPlan.meals = ArrayList(currentDailyMealPlanMealsArrayList)
             this.mealListAdapter.updateItemChanged(currentDailyMealPlan.meals as ArrayList, index)
@@ -243,8 +242,8 @@ class DayFragment : Fragment() {
         alertDialog.show()
     }
 
-    private fun saveDataInCloudFirestore(){
-       val weekMealPlan= (activity as MainActivity).getWeek()
+    private fun saveDataInCloudFirestore() {
+        val weekMealPlan = (activity as MainActivity).getWeek()
         (activity as MainActivity).saveData(weekMealPlan)
         messageUpdate()
     }
