@@ -40,20 +40,20 @@ class DailyMealPlanDefaultListBuilder : () -> List<DailyMealPlan> {
             val quantityDefault = arrayOf(3.0f, 2.0f, 4.0f, 2.0f, 1.0f, 1.0f, 2.0f)
             val meals = ArrayList<Meal>()
 
-            for (index in 0..5) {
+            for (j in 0..5) {
                 val nutriments = ArrayList<Nutriment>()
-                for(index in 0..6){
-                    val nutriment = Nutriment(nutrimentTitles[index], 0.0f, "")
+                for(k in 0..6){
+                    val nutriment = Nutriment(k, 0.0f, "")
                     nutriments.add(nutriment)
                 }
-                val meal = Meal(index, titlesOfMeals[index], nutriments, false)
+                val meal = Meal(j, j, nutriments, false)
                 meals.add(meal)
             }
 
             val dailyPortions = ArrayList<Nutriment>()
 
-            for (index in 0..6) {
-                val nutriment = Nutriment(nutrimentTitles[index], quantityDefault[index], "")
+            for (key in 0..6) {
+                val nutriment = Nutriment(key, quantityDefault[key], "")
                 dailyPortions.add(nutriment)
             }
 

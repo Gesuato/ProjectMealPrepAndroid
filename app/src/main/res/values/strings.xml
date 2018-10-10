@@ -14,6 +14,15 @@
     <string name="oilsAndNutButters">Oils and Nut Butters</string>
 
     <!-- String of Meals -->
+    <string-array name="mealTitles">
+        <item>Breakfast</item>
+        <item>Snack1</item>
+        <item>Lunch</item>
+        <item>Snack2</item>
+        <item>Dinner</item>
+        <item>Snack3</item>
+    </string-array>
+
     <string name="breakfast">Breakfast</string>
     <string name="snack1">Snack1</string>
     <string name="lunch">Lunch</string>

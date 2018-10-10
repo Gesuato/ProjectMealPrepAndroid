@@ -3,7 +3,7 @@ package com.easyprep.easyprep.data.model
 import java.io.Serializable
 
 data class DailyMealPlan(
-    var day: Int = 0,
+    var dayId: Int = 0,
     var meals: List<Meal> = emptyList(),
     var dailyPortions: List<Nutriment> = emptyList()
 ) : Serializable, Cloneable {

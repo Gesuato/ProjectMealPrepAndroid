@@ -74,7 +74,7 @@ class DayFragment : Fragment() {
             val intent = Intent(context, DetailDailyPortionActivity::class.java)
             val curentDailyPotion = this.currentDailyMealPlan.dailyPortions as ArrayList
             intent.putExtra(EXTRA_DAILYPORTION, curentDailyPotion)
-            intent.putExtra("CURRENTDAY", currentDailyMealPlan.day)
+            intent.putExtra("CURRENTDAY", currentDailyMealPlan.dayId)
             startActivityForResult(intent, REQUEST_DAILYPORTION)
         }
 
@@ -172,7 +172,7 @@ class DayFragment : Fragment() {
             popupCopy.dismiss()
         }
         for ((key, dailyMealPlan) in dailyMealPlansForCopy.withIndex()) {
-            itemsPopup[key].setTitleItemPopup(resources.getString(dailyMealPlan.day))
+            itemsPopup[key].setTitleItemPopup(resources.getString(dailyMealPlan.dayId))
         }
 
         (0..5).forEach { index ->
@@ -190,7 +190,7 @@ class DayFragment : Fragment() {
 
         val dailyMealPlans = ArrayList<DailyMealPlan>()
         for (dailyMealPlan in week.dailyMealPlanList) {
-            if (dailyMealPlan.day != this.currentDailyMealPlan.day) {
+            if (dailyMealPlan.dayId != this.currentDailyMealPlan.dayId) {
                 val cloneDailyMealPlan = dailyMealPlan.customClone()
                 dailyMealPlans.add(cloneDailyMealPlan)
             }
@@ -212,13 +212,13 @@ class DayFragment : Fragment() {
         alertDialog.setTitle(
             resources.getString(
                 R.string.copy,
-                resources.getString(dayForCopy.day)
+                resources.getString(dayForCopy.dayId)
             )
         )
         alertDialog.setMessage(
             resources.getString(
                 R.string.alert_message,
-                resources.getString(dayForCopy.day)
+                resources.getString(dayForCopy.dayId)
             )
         )
 
