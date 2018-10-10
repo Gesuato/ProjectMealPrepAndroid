@@ -59,10 +59,16 @@ class SupermarketListActivity : AppCompatActivity() {
         }
 
         (0..6).forEach { index ->
+            val isExpandable = when (index) {
+                0 -> true
+                else -> {
+                    false
+                }
+            }
             ExpandableGroup(
                 ExpandableHeaderItem(
                     nutrimentTitles[index]
-                ), true
+                ), isExpandable
             ).apply {
                 add(Section(generateItemSupermarketListViews(index)))
                 groupAdapter.add(this)

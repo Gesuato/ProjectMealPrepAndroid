@@ -6,12 +6,15 @@ import android.os.Bundle
 import android.preference.PreferenceManager
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import com.easyprep.easyprep.R
 import com.easyprep.easyprep.data.model.DailyMealPlanDefaultListBuilder
 import com.easyprep.easyprep.data.model.WeekMealPlan
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_login.*
 
@@ -138,6 +141,8 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun singIn(email: String, password: String) {
+
+
         if (!email.isBlank() && !password.isBlank()) {
             mAuth!!.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(
@@ -164,6 +169,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun userAuthentication() {
+
         mAuthListener = FirebaseAuth.AuthStateListener { firebaseAuth ->
             val userAuth = firebaseAuth.currentUser
             if (userAuth != null) {
@@ -189,5 +195,24 @@ class LoginActivity : AppCompatActivity() {
             btnLogin.setText(R.string.sing_up)
             btnSingUpOrSingIn.setText(R.string.sing_in_button)
         }
+    }
+
+    private fun retrieveAccount(){
+
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.login_menu,menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+
+        if(item!!.itemId == R.id.retrieve_account_menu){
+           retrieveAccount()
+        }else{
+            
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

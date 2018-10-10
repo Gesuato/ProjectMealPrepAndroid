@@ -89,4 +89,8 @@
     <string name="warning_empty_fields">Null fields</string>
     <string name="warning_incorrect_password_confirmation">Incorrect password confirmation</string>
 
+    <!-- String of Login Menu -->
+    <string name="know_app">Know the App</string>
+    <string name="retrieve_account">Retrieve account</string>
+
 </resources>
