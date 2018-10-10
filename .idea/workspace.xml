@@ -10,6 +10,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="LoginAuth" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
@@ -29,11 +30,8 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/ui/LoginActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/ui/LoginActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -100,8 +98,29 @@
       <file leaf-file-name="LoginActivity.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/ui/LoginActivity.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="635">
-              <caret line="98" column="36" selection-start-line="98" selection-start-column="36" selection-end-line="98" selection-end-column="36" />
+            <state relative-caret-position="3043">
+              <caret line="192" column="1" lean-forward="true" selection-start-line="192" selection-start-column="1" selection-end-line="192" selection-end-column="1" />
+              <folding>
+                <element signature="e#1440#1477#0" expanded="true" />
+                <element signature="e#4410#4479#1" expanded="true" />
+                <element signature="e#4643#4693#1" expanded="true" />
+                <element signature="e#5568#5618#1" expanded="true" />
+                <element signature="e#6286#6323#0" expanded="true" />
+                <element signature="e#6417#6433#1" expanded="true" />
+                <element signature="e#6473#6496#1" expanded="true" />
+                <element signature="e#6587#6624#0" expanded="true" />
+                <element signature="e#6721#6737#1" expanded="true" />
+                <element signature="e#6777#6800#1" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="884">
+              <caret line="87" column="25" selection-start-line="87" selection-start-column="25" selection-end-line="87" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -109,15 +128,14 @@
       <file leaf-file-name="activity_login.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-11">
-              <caret line="44" column="17" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
+            <state relative-caret-position="873">
+              <caret line="97" column="44" selection-start-line="97" selection-start-column="30" selection-end-line="97" selection-end-column="44" />
               <folding>
                 <element signature="e#702#720#0" expanded="true" />
                 <element signature="e#1239#1254#0" expanded="true" />
                 <element signature="e#1611#1629#0" expanded="true" />
                 <element signature="e#1994#2025#0" expanded="true" />
                 <element signature="e#2400#2417#0" expanded="true" />
-                <element signature="e#3642#3666#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2663,8 +2681,8 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/ui/adapters/MealListAdapter.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/ui/DayFragment.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/ui/DetailDailyPortionActivity.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/ui/LoginActivity.kt" />
       </list>
     </option>
@@ -2746,6 +2764,16 @@
               <item name="ProjectMealPrepAndroid" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="ProjectMealPrepAndroid" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
+            <path>
+              <item name="ProjectMealPrepAndroid" type="1abcf292:AndroidViewProjectNode" />
+              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
             </path>
           </expand>
           <select />
@@ -3143,11 +3171,11 @@
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.671459" weight="0.3166969" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Logcat" order="7" sideWeight="0.6602769" weight="0.30217785" />
+      <window_info active="true" anchor="bottom" id="Logcat" order="7" sideWeight="0.6602769" visible="true" weight="0.30217785" />
       <window_info id="Captures" order="2" weight="0.24973376" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24973376" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24973376" />
       <window_info anchor="bottom" id="Build" order="7" sideWeight="0.60383385" weight="0.23684211" />
       <window_info anchor="right" id="Gradle" order="3" weight="0.32960597" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -3518,24 +3546,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="977">
-          <caret line="90" selection-start-line="90" selection-end-line="90" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-11">
-          <caret line="44" column="17" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
+        <state relative-caret-position="873">
+          <caret line="97" column="44" selection-start-line="97" selection-start-column="30" selection-end-line="97" selection-end-column="44" />
           <folding>
             <element signature="e#702#720#0" expanded="true" />
             <element signature="e#1239#1254#0" expanded="true" />
             <element signature="e#1611#1629#0" expanded="true" />
             <element signature="e#1994#2025#0" expanded="true" />
             <element signature="e#2400#2417#0" expanded="true" />
-            <element signature="e#3642#3666#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3543,10 +3563,29 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="884">
+          <caret line="87" column="25" selection-start-line="87" selection-start-column="25" selection-end-line="87" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/ui/LoginActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="635">
-          <caret line="98" column="36" selection-start-line="98" selection-start-column="36" selection-end-line="98" selection-end-column="36" />
+        <state relative-caret-position="3043">
+          <caret line="192" column="1" lean-forward="true" selection-start-line="192" selection-start-column="1" selection-end-line="192" selection-end-column="1" />
+          <folding>
+            <element signature="e#1440#1477#0" expanded="true" />
+            <element signature="e#4410#4479#1" expanded="true" />
+            <element signature="e#4643#4693#1" expanded="true" />
+            <element signature="e#5568#5618#1" expanded="true" />
+            <element signature="e#6286#6323#0" expanded="true" />
+            <element signature="e#6417#6433#1" expanded="true" />
+            <element signature="e#6473#6496#1" expanded="true" />
+            <element signature="e#6587#6624#0" expanded="true" />
+            <element signature="e#6721#6737#1" expanded="true" />
+            <element signature="e#6777#6800#1" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
