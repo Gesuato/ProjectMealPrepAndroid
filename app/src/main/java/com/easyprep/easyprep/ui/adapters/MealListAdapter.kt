@@ -17,6 +17,7 @@ class MealListAdapter : RecyclerView.Adapter<MealListAdapter.MealViewHolder>() {
     private lateinit var currentMeals: List<Meal>
     private lateinit var resources: Resources
     private lateinit var onCustomClickListener: CustomOnClickListener
+    private lateinit var titlesOfMeals: Array<String>
 
     fun update(currentMeals: List<Meal>) {
         this.currentMeals = currentMeals
@@ -32,12 +33,16 @@ class MealListAdapter : RecyclerView.Adapter<MealListAdapter.MealViewHolder>() {
         val layoutInflater = LayoutInflater.from(viewGroup.context)
         val itemView = layoutInflater.inflate(R.layout.meal_view_holder, viewGroup, false)
         val viewHolder = MealViewHolder(itemView)
+        resources = layoutInflater.context.resources
+        if (!::titlesOfMeals.isInitialized) {
+            this.titlesOfMeals = resources.getStringArray(R.array.mealTitles)
+        }
 
         viewHolder.imageButtonEdit.setOnClickListener {
             onCustomClickListener.onCustomItemClickListener(currentMeals[viewHolder.adapterPosition])
         }
 
-        resources = layoutInflater.context.resources
+
         return viewHolder
     }
 
@@ -51,7 +56,7 @@ class MealListAdapter : RecyclerView.Adapter<MealListAdapter.MealViewHolder>() {
 
     override fun onBindViewHolder(holder: MealViewHolder, position: Int) {
         val currentMeal = currentMeals[position]
-        holder.titleMeal.text = resources.getText(currentMeal.nameId)
+        holder.titleMeal.text = titlesOfMeals[currentMeal.nameId]
         holder.mealPortionView.setValues(currentMeal)
     }
 

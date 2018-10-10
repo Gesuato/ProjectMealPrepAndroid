@@ -1,7 +1,6 @@
 package com.easyprep.easyprep.ui
 
 import android.content.Intent
-import android.content.Intent.EXTRA_USER
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.preference.PreferenceManager
@@ -12,7 +11,6 @@ import android.widget.Toast
 import com.easyprep.easyprep.R
 import com.easyprep.easyprep.data.model.DailyMealPlanDefaultListBuilder
 import com.easyprep.easyprep.data.model.WeekMealPlan
-import com.easyprep.easyprep.data.model.login.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_login.*
@@ -22,12 +20,11 @@ class LoginActivity : AppCompatActivity() {
 
     private var mAuth: FirebaseAuth? = null
     private var mAuthListener: FirebaseAuth.AuthStateListener? = null
-    private var email = ""
-    private var password = ""
     private val db = FirebaseFirestore.getInstance()
     private val weekRef = db.collection(DB_REF)
     private var weekMealPlan = WeekMealPlan()
-    private lateinit var userSharePref : SharedPreferences
+    private lateinit var userSharePref: SharedPreferences
+    private var isSingUp = false
 
     companion object {
         const val DB_REF = "WeekMealPlan"
@@ -38,49 +35,25 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-         userSharePref = PreferenceManager.getDefaultSharedPreferences(this)
-
-
+        userSharePref = PreferenceManager.getDefaultSharedPreferences(this)
+        supportActionBar!!.title = resources.getString(R.string.sing_in)
         mAuth = FirebaseAuth.getInstance()
-        mAuthListener = FirebaseAuth.AuthStateListener { firebaseAuth ->
-            val userAuth = firebaseAuth.currentUser
-            if (userAuth != null) {
-                userSharePref.edit().putString(EXTRA_USER,userAuth.uid).apply()
-                loadDataInFirestore(userAuth.uid)
-                // User is signed in
-                Log.d("LoginAuth", "onAuthStateChanged:signed_in:" + userAuth.uid)
-            } else {
-                editTextPassword.visibility = View.VISIBLE
-                editTextEmail.visibility = View.VISIBLE
-                btnLogin.visibility = View.VISIBLE
-                userSharePref.edit().putString(EXTRA_USER,null).apply()
-                Log.d("LoginAuth", "onAuthStateChanged:signed_out")
-            }
-        }
-        editTextEmail.visibility = View.GONE
-        editTextPassword.visibility = View.GONE
-        btnLogin.visibility = View.GONE
+
+        userAuthentication()
 
         btnLogin.setOnClickListener {
-            email = editTextEmail.text.toString()
-            password = editTextPassword.text.toString()
-            print(email)
+            val email = editTextEmail.text.toString()
+            val password = editTextPassword.text.toString()
+            val passwordConfirmation = editTextConfirmationPassword.text.toString()
 
-            mAuth!!.signInWithEmailAndPassword("email@gmail.com", "123456")
-                .addOnCompleteListener(
-                    this
-                ) { task ->
-
-                    Log.d("LoginSucess", "signInWithEmail:onComplete:" + task.isSuccessful)
-
-                    if (!task.isSuccessful) {
-                        Log.w("LoginFailed", "signInWithEmail:failed", task.exception)
-                        Toast.makeText(
-                            this, "Failed",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                    }
-                }
+            if (this.isSingUp) {
+                singUp(email, password, passwordConfirmation)
+            } else {
+                singIn(email, password)
+            }
+        }
+        btnSingUpOrSingIn.setOnClickListener {
+            singUpOrSingIn()
         }
     }
 
@@ -98,6 +71,13 @@ class LoginActivity : AppCompatActivity() {
 
     private fun loadDataInFirestore(userUID: String) {
         weekMealPlan.dailyMealPlanList = DailyMealPlanDefaultListBuilder().invoke()
+        btnLogin.visibility = View.GONE
+        btnSingUpOrSingIn.visibility = View.GONE
+        editTextEmail.visibility = View.GONE
+        editTextPassword.visibility = View.GONE
+        editTextConfirmationPassword.visibility = View.GONE
+        space.visibility = View.GONE
+        progressBar.visibility = View.VISIBLE
 
         weekRef.document(userUID).get().addOnSuccessListener { documentSnapshot ->
             var saveData = false
@@ -123,5 +103,91 @@ class LoginActivity : AppCompatActivity() {
 
     private fun saveData(weekMealPlan: WeekMealPlan, userUID: String) {
         weekRef.document(userUID).set(weekMealPlan)
+    }
+
+    private fun singUp(email: String, password: String, passwordConfirmation: String) {
+        if (!email.isBlank() && !password.isBlank() && !passwordConfirmation.isBlank()) {
+            if (password == passwordConfirmation) {
+                mAuth!!.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(
+                        this
+                    ) { task ->
+                        if (!task.isSuccessful) {
+                            Toast.makeText(
+                                this,
+                                task.exception!!.message,
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                    }
+            } else {
+                Toast.makeText(
+                    this,
+                    resources.getString(R.string.warning_incorrect_password_confirmation),
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+
+        } else {
+            Toast.makeText(
+                this,
+                resources.getString(R.string.warning_empty_fields),
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+    }
+
+    private fun singIn(email: String, password: String) {
+        if (!email.isBlank() && !password.isBlank()) {
+            mAuth!!.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(
+                    this
+                ) { task ->
+
+                    Log.d("LoginSucess", "signInWithEmail:onComplete:" + task.isSuccessful)
+
+                    if (!task.isSuccessful) {
+                        Log.w("LoginFailed", "signInWithEmail:failed", task.exception)
+                        Toast.makeText(
+                            this, task.exception!!.message,
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                }
+        } else {
+            Toast.makeText(
+                this,
+                resources.getString(R.string.warning_empty_fields),
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+    }
+
+    private fun userAuthentication() {
+        mAuthListener = FirebaseAuth.AuthStateListener { firebaseAuth ->
+            val userAuth = firebaseAuth.currentUser
+            if (userAuth != null) {
+                userSharePref.edit().putString(EXTRA_USER, userAuth.uid).apply()
+                loadDataInFirestore(userAuth.uid)
+            } else {
+                userSharePref.edit().putString(EXTRA_USER, null).apply()
+            }
+        }
+    }
+
+    private fun singUpOrSingIn() {
+        if (this.isSingUp) {
+            this.isSingUp = false
+            supportActionBar!!.title = resources.getString(R.string.sing_in)
+            editTextConfirmationPassword.visibility = View.GONE
+            btnLogin.setText(R.string.sing_in)
+            btnSingUpOrSingIn.setText(R.string.sing_up_button)
+        } else {
+            this.isSingUp = true
+            supportActionBar!!.title = resources.getString(R.string.sing_up)
+            editTextConfirmationPassword.visibility = View.VISIBLE
+            btnLogin.setText(R.string.sing_up)
+            btnSingUpOrSingIn.setText(R.string.sing_in_button)
+        }
     }
 }

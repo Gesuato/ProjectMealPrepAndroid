@@ -6,34 +6,55 @@
     android:layout_height="match_parent"
     tools:context=".ui.LoginActivity">
 
-    <android.support.constraint.ConstraintLayout
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="80dp"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:text="@string/app_name" />
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="200dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+
         <EditText
             android:id="@+id/editTextEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="5dp"
             android:ems="10"
             android:hint="@string/email"
-            android:inputType="textPersonName"
-            app:layout_constraintBottom_toTopOf="@id/editTextPassword"
-            app:layout_constraintLeft_toLeftOf="@id/editTextPassword"
-            app:layout_constraintRight_toRightOf="@id/editTextPassword"
-            android:visibility="gone"/>
+            android:inputType="textEmailAddress"
+            android:visibility="visible" />
 
         <EditText
             android:id="@+id/editTextPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
             android:ems="10"
             android:hint="@string/password"
-            android:inputType="textPersonName"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:visibility="gone"/>
+            android:inputType="textPassword"
+            android:visibility="visible" />
+
+        <EditText
+            android:id="@+id/editTextConfirmationPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:ems="10"
+            android:hint="@string/password_confirmation"
+            android:inputType="textPassword"
+            android:visibility="gone" />
 
         <Button
             android:id="@+id/btnLogin"
@@ -43,18 +64,38 @@
             android:background="?selectableItemBackgroundBorderless"
             android:text="@string/sing_in"
             android:textColor="@color/colorAccent"
+            android:visibility="visible"
             app:layout_constraintLeft_toLeftOf="@id/editTextPassword"
             app:layout_constraintRight_toRightOf="@id/editTextPassword"
-            app:layout_constraintTop_toBottomOf="@id/editTextPassword"
-            android:visibility="gone"/>
-    </android.support.constraint.ConstraintLayout>
+            app:layout_constraintTop_toBottomOf="@id/editTextPassword" />
+    </LinearLayout>
 
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/space"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="horizontal"
+        android:background="#3e000000"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="50dp"/>
+
+    <Button
+        android:id="@+id/btnSingUpOrSingIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?selectableItemBackgroundBorderless"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal|bottom"
+        android:textColor="#ce000000"
+        android:text="@string/sing_up_button" />
 
 
 </FrameLayout>

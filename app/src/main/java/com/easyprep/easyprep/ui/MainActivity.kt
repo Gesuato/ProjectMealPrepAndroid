@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.preference.PreferenceManager
 import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import com.easyprep.easyprep.R
@@ -14,6 +13,7 @@ import com.easyprep.easyprep.data.model.DailyMealPlanDefaultListBuilder
 import com.easyprep.easyprep.data.model.WeekMealPlan
 import com.easyprep.easyprep.data.model.login.User
 import com.easyprep.easyprep.ui.adapters.ViewPagerAdapter
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
     private var user = User("")
     private var isLogged = false
     private lateinit var userSharePref: SharedPreferences
+    private var mAuth: FirebaseAuth? = null
 
     companion object {
         const val EXTRA_SUPERMARKETLIST = "SUPERMARKETLIST"
@@ -37,6 +38,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         userSharePref = PreferenceManager.getDefaultSharedPreferences(this)
         user.userId = userSharePref.getString(LoginActivity.EXTRA_USER, "")
+        mAuth = FirebaseAuth.getInstance()
 
         if (intent.getSerializableExtra(LoginActivity.EXTRA_WEEK_MEAL_PLAN) != null) {
             weekMealPlan =
@@ -82,6 +84,12 @@ class MainActivity : AppCompatActivity() {
             R.id.contactMenu -> {
 
             }
+            R.id.singOutMenu -> {
+                val intent = Intent(this,LoginActivity::class.java)
+                singOut()
+                startActivity(intent)
+                finish()
+            }
         }
         return super.onOptionsItemSelected(item)
     }
@@ -92,5 +100,9 @@ class MainActivity : AppCompatActivity() {
         if (user.userId != "") {
             weekRef.document(user.userId).set(weekMealPlan)
         }
+    }
+
+    private fun singOut() {
+        mAuth!!.signOut()
     }
 }

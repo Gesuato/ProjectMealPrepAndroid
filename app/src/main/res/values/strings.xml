@@ -5,30 +5,36 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!-- Strings of Nutriments -->
-    <string name="veggies">Veggies</string>
-    <string name="fruits">Fruits</string>
-    <string name="proteins">Proteins</string>
-    <string name="carbohydrates">Carbohydrates</string>
-    <string name="healthyFats">Healthy Fats</string>
-    <string name="seedsAndDressings">Seeds and Dressings</string>
-    <string name="oilsAndNutButters">Oils and Nut Butters</string>
+    <string-array name="nutrimentTitles">
+        <item>Veggies</item>
+        <item>Fruits</item>
+        <item>Proteins</item>
+        <item>Carbohydrates</item>
+        <item>Healthy Fats</item>
+        <item>Seeds and Dressings</item>
+        <item>Oils and Nut Butters</item>
+    </string-array>
 
     <!-- String of Meals -->
-    <string name="breakfast">Breakfast</string>
-    <string name="snack1">Snack1</string>
-    <string name="lunch">Lunch</string>
-    <string name="snack2">Snack2</string>
-    <string name="dinner">Dinner</string>
-    <string name="snack3">Snack3</string>
+    <string-array name="mealTitles">
+        <item>Breakfast</item>
+        <item>Snack1</item>
+        <item>Lunch</item>
+        <item>Snack2</item>
+        <item>Dinner</item>
+        <item>Snack3</item>
+    </string-array>
 
     <!-- String of Days -->
-    <string name="monday">Monday</string>
-    <string name="tuesday">Tuesday</string>
-    <string name="wednesday">Wednesday</string>
-    <string name="thursday">Thursday</string>
-    <string name="friday">Friday</string>
-    <string name="saturday">Saturday</string>
-    <string name="sunday">Sunday</string>
+    <string-array name="dayTitles">
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+        <item>Sunday</item>
+    </string-array>
 
     <string-array name="pagerDayTitles">
         <item>Mon</item>
@@ -56,13 +62,13 @@
 
     <!-- Strings of Hints Meals Description -->
     <string-array name="hintsMealDescription">
-        <item>Ex: Broccoli, carrot ... etc</item>
-        <item>Ex: Apple, banana ... etc</item>
-        <item>Ex: Chicken thigh, filet mignon ... etc</item>
-        <item>Ex: Bread, rice ... etc</item>
-        <item>Ex: Dark Chocolate, avocados ... etc</item>
-        <item>Ex: Sunflower Seeds, tahini garlic ... etc</item>
-        <item>Ex: Olive oil, chocolate sesame butter ... etc</item>
+        <item>Ex: Broccoli, carrot … etc</item>
+        <item>Ex: Apple, banana … etc</item>
+        <item>Ex: Chicken thigh, filet mignon … etc</item>
+        <item>Ex: Bread, rice … etc</item>
+        <item>Ex: Dark Chocolate, avocados … etc</item>
+        <item>Ex: Sunflower Seeds, tahini garlic … etc</item>
+        <item>Ex: Olive oil, chocolate sesame butter … etc</item>
     </string-array>
 
     <!-- Strings of AlertDialog -->
@@ -76,5 +82,11 @@
     <string name="password">password</string>
     <string name="sing_in">Sing In</string>
     <string name="sing_out">Sing Out</string>
+    <string name="sing_up">Sing Up</string>
+    <string name="password_confirmation">Password confirmation</string>
+    <string name="sing_in_button">You already have an account?</string>
+    <string name="sing_up_button">Do not have an account?</string>
+    <string name="warning_empty_fields">Null fields</string>
+    <string name="warning_incorrect_password_confirmation">Incorrect password confirmation</string>
 
 </resources>

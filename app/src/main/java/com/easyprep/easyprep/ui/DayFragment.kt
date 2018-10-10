@@ -32,6 +32,7 @@ class DayFragment : Fragment() {
     private var quantityList = arrayListOf(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f)
     private var valuesInCurrentDailyMealPlanIsChanged = false
     private lateinit var popupCopy: Dialog
+    private lateinit var dayTitles: Array<String>
 
     companion object {
         const val ARG_CAUGHT = "DayFragment"
@@ -62,6 +63,10 @@ class DayFragment : Fragment() {
         if (!::currentDailyMealPlan.isInitialized) {
             this.currentDailyMealPlan = arguments!!.getSerializable(ARG_CAUGHT) as DailyMealPlan
         }
+        if (!::dayTitles.isInitialized) {
+            this.dayTitles = resources.getStringArray(R.array.dayTitles)
+        }
+
         this.recyclerView = rootView.findViewById(R.id.recycleViewId) as RecyclerView
         this.dailyPortionView = rootView.findViewById(R.id.daily_portion)
         this.recyclerView.layoutManager = layoutManager
@@ -74,7 +79,7 @@ class DayFragment : Fragment() {
             val intent = Intent(context, DetailDailyPortionActivity::class.java)
             val curentDailyPotion = this.currentDailyMealPlan.dailyPortions as ArrayList
             intent.putExtra(EXTRA_DAILYPORTION, curentDailyPotion)
-            intent.putExtra("CURRENTDAY", currentDailyMealPlan.day)
+            intent.putExtra("CURRENTDAY", currentDailyMealPlan.dayId)
             startActivityForResult(intent, REQUEST_DAILYPORTION)
         }
 
@@ -108,7 +113,7 @@ class DayFragment : Fragment() {
             this.valuesInCurrentDailyMealPlanIsChanged = meal.valueIsChanged
             meal.valueIsChanged = false
             index = meal.index
-            val currentDailyMealPlanMealsArrayList  = this.currentDailyMealPlan.meals as ArrayList
+            val currentDailyMealPlanMealsArrayList = this.currentDailyMealPlan.meals as ArrayList
             currentDailyMealPlanMealsArrayList[index] = meal
             this.currentDailyMealPlan.meals = ArrayList(currentDailyMealPlanMealsArrayList)
             this.mealListAdapter.updateItemChanged(currentDailyMealPlan.meals as ArrayList, index)
@@ -172,7 +177,7 @@ class DayFragment : Fragment() {
             popupCopy.dismiss()
         }
         for ((key, dailyMealPlan) in dailyMealPlansForCopy.withIndex()) {
-            itemsPopup[key].setTitleItemPopup(resources.getString(dailyMealPlan.day))
+            itemsPopup[key].setTitleItemPopup(dayTitles[dailyMealPlan.dayId])
         }
 
         (0..5).forEach { index ->
@@ -190,7 +195,7 @@ class DayFragment : Fragment() {
 
         val dailyMealPlans = ArrayList<DailyMealPlan>()
         for (dailyMealPlan in week.dailyMealPlanList) {
-            if (dailyMealPlan.day != this.currentDailyMealPlan.day) {
+            if (dailyMealPlan.dayId != this.currentDailyMealPlan.dayId) {
                 val cloneDailyMealPlan = dailyMealPlan.customClone()
                 dailyMealPlans.add(cloneDailyMealPlan)
             }
@@ -201,6 +206,7 @@ class DayFragment : Fragment() {
     private fun updateInfosByPopup(dailyMealPlansForChange: DailyMealPlan) {
         currentDailyMealPlan.meals = dailyMealPlansForChange.meals
         currentDailyMealPlan.dailyPortions = dailyMealPlansForChange.dailyPortions
+        saveDataInCloudFirestore()
         updateValuesInDailyPortionView()
         this.mealListAdapter.update(this.currentDailyMealPlan.meals)
         popupCopy.dismiss()
@@ -212,13 +218,13 @@ class DayFragment : Fragment() {
         alertDialog.setTitle(
             resources.getString(
                 R.string.copy,
-                resources.getString(dayForCopy.day)
+                dayTitles[dayForCopy.dayId]
             )
         )
         alertDialog.setMessage(
             resources.getString(
                 R.string.alert_message,
-                resources.getString(dayForCopy.day)
+                dayTitles[dayForCopy.dayId]
             )
         )
 
@@ -236,8 +242,8 @@ class DayFragment : Fragment() {
         alertDialog.show()
     }
 
-    private fun saveDataInCloudFirestore(){
-       val weekMealPlan= (activity as MainActivity).getWeek()
+    private fun saveDataInCloudFirestore() {
+        val weekMealPlan = (activity as MainActivity).getWeek()
         (activity as MainActivity).saveData(weekMealPlan)
         messageUpdate()
     }
