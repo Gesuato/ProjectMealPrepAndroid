@@ -30,10 +30,10 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/ui/AccountManagementActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/ui/AccountManagementActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/ui/LoginActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/ui/LoginActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_account_management.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_account_management.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -96,27 +96,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginActivity.kt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LoginActivity.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/ui/LoginActivity.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1160">
-              <caret line="45" column="76" selection-start-line="45" selection-start-column="76" selection-end-line="45" selection-end-column="76" />
+            <state relative-caret-position="34">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
               <folding>
                 <element signature="e#34#769#0" expanded="true" />
+                <element signature="e#2270#2307#0" expanded="true" />
+                <element signature="e#5262#5331#1" expanded="true" />
+                <element signature="e#5495#5545#1" expanded="true" />
+                <element signature="e#6422#6472#1" expanded="true" />
+                <element signature="e#7141#7178#0" expanded="true" />
+                <element signature="e#7281#7297#1" expanded="true" />
+                <element signature="e#7337#7360#1" expanded="true" />
+                <element signature="e#7451#7488#0" expanded="true" />
+                <element signature="e#7594#7610#1" expanded="true" />
+                <element signature="e#7650#7673#1" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_login.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="activity_login.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1407">
-              <caret line="108" column="41" selection-start-line="108" selection-start-column="41" selection-end-line="108" selection-end-column="41" />
+            <state relative-caret-position="414">
+              <caret line="78" column="27" selection-start-line="78" selection-start-column="27" selection-end-line="78" selection-end-column="27" />
               <folding>
-                <element signature="e#2058#2076#0" expanded="true" />
-                <element signature="e#2940#2971#0" expanded="true" />
-                <element signature="e#5533#5557#0" expanded="true" />
+                <element signature="e#2165#2180#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -134,11 +142,26 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="AccountManagementActivity.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/ui/AccountManagementActivity.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="37" column="66" selection-start-line="37" selection-start-column="66" selection-end-line="37" selection-end-column="66" />
+              <folding>
+                <element signature="e#34#503#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="activity_account_management.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_account_management.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="55" selection-end-column="52" />
+            <state relative-caret-position="527">
+              <caret line="31" column="50" selection-start-line="31" selection-start-column="50" selection-end-line="31" selection-end-column="50" />
+              <folding>
+                <element signature="e#1439#1454#0" expanded="true" />
+              </folding>
             </state>
           </provider>
           <provider editor-type-id="android-designer2">
@@ -2681,11 +2704,11 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/ui/FirebaseHandler.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/login_menu.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/ui/AccountManagementActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_account_management.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/ui/LoginActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" />
       </list>
     </option>
   </component>
@@ -3175,16 +3198,16 @@
       <window_info id="Build Variants" order="2" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.3397231" side_tool="true" weight="0.30217785" />
-      <window_info anchor="right" id="Preview" order="3" weight="0.22417465" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.671459" visible="true" weight="0.3166969" />
+      <window_info active="true" anchor="right" id="Preview" order="3" visible="true" weight="0.22417465" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.671459" weight="0.3166969" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Logcat" order="7" sideWeight="0.6602769" weight="0.30217785" />
       <window_info id="Captures" order="2" weight="0.24973376" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24973376" />
-      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.60383385" weight="0.23684211" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24973376" />
+      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.60383385" visible="true" weight="0.23684211" />
       <window_info anchor="right" id="Gradle" order="3" weight="0.32960597" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Device File Explorer" order="3" side_tool="true" weight="0.32960597" />
@@ -3516,20 +3539,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/ui/AccountManagementActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="31" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="31" />
-          <folding>
-            <element signature="e#34#479#0" expanded="true" />
-            <element signature="e#1696#1742#0" expanded="true" />
-            <element signature="e#1788#1833#0" expanded="true" />
-            <element signature="e#2552#2602#0" expanded="true" />
-            <element signature="e#2709#2765#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -3537,24 +3546,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_account_management.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/ui/AccountManagementActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="55" selection-end-column="52" />
+        <state relative-caret-position="264">
+          <caret line="37" column="66" selection-start-line="37" selection-start-column="66" selection-end-line="37" selection-end-column="66" />
+          <folding>
+            <element signature="e#34#503#0" expanded="true" />
+          </folding>
         </state>
       </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_account_management.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1407">
-          <caret line="108" column="41" selection-start-line="108" selection-start-column="41" selection-end-line="108" selection-end-column="41" />
+        <state relative-caret-position="527">
+          <caret line="31" column="50" selection-start-line="31" selection-start-column="50" selection-end-line="31" selection-end-column="50" />
           <folding>
-            <element signature="e#2058#2076#0" expanded="true" />
-            <element signature="e#2940#2971#0" expanded="true" />
-            <element signature="e#5533#5557#0" expanded="true" />
+            <element signature="e#1439#1454#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3564,12 +3571,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/easyprep/easyprep/ui/LoginActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1160">
-          <caret line="45" column="76" selection-start-line="45" selection-start-column="76" selection-end-line="45" selection-end-column="76" />
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
           <folding>
             <element signature="e#34#769#0" expanded="true" />
+            <element signature="e#2270#2307#0" expanded="true" />
+            <element signature="e#5262#5331#1" expanded="true" />
+            <element signature="e#5495#5545#1" expanded="true" />
+            <element signature="e#6422#6472#1" expanded="true" />
+            <element signature="e#7141#7178#0" expanded="true" />
+            <element signature="e#7281#7297#1" expanded="true" />
+            <element signature="e#7337#7360#1" expanded="true" />
+            <element signature="e#7451#7488#0" expanded="true" />
+            <element signature="e#7594#7610#1" expanded="true" />
+            <element signature="e#7650#7673#1" expanded="true" />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="78" column="27" selection-start-line="78" selection-start-column="27" selection-end-line="78" selection-end-column="27" />
+          <folding>
+            <element signature="e#2165#2180#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
   </component>

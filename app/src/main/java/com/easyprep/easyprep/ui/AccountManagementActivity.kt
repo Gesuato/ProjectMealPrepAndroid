@@ -17,6 +17,9 @@ class AccountManagementActivity : AppCompatActivity() {
 
     private var typeManagement = 0
     private var mAuth: FirebaseAuth? = null
+    private lateinit var password: TextInputEditText
+    private lateinit var passwordConfirmation: TextInputEditText
+    private lateinit var email: TextInputEditText
 
     @SuppressLint("WrongViewCast")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,14 +29,16 @@ class AccountManagementActivity : AppCompatActivity() {
         activity_account_management_id.setOnTouchListener { p0, p1 ->
             val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
             imm.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
-            editText_password_confirmation_retrieve.clearFocus()
-            editText_password_retrieve.clearFocus()
-            editText_email_retrieve.clearFocus()
+            textInputEditText_password_confirmation_retrieve.clearFocus()
+            textInputEditText_password_retrieve.clearFocus()
+            textInputEditText_email_retrieve.clearFocus()
             false
         }
 
-        val password = findViewById<TextInputEditText>(R.id.editText_password_retrieve)
-        val passwordConfirmation = findViewById<TextInputEditText>(R.id.editText_password_confirmation_retrieve)
+        email = findViewById(R.id.textInputEditText_email_retrieve)
+        password = findViewById(R.id.textInputEditText_password_retrieve)
+        passwordConfirmation =
+                findViewById(R.id.textInputEditText_password_confirmation_retrieve)
 
         this.mAuth = FirebaseAuth.getInstance()
         this.typeManagement = intent.getIntExtra("TYPEMANEGEMENT", 0)
@@ -48,8 +53,8 @@ class AccountManagementActivity : AppCompatActivity() {
         }
 
         if (typeManagement == 0) {
-            editText_password_retrieve_layout.visibility = View.GONE
-            editText_password_confirmation_retrieve_layout.visibility = View.GONE
+            textInputLayout_password_retrieve_layout.visibility = View.GONE
+            textInputEditText_password_confirmation_retrieve_layout.visibility = View.GONE
         }
 
         btnConfirm.setOnClickListener {
@@ -58,9 +63,8 @@ class AccountManagementActivity : AppCompatActivity() {
     }
 
     private fun retrieveAccount() {
-        val email = editText_email_retrieve.text.toString()
-        if (email.isNotEmpty()) {
-            this.mAuth!!.sendPasswordResetEmail(email).addOnCompleteListener { task ->
+        if (email.text.toString().isNotEmpty()) {
+            this.mAuth!!.sendPasswordResetEmail(email.text.toString()).addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     textView_message_retrieve.text =
                             resources.getString(R.string.message_change_email)

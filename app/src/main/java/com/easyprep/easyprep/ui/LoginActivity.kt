@@ -29,8 +29,9 @@ class LoginActivity : AppCompatActivity() {
     private var weekMealPlan = WeekMealPlan()
     private lateinit var userSharePref: SharedPreferences
     private var isSingUp = false
-    private lateinit var editTextPassword: TextInputEditText
-    private lateinit var editTextPasswordConfirmation: TextInputEditText
+    private lateinit var textInputEditTextPassword: TextInputEditText
+    private lateinit var textInputEditTextPasswordConfirmation: TextInputEditText
+    private lateinit var textInputEditextEmail: TextInputEditText
 
     companion object {
         const val DB_REF = "WeekMealPlan"
@@ -42,15 +43,16 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        editTextPassword = findViewById(R.id.editTextPasswordId)
-        editTextPasswordConfirmation = findViewById(R.id.editTextConfirmationPasswordId)
+        textInputEditTextPassword = findViewById(R.id.editTextPasswordId)
+        textInputEditTextPasswordConfirmation = findViewById(R.id.editTextConfirmationPasswordId)
+        textInputEditextEmail = findViewById(R.id.textInputEditTextEmail)
 
         activity_login_id.setOnTouchListener { p0, p1 ->
             val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
             imm.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
-            editTextPasswordConfirmation.clearFocus()
-            editTextPassword.clearFocus()
-            editTextEmail.clearFocus()
+            textInputEditTextPasswordConfirmation.clearFocus()
+            textInputEditTextPassword.clearFocus()
+            textInputEditextEmail.clearFocus()
             false
         }
 
@@ -61,9 +63,9 @@ class LoginActivity : AppCompatActivity() {
         userAuthentication()
 
         btnLogin.setOnClickListener {
-            val email = editTextEmail.text.toString()
-            val password = editTextPassword.text.toString()
-            val passwordConfirmation = editTextPasswordConfirmation.text.toString()
+            val email = textInputEditextEmail.text.toString()
+            val password = textInputEditTextPassword.text.toString()
+            val passwordConfirmation = textInputEditTextPasswordConfirmation.text.toString()
 
             if (this.isSingUp) {
                 singUp(email, password, passwordConfirmation)
@@ -92,7 +94,7 @@ class LoginActivity : AppCompatActivity() {
         weekMealPlan.dailyMealPlanList = DailyMealPlanDefaultListBuilder().invoke()
         btnLogin.visibility = View.GONE
         btnSingUpOrSingIn.visibility = View.GONE
-        editTextEmail.visibility = View.GONE
+        textInputLayout_email.visibility = View.GONE
         textInputLayout_password_confirmation.visibility = View.GONE
         textInputLayout_password.visibility = View.GONE
         space.visibility = View.GONE
