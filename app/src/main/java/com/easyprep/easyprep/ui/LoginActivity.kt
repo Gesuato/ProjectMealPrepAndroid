@@ -50,17 +50,10 @@ class LoginActivity : AppCompatActivity() {
                 // User is signed in
                 Log.d("LoginAuth", "onAuthStateChanged:signed_in:" + userAuth.uid)
             } else {
-                editTextPassword.visibility = View.VISIBLE
-                editTextEmail.visibility = View.VISIBLE
-                btnLogin.visibility = View.VISIBLE
                 userSharePref.edit().putString(EXTRA_USER,null).apply()
                 Log.d("LoginAuth", "onAuthStateChanged:signed_out")
             }
         }
-        editTextEmail.visibility = View.GONE
-        editTextPassword.visibility = View.GONE
-        btnLogin.visibility = View.GONE
-
         btnLogin.setOnClickListener {
             email = editTextEmail.text.toString()
             password = editTextPassword.text.toString()
@@ -98,6 +91,13 @@ class LoginActivity : AppCompatActivity() {
 
     private fun loadDataInFirestore(userUID: String) {
         weekMealPlan.dailyMealPlanList = DailyMealPlanDefaultListBuilder().invoke()
+        btnLogin.visibility = View.GONE
+        btnSingUpOrSingIn.visibility = View.GONE
+        editTextEmail.visibility = View.GONE
+        editTextPassword.visibility = View.GONE
+        editTextConfirmationPassword.visibility = View.GONE
+        space.visibility = View.GONE
+        progressBar.visibility = View.VISIBLE
 
         weekRef.document(userUID).get().addOnSuccessListener { documentSnapshot ->
             var saveData = false
