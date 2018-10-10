@@ -9,12 +9,12 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import com.easyprep.easyprep.R
 import com.easyprep.easyprep.data.model.DailyMealPlanDefaultListBuilder
 import com.easyprep.easyprep.data.model.WeekMealPlan
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_login.*
 
@@ -38,9 +38,19 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        userSharePref = PreferenceManager.getDefaultSharedPreferences(this)
+
+        activity_login_id.setOnTouchListener { p0, p1 ->
+            val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
+            editTextConfirmationPassword.clearFocus()
+            editTextPassword.clearFocus()
+            editTextEmail.clearFocus()
+            false
+        }
+
+        this.userSharePref = PreferenceManager.getDefaultSharedPreferences(this)
         supportActionBar!!.title = resources.getString(R.string.sing_in)
-        mAuth = FirebaseAuth.getInstance()
+        this.mAuth = FirebaseAuth.getInstance()
 
         userAuthentication()
 
@@ -197,21 +207,18 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun retrieveAccount(){
-
-    }
-
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.login_menu,menu)
+        menuInflater.inflate(R.menu.login_menu, menu)
         return super.onCreateOptionsMenu(menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        if (item!!.itemId == R.id.retrieve_account_menu) {
+            val intent = Intent(this, AccountManagementActivity::class.java)
+            startActivity(intent)
+            finish()
+        } else {
 
-        if(item!!.itemId == R.id.retrieve_account_menu){
-           retrieveAccount()
-        }else{
-            
         }
         return super.onOptionsItemSelected(item)
     }

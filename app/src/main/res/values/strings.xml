@@ -93,4 +93,10 @@
     <string name="know_app">Know the App</string>
     <string name="retrieve_account">Retrieve account</string>
 
+    <!-- String of AccountManagementActivity -->
+    <string name="confirm">Confirm</string>
+    <string name="change_password">Change password</string>
+    <string name="message_change_email">Email change confirmation was sent to your email!</string>
+    <string name="error_message_change_email">This email is not registered!</string>
+
 </resources>
