@@ -24,7 +24,6 @@
         android:layout_height="200dp"
         android:gravity="center"
         android:layout_gravity="center"
-        android:layout_marginBottom="10dp"
         android:orientation="vertical">
 
 
@@ -33,30 +32,71 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
-            android:ems="10"
+            android:ems="15"
             android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:visibility="visible" />
 
-        <EditText
-            android:id="@+id/editTextPassword"
-            android:layout_width="wrap_content"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/textInputLayout_password"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:ems="10"
-            android:hint="@string/password"
-            android:inputType="textPassword"
-            android:visibility="visible" />
+            android:gravity="center"
+            android:orientation="vertical"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/colorAccent">
 
-        <EditText
-            android:id="@+id/editTextConfirmationPassword"
-            android:layout_width="wrap_content"
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/editTextPasswordId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="15"
+                android:hint="@string/password"
+                android:inputType="textPassword" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/textInputLayout_password_confirmation"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:ems="10"
-            android:hint="@string/password_confirmation"
-            android:inputType="textPassword"
-            android:visibility="gone" />
+            android:gravity="center"
+            android:orientation="vertical"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/colorAccent"
+            android:visibility="gone">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/editTextConfirmationPasswordId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:ems="15"
+                android:hint="@string/password_confirmation"
+                android:inputType="textPassword"
+                />
+        </android.support.design.widget.TextInputLayout>
+
+
+
+        <!--<EditText-->
+            <!--android:id="@+id/editTextPassword"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginBottom="5dp"-->
+            <!--android:ems="10"-->
+            <!--android:hint="@string/password"-->
+            <!--android:inputType="textPassword"-->
+            <!--android:visibility="visible" />-->
+
+        <!--<EditText-->
+            <!--android:id="@+id/editTextConfirmationPassword"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginBottom="5dp"-->
+            <!--android:ems="10"-->
+            <!--android:hint="@string/password_confirmation"-->
+            <!--android:inputType="textPassword"-->
+            <!--android:visibility="gone" />-->
 
         <Button
             android:id="@+id/btnLogin"
@@ -66,10 +106,7 @@
             android:background="?selectableItemBackgroundBorderless"
             android:text="@string/sing_in"
             android:textColor="@color/colorAccent"
-            android:visibility="visible"
-            app:layout_constraintLeft_toLeftOf="@id/editTextPassword"
-            app:layout_constraintRight_toRightOf="@id/editTextPassword"
-            app:layout_constraintTop_toBottomOf="@id/editTextPassword" />
+            android:visibility="visible" />
     </LinearLayout>
 
     <ProgressBar

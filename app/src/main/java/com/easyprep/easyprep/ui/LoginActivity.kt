@@ -4,6 +4,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.preference.PreferenceManager
+import android.support.design.widget.TextInputEditText
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.Menu
@@ -28,6 +29,8 @@ class LoginActivity : AppCompatActivity() {
     private var weekMealPlan = WeekMealPlan()
     private lateinit var userSharePref: SharedPreferences
     private var isSingUp = false
+    private lateinit var editTextPassword: TextInputEditText
+    private lateinit var editTextPasswordConfirmation: TextInputEditText
 
     companion object {
         const val DB_REF = "WeekMealPlan"
@@ -39,10 +42,13 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        editTextPassword = findViewById(R.id.editTextPasswordId)
+        editTextPasswordConfirmation = findViewById(R.id.editTextConfirmationPasswordId)
+
         activity_login_id.setOnTouchListener { p0, p1 ->
             val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
             imm.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
-            editTextConfirmationPassword.clearFocus()
+            editTextPasswordConfirmation.clearFocus()
             editTextPassword.clearFocus()
             editTextEmail.clearFocus()
             false
@@ -57,7 +63,7 @@ class LoginActivity : AppCompatActivity() {
         btnLogin.setOnClickListener {
             val email = editTextEmail.text.toString()
             val password = editTextPassword.text.toString()
-            val passwordConfirmation = editTextConfirmationPassword.text.toString()
+            val passwordConfirmation = editTextPasswordConfirmation.text.toString()
 
             if (this.isSingUp) {
                 singUp(email, password, passwordConfirmation)
@@ -87,8 +93,8 @@ class LoginActivity : AppCompatActivity() {
         btnLogin.visibility = View.GONE
         btnSingUpOrSingIn.visibility = View.GONE
         editTextEmail.visibility = View.GONE
-        editTextPassword.visibility = View.GONE
-        editTextConfirmationPassword.visibility = View.GONE
+        textInputLayout_password_confirmation.visibility = View.GONE
+        textInputLayout_password.visibility = View.GONE
         space.visibility = View.GONE
         progressBar.visibility = View.VISIBLE
 
@@ -195,13 +201,13 @@ class LoginActivity : AppCompatActivity() {
         if (this.isSingUp) {
             this.isSingUp = false
             supportActionBar!!.title = resources.getString(R.string.sing_in)
-            editTextConfirmationPassword.visibility = View.GONE
+            textInputLayout_password_confirmation.visibility = View.GONE
             btnLogin.setText(R.string.sing_in)
             btnSingUpOrSingIn.setText(R.string.sing_up_button)
         } else {
             this.isSingUp = true
             supportActionBar!!.title = resources.getString(R.string.sing_up)
-            editTextConfirmationPassword.visibility = View.VISIBLE
+            textInputLayout_password_confirmation.visibility = View.VISIBLE
             btnLogin.setText(R.string.sing_up)
             btnSingUpOrSingIn.setText(R.string.sing_in_button)
         }

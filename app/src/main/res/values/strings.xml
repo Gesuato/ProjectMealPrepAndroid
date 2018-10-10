@@ -79,7 +79,7 @@
 
     <!-- Strings of Login -->
     <string name="email">Email</string>
-    <string name="password">password</string>
+    <string name="password">Password</string>
     <string name="sing_in">Sing In</string>
     <string name="sing_out">Sing Out</string>
     <string name="sing_up">Sing Up</string>
