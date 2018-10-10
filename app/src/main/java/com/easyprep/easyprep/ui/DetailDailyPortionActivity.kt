@@ -16,11 +16,16 @@ class DetailDailyPortionActivity : AppCompatActivity() {
     private lateinit var titleActionBar: String
     private var currentDayId: Int = 0
     private var valuesIsChanged = false
+    private lateinit var nutrimentTitles : Array<String>
 
     @SuppressLint("RestrictedApi")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_daily_portion)
+
+        if(!::nutrimentTitles.isInitialized){
+            this.nutrimentTitles = resources.getStringArray(R.array.nutrimentTitles)
+        }
 
         supportActionBar!!.run {
             setDefaultDisplayHomeAsUpEnabled(true)
@@ -119,7 +124,7 @@ class DetailDailyPortionActivity : AppCompatActivity() {
 
     private fun setTitleInNutrimentButtons(editingGroupDailyPotionList: ArrayList<EditingGroupDailyPortionView>) {
         for ((key, group) in editingGroupDailyPotionList.withIndex()) {
-            val title = resources.getText(this.currentDailyPotion[key].nameId) as String
+            val title = nutrimentTitles[this.currentDailyPotion[key].nameId]
             group.setNutrimentTitle(title)
         }
     }

@@ -16,11 +16,13 @@ class DetailMealPortionActivity : AppCompatActivity() {
 
     private lateinit var currentMeal: Meal
     private var metalDetailAdapter = MealDetailAdapter()
+    private lateinit var mealTitles : Array<String>
 
     @SuppressLint("RestrictedApi")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_meal_portion)
+        mealTitles = resources.getStringArray(R.array.mealTitles)
 
         supportActionBar!!.run {
             setDefaultDisplayHomeAsUpEnabled(true)
@@ -29,7 +31,7 @@ class DetailMealPortionActivity : AppCompatActivity() {
 
         if (intent.getSerializableExtra(DayFragment.EXTRA_MEAL) != null) {
             this.currentMeal = intent.getSerializableExtra(DayFragment.EXTRA_MEAL) as Meal
-            supportActionBar!!.setTitle(this.currentMeal.nameId)
+            supportActionBar!!.title = mealTitles[this.currentMeal.nameId]
         }
 
         val layoutManager = LinearLayoutManager(this)

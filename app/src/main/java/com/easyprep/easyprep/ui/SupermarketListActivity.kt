@@ -30,6 +30,7 @@ class SupermarketListActivity : AppCompatActivity() {
             ArrayList(),
             ArrayList()
         )
+    private lateinit var nutrimentTitles: Array<String>
 
     @SuppressLint("RestrictedApi")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,6 +45,10 @@ class SupermarketListActivity : AppCompatActivity() {
         if (!::weekMealPlan.isInitialized) {
             weekMealPlan = intent.getSerializableExtra("SUPERMARKETLIST") as WeekMealPlan
         }
+        if (!::nutrimentTitles.isInitialized) {
+            this.nutrimentTitles = resources.getStringArray(R.array.nutrimentTitles)
+        }
+
         removeDuplicateItemsInSupermarketList()
 
         val groupAdapter = GroupAdapter<ViewHolder>()
@@ -53,68 +58,15 @@ class SupermarketListActivity : AppCompatActivity() {
             adapter = groupAdapter
         }
 
-        ExpandableGroup(
-            ExpandableHeaderItem(
-                resources.getString(R.string.veggies).capitalize()
-            ), true
-        ).apply {
-            add(Section(generateItemSupermarketListViews(0)))
-            groupAdapter.add(this)
-        }
-
-        ExpandableGroup(
-            ExpandableHeaderItem(
-                resources.getString(R.string.fruits).capitalize()
-            ), false
-        ).apply {
-            add(Section(generateItemSupermarketListViews(1)))
-            groupAdapter.add(this)
-        }
-
-        ExpandableGroup(
-            ExpandableHeaderItem(
-                resources.getString(R.string.proteins).capitalize()
-            ), false
-        ).apply {
-            add(Section(generateItemSupermarketListViews(2)))
-            groupAdapter.add(this)
-        }
-
-        ExpandableGroup(
-            ExpandableHeaderItem(
-                resources.getString(R.string.carbohydrates).capitalize()
-            ), false
-        ).apply {
-            add(Section(generateItemSupermarketListViews(3)))
-            groupAdapter.add(this)
-        }
-
-        ExpandableGroup(
-            ExpandableHeaderItem(
-                resources.getString(R.string.healthyFats).capitalize()
-            ), false
-        ).apply {
-
-            add(Section(generateItemSupermarketListViews(4)))
-            groupAdapter.add(this)
-        }
-
-        ExpandableGroup(
-            ExpandableHeaderItem(
-                resources.getString(R.string.seedsAndDressings).capitalize()
-            ), false
-        ).apply {
-            add(Section(generateItemSupermarketListViews(5)))
-            groupAdapter.add(this)
-        }
-
-        ExpandableGroup(
-            ExpandableHeaderItem(
-                resources.getString(R.string.oilsAndNutButters).capitalize()
-            ), false
-        ).apply {
-            add(Section(generateItemSupermarketListViews(6)))
-            groupAdapter.add(this)
+        (0..6).forEach { index ->
+            ExpandableGroup(
+                ExpandableHeaderItem(
+                    nutrimentTitles[index]
+                ), true
+            ).apply {
+                add(Section(generateItemSupermarketListViews(index)))
+                groupAdapter.add(this)
+            }
         }
     }
 
@@ -219,8 +171,8 @@ class SupermarketListActivity : AppCompatActivity() {
         if (item!!.itemId == R.id.shareSupermarketListMenu) {
 
         } else {
-            val intent = Intent(this,MainActivity::class.java)
-            intent.putExtra(MainActivity.EXTRA_SUPERMARKETLIST,this.weekMealPlan)
+            val intent = Intent(this, MainActivity::class.java)
+            intent.putExtra(MainActivity.EXTRA_SUPERMARKETLIST, this.weekMealPlan)
             startActivity(intent)
             finish()
         }

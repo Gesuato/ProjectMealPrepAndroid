@@ -17,6 +17,18 @@ class MealDetailAdapter : RecyclerView.Adapter<MealDetailAdapter.MealDetailHolde
 
     private lateinit var currentMeal: Meal
     private lateinit var resources: Resources
+    private lateinit var nutrimentTitles : Array<String>
+    private lateinit var hints : Array<String>
+    private val backgroundBtns =
+        arrayOf(
+            R.drawable.background_circle_btn_vegetable,
+            R.drawable.background_circle_btn_fruit,
+            R.drawable.background_circle_btn_protein,
+            R.drawable.background_circle_btn_carbohydrate,
+            R.drawable.background_circle_btn_goodfat,
+            R.drawable.background_circle_btn_seed,
+            R.drawable.background_circle_btn_oil
+        )
 
     fun update(currentMeal: Meal) {
         this.currentMeal = currentMeal
@@ -28,6 +40,14 @@ class MealDetailAdapter : RecyclerView.Adapter<MealDetailAdapter.MealDetailHolde
         val itemView = layoutInflater.inflate(R.layout.meal_detail_view_holder, viewGroup, false)
         val viewHolder = MealDetailHolder(itemView)
         this.resources = layoutInflater.context.resources
+
+        if(!::nutrimentTitles.isInitialized){
+            this.nutrimentTitles = resources.getStringArray(R.array.nutrimentTitles)
+        }
+
+        if(!::hints.isInitialized){
+            this.hints = resources.getStringArray(R.array.hintsMealDescription)
+        }
 
         viewHolder.btnPlus.setOnClickListener {
             viewHolder.btnQuantityNutriment.text =
@@ -66,20 +86,8 @@ class MealDetailAdapter : RecyclerView.Adapter<MealDetailAdapter.MealDetailHolde
     }
 
     override fun onBindViewHolder(holder: MealDetailHolder, position: Int) {
-        val hints = resources.getStringArray(R.array.hintsMealDescription)
-        val backgroundBtns =
-            arrayOf(
-                R.drawable.background_circle_btn_vegetable,
-                R.drawable.background_circle_btn_fruit,
-                R.drawable.background_circle_btn_protein,
-                R.drawable.background_circle_btn_carbohydrate,
-                R.drawable.background_circle_btn_goodfat,
-                R.drawable.background_circle_btn_seed,
-                R.drawable.background_circle_btn_oil
-            )
         holder.btnQuantityNutriment.setBackgroundResource(backgroundBtns[position])
-        holder.textViewNutrimentName.text =
-                resources.getText(currentMeal.nutriments[position].nameId)
+        holder.textViewNutrimentName.text = nutrimentTitles[currentMeal.nutriments[position].nameId]
         holder.btnQuantityNutriment.text = currentMeal.nutriments[position].quantity.toString()
         holder.editextNutriment.hint = hints[position]
         holder.editextNutriment.setText(currentMeal.nutriments[position].items)

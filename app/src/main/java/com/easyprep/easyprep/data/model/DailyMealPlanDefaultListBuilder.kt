@@ -5,24 +5,6 @@ import com.easyprep.easyprep.R
 class DailyMealPlanDefaultListBuilder : () -> List<DailyMealPlan> {
     override operator fun invoke(): List<DailyMealPlan> {
 
-        val titlesOfMeals = arrayOf(
-            R.string.breakfast,
-            R.string.snack1,
-            R.string.lunch,
-            R.string.snack2,
-            R.string.dinner,
-            R.string.snack3
-        )
-        val nutrimentTitles = arrayOf(
-            R.string.veggies,
-            R.string.fruits,
-            R.string.proteins,
-            R.string.carbohydrates,
-            R.string.healthyFats,
-            R.string.seedsAndDressings,
-            R.string.oilsAndNutButters
-        )
-
         val titlesDay = arrayOf(
             R.string.monday,
             R.string.tuesday,
