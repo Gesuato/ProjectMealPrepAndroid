@@ -1,7 +1,9 @@
 package com.easyprep.easyprep.ui
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.support.design.widget.TextInputEditText
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import android.view.View
@@ -16,6 +18,7 @@ class AccountManagementActivity : AppCompatActivity() {
     private var typeManagement = 0
     private var mAuth: FirebaseAuth? = null
 
+    @SuppressLint("WrongViewCast")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_account_management)
@@ -28,6 +31,9 @@ class AccountManagementActivity : AppCompatActivity() {
             editText_email_retrieve.clearFocus()
             false
         }
+
+        val password = findViewById<TextInputEditText>(R.id.editText_password_retrieve)
+        val passwordConfirmation = findViewById<TextInputEditText>(R.id.editText_password_confirmation_retrieve)
 
         this.mAuth = FirebaseAuth.getInstance()
         this.typeManagement = intent.getIntExtra("TYPEMANEGEMENT", 0)
@@ -42,8 +48,8 @@ class AccountManagementActivity : AppCompatActivity() {
         }
 
         if (typeManagement == 0) {
-            editText_password_retrieve.visibility = View.GONE
-            editText_password_confirmation_retrieve.visibility = View.GONE
+            editText_password_retrieve_layout.visibility = View.GONE
+            editText_password_confirmation_retrieve_layout.visibility = View.GONE
         }
 
         btnConfirm.setOnClickListener {

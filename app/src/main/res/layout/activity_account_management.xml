@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_account_management_id"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginBottom="100dp"
+    android:focusableInTouchMode="true"
     android:gravity="center"
     android:orientation="vertical"
-    android:layout_marginBottom="100dp"
-    tools:context=".ui.AccountManagementActivity"
-    android:focusableInTouchMode="true">
+    tools:context=".ui.AccountManagementActivity">
 
     <EditText
         android:id="@+id/editText_email_retrieve"
@@ -18,21 +19,57 @@
         android:hint="@string/email"
         android:inputType="textEmailAddress" />
 
-    <EditText
-        android:id="@+id/editText_password_retrieve"
-        android:layout_width="wrap_content"
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/editText_password_retrieve_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/password"
-        android:inputType="textPassword" />
+        android:gravity="center"
+        android:orientation="vertical"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/colorAccent">
 
-    <EditText
-        android:id="@+id/editText_password_confirmation_retrieve"
-        android:layout_width="wrap_content"
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/editText_password_retrieve"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/password"
+            android:inputType="textPassword" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/editText_password_confirmation_retrieve_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/password_confirmation"
-        android:inputType="textPassword" />
+        android:gravity="center"
+        android:orientation="vertical"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/colorAccent">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/editText_password_confirmation_retrieve"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/password_confirmation"
+            android:inputType="textPassword" />
+    </android.support.design.widget.TextInputLayout>
+
+    <!--<EditText-->
+    <!--android:id="@+id/editText_password_retrieve"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:ems="10"-->
+    <!--android:hint="@string/password"-->
+    <!--android:inputType="textPassword" />-->
+
+    <!--<EditText-->
+    <!--android:id="@+id/editText_password_confirmation_retrieve"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:ems="10"-->
+    <!--android:hint="@string/password_confirmation"-->
+    <!--android:inputType="textPassword" />-->
 
     <Button
         android:id="@+id/btnConfirm"
@@ -46,8 +83,8 @@
         android:id="@+id/textView_message_retrieve"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:layout_marginTop="50dp"
-        android:textColor="#000"/>
+        android:gravity="center"
+        android:textColor="#000" />
 
 </LinearLayout>
