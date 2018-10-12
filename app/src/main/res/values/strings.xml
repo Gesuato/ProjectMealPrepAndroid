@@ -53,6 +53,7 @@
     <string name="contact">Contact</string>
     <string name="supermarketList">Supermarket list</string>
     <string name="introduction">Introduction</string>
+    <string name="profile">Profile</string>
 
     <!-- Strings of ActionBar MainActivity -->
     <string name="homepage">Home page</string>
@@ -76,6 +77,7 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="alert_message">If you copy %s\'s meal plan, you will miss your current day\'s model. Do you wish to continue?</string>
+    <string name="cancel">Cancel</string>
 
     <!-- Strings of Login -->
     <string name="email">Email</string>
@@ -93,10 +95,17 @@
     <string name="know_app">Know the App</string>
     <string name="retrieve_account">Retrieve account</string>
 
-    <!-- String of AccountManagementActivity -->
+    <!-- String of AccountRecoveryActivity -->
     <string name="confirm">Confirm</string>
     <string name="change_password">Change password</string>
     <string name="message_change_email">Email change confirmation was sent to your email!</string>
     <string name="error_message_change_email">This email is not registered!</string>
 
+    <!-- String of ProfileActivity -->
+    <string name="new_password">New password</string>
+    <string name="new_password_confirmation">New password confirmation</string>
+    <string name="new_email">New email</string>
+    <string name="new_email_confirmation">New email confirmation</string>
+    <string name="current_email">Current email</string>
+    <string name="current_password">Current password</string>
 </resources>

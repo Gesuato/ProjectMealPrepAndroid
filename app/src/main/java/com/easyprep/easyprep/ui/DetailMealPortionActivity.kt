@@ -10,6 +10,7 @@ import android.view.MenuItem
 import com.easyprep.easyprep.R
 import com.easyprep.easyprep.data.model.Meal
 import com.easyprep.easyprep.ui.adapters.MealDetailAdapter
+import com.easyprep.easyprep.ui.mainActivity.DayFragment
 import kotlinx.android.synthetic.main.activity_detail_meal_portion.*
 
 class DetailMealPortionActivity : AppCompatActivity() {

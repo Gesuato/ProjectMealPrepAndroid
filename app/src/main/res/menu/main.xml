@@ -18,6 +18,11 @@
         app:showAsAction="never" />
 
     <item
+        android:id="@+id/profileMenu"
+        android:title="@string/profile"
+        app:showAsAction="never" />
+
+    <item
         android:id="@+id/singOutMenu"
         android:title="@string/sing_out"
         app:showAsAction="never" />

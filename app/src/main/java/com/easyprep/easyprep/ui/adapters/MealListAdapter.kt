@@ -9,8 +9,8 @@ import android.widget.ImageButton
 import android.widget.TextView
 import com.easyprep.easyprep.R
 import com.easyprep.easyprep.data.model.Meal
-import com.easyprep.easyprep.ui.CustomOnClickListener
-import com.easyprep.easyprep.ui.MealPortionView
+import com.easyprep.easyprep.ui.interfaces.CustomOnClickListener
+import com.easyprep.easyprep.ui.mainActivity.MealPortionView
 
 class MealListAdapter : RecyclerView.Adapter<MealListAdapter.MealViewHolder>() {
 

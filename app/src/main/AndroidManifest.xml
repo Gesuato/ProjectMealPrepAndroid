@@ -22,15 +22,16 @@
             android:name=".ui.DetailMealPortionActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.DetailDailyPortionActivity"
+            android:name=".ui.detailDailyPortionActivity.DetailDailyPortionActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.SupermarketListActivity"
+            android:name=".ui.supermarketActivity.SupermarketListActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".ui.mainActivity.MainActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".ui.AccountManagementActivity"></activity>
+        <activity android:name=".ui.AccountRecoveryActivity" />
+        <activity android:name=".ui.ProfileActivity"></activity>
     </application>
 
 </manifest>

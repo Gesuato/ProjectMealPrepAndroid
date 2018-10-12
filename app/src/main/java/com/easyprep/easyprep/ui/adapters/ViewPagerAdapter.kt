@@ -4,7 +4,7 @@ import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 import com.easyprep.easyprep.data.model.WeekMealPlan
-import com.easyprep.easyprep.ui.DayFragment
+import com.easyprep.easyprep.ui.mainActivity.DayFragment
 
 class ViewPagerAdapter(fm: FragmentManager?, private val titlesTab: Array<String>, private val week: WeekMealPlan) :
     FragmentPagerAdapter(fm) {

@@ -4,9 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.DayFragment">
+    tools:context=".ui.mainActivity.DayFragment">
 
-    <com.easyprep.easyprep.ui.DailyPortionView
+    <com.easyprep.easyprep.ui.mainActivity.DailyPortionView
         android:id="@+id/daily_portion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

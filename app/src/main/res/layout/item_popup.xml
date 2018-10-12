@@ -17,12 +17,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:text="Monday"
+            android:text="Title"
             android:textColor="#000"
             android:textSize="18sp" />
 
         <ImageButton
-            android:id="@+id/imgBtnCopyDailyMealPlanId"
+            android:id="@+id/imageButtonPopup"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_alignParentRight="true"

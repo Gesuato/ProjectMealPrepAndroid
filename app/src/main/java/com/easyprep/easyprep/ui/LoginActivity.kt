@@ -15,6 +15,7 @@ import android.widget.Toast
 import com.easyprep.easyprep.R
 import com.easyprep.easyprep.data.model.DailyMealPlanDefaultListBuilder
 import com.easyprep.easyprep.data.model.WeekMealPlan
+import com.easyprep.easyprep.ui.mainActivity.MainActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_login.*
@@ -222,7 +223,7 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         if (item!!.itemId == R.id.retrieve_account_menu) {
-            val intent = Intent(this, AccountManagementActivity::class.java)
+            val intent = Intent(this, AccountRecoveryActivity::class.java)
             startActivity(intent)
             finish()
         } else {

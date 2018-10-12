@@ -31,12 +31,11 @@
             android:textColor="#000"
             android:textSize="20sp"
             app:layout_constraintLeft_toLeftOf="parent"
-
             app:layout_constraintTop_toTopOf="parent" />
 
     </android.support.constraint.ConstraintLayout>
 
-    <com.easyprep.easyprep.ui.MealPortionView
+    <com.easyprep.easyprep.ui.mainActivity.MealPortionView
         android:id="@+id/mealPortionViewId"
         android:layout_width="match_parent"
         android:layout_height="0dp"
