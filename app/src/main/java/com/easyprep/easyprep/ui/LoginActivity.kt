@@ -225,7 +225,6 @@ class LoginActivity : AppCompatActivity() {
         if (item!!.itemId == R.id.retrieve_account_menu) {
             val intent = Intent(this, AccountRecoveryActivity::class.java)
             startActivity(intent)
-            finish()
         } else {
 
         }

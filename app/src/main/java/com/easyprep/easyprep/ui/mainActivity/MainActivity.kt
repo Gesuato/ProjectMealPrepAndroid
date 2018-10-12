@@ -13,15 +13,13 @@ import com.easyprep.easyprep.R
 import com.easyprep.easyprep.data.model.DailyMealPlanDefaultListBuilder
 import com.easyprep.easyprep.data.model.WeekMealPlan
 import com.easyprep.easyprep.data.model.login.User
-import com.easyprep.easyprep.ui.AccountManagementActivity
+import com.easyprep.easyprep.ui.AccountRecoveryActivity
 import com.easyprep.easyprep.ui.LoginActivity
 import com.easyprep.easyprep.ui.adapters.ViewPagerAdapter
 import com.easyprep.easyprep.ui.supermarketActivity.SupermarketListActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.item_popup.view.*
-import kotlinx.android.synthetic.main.popup_profile.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -38,12 +36,12 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         const val EXTRA_SUPERMARKETLIST = "SUPERMARKETLIST"
-        const val EXTRA_ACCOUNT_MANAGEMENT = "EXTRA_MANAGEMENT"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         this.userSharePref = PreferenceManager.getDefaultSharedPreferences(this)
         this.user.userId = this.userSharePref.getString(LoginActivity.EXTRA_USER, "")
         mAuth = FirebaseAuth.getInstance()
@@ -96,9 +94,10 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intentLogin)
                 finish()
             }
-            R.id.profileMenu -> {
-                showPopupProfile()
-
+            R.id.change_password_menu -> {
+                val intent = Intent(this, AccountRecoveryActivity::class.java)
+                intent.putExtra("TYPEMANEGEMENT",1)
+                startActivity(intent)
             }
         }
         return super.onOptionsItemSelected(item)
@@ -110,36 +109,6 @@ class MainActivity : AppCompatActivity() {
         if (user.userId != "") {
             weekRef.document(user.userId).set(weekMealPlan)
         }
-    }
-
-    private fun getCurrentEmail(): String {
-        return mAuth!!.currentUser!!.email.toString()
-    }
-
-    private fun showPopupProfile() {
-        val email = getCurrentEmail()
-        val intentAccountManagement = Intent(this, AccountManagementActivity::class.java)
-
-        this.popupProfile.setContentView(R.layout.popup_profile)
-        this.popupProfile.item_popup_email.setTitleItemPopup(email)
-        this.popupProfile.item_popup_email.setBackgroundImage(R.drawable.icon_edit)
-        this.popupProfile.item_popup_email.imageButtonPopup.setOnClickListener {
-            intentAccountManagement.putExtra(EXTRA_ACCOUNT_MANAGEMENT, "EMAIL")
-            startActivity(intentAccountManagement)
-        }
-
-        this.popupProfile.item_popup_password.setTitleItemPopup("***********")
-        this.popupProfile.item_popup_password.setBackgroundImage(R.drawable.icon_edit)
-        this.popupProfile.item_popup_password.imageButtonPopup.setOnClickListener {
-            intentAccountManagement.putExtra(EXTRA_ACCOUNT_MANAGEMENT, "PASSWORD")
-            startActivity(intentAccountManagement)
-        }
-
-        this.popupProfile.btnCancelPopupProfile.setOnClickListener {
-            this.popupProfile.dismiss()
-        }
-
-        this.popupProfile.show()
     }
 
     private fun singOut() {

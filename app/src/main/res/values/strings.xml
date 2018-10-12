@@ -98,7 +98,7 @@
     <!-- String of AccountRecoveryActivity -->
     <string name="confirm">Confirm</string>
     <string name="change_password">Change password</string>
-    <string name="message_change_email">E-mail change confirmation was sent to your e-mail!</string>
+    <string name="message_change_email">Confirmation of password change has been sent to your email!</string>
     <string name="error_message_change_email">This e-mail is not registered!</string>
 
     <!-- String of ProfileActivity -->
