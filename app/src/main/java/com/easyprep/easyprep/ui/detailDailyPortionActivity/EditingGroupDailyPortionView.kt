@@ -1,4 +1,4 @@
-package com.easyprep.easyprep.ui
+package com.easyprep.easyprep.ui.detailDailyPortionActivity
 
 import android.content.Context
 import android.support.constraint.ConstraintLayout

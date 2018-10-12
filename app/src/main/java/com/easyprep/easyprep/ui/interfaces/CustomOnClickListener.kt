@@ -1,4 +1,4 @@
-package com.easyprep.easyprep.ui
+package com.easyprep.easyprep.ui.interfaces
 import com.easyprep.easyprep.data.model.Meal
 
 interface CustomOnClickListener {

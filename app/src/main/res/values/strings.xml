@@ -80,7 +80,7 @@
     <string name="cancel">Cancel</string>
 
     <!-- Strings of Login -->
-    <string name="email">Email</string>
+    <string name="email">E-mail</string>
     <string name="password">Password</string>
     <string name="sing_in">Sing In</string>
     <string name="sing_out">Sing Out</string>
@@ -98,14 +98,18 @@
     <!-- String of AccountRecoveryActivity -->
     <string name="confirm">Confirm</string>
     <string name="change_password">Change password</string>
-    <string name="message_change_email">Email change confirmation was sent to your email!</string>
-    <string name="error_message_change_email">This email is not registered!</string>
+    <string name="message_change_email">E-mail change confirmation was sent to your e-mail!</string>
+    <string name="error_message_change_email">This e-mail is not registered!</string>
 
     <!-- String of ProfileActivity -->
     <string name="new_password">New password</string>
     <string name="new_password_confirmation">New password confirmation</string>
-    <string name="new_email">New email</string>
-    <string name="new_email_confirmation">New email confirmation</string>
-    <string name="current_email">Current email</string>
+    <string name="new_email">New e-mail</string>
+    <string name="new_email_confirmation">New e-mail confirmation</string>
+    <string name="current_email">Current e-mail</string>
     <string name="current_password">Current password</string>
+
+    <!-- String of AccountManagementActivity -->
+    <string name="change_email">Change e-mail</string>
+
 </resources>

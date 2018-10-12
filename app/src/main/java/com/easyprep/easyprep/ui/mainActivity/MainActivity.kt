@@ -13,12 +13,14 @@ import com.easyprep.easyprep.R
 import com.easyprep.easyprep.data.model.DailyMealPlanDefaultListBuilder
 import com.easyprep.easyprep.data.model.WeekMealPlan
 import com.easyprep.easyprep.data.model.login.User
+import com.easyprep.easyprep.ui.AccountManagementActivity
 import com.easyprep.easyprep.ui.LoginActivity
 import com.easyprep.easyprep.ui.adapters.ViewPagerAdapter
 import com.easyprep.easyprep.ui.supermarketActivity.SupermarketListActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.item_popup.view.*
 import kotlinx.android.synthetic.main.popup_profile.*
 
 class MainActivity : AppCompatActivity() {
@@ -36,6 +38,7 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         const val EXTRA_SUPERMARKETLIST = "SUPERMARKETLIST"
+        const val EXTRA_ACCOUNT_MANAGEMENT = "EXTRA_MANAGEMENT"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -115,20 +118,21 @@ class MainActivity : AppCompatActivity() {
 
     private fun showPopupProfile() {
         val email = getCurrentEmail()
+        val intentAccountManagement = Intent(this, AccountManagementActivity::class.java)
 
         this.popupProfile.setContentView(R.layout.popup_profile)
         this.popupProfile.item_popup_email.setTitleItemPopup(email)
         this.popupProfile.item_popup_email.setBackgroundImage(R.drawable.icon_edit)
+        this.popupProfile.item_popup_email.imageButtonPopup.setOnClickListener {
+            intentAccountManagement.putExtra(EXTRA_ACCOUNT_MANAGEMENT, "EMAIL")
+            startActivity(intentAccountManagement)
+        }
 
         this.popupProfile.item_popup_password.setTitleItemPopup("***********")
         this.popupProfile.item_popup_password.setBackgroundImage(R.drawable.icon_edit)
-
-        this.popupProfile.item_popup_email.setOnClickListener {
-
-        }
-
-        this.popupProfile.item_popup_password.setOnClickListener {
-
+        this.popupProfile.item_popup_password.imageButtonPopup.setOnClickListener {
+            intentAccountManagement.putExtra(EXTRA_ACCOUNT_MANAGEMENT, "PASSWORD")
+            startActivity(intentAccountManagement)
         }
 
         this.popupProfile.btnCancelPopupProfile.setOnClickListener {

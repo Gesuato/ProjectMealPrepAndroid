@@ -31,7 +31,8 @@
             android:name=".ui.mainActivity.MainActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".ui.AccountRecoveryActivity" />
-        <activity android:name=".ui.ProfileActivity"></activity>
+        <activity android:name=".ui.ProfileActivity" />
+        <activity android:name=".ui.AccountManagementActivity"></activity>
     </application>
 
 </manifest>

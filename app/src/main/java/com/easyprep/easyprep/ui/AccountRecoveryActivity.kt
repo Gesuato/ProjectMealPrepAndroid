@@ -26,7 +26,7 @@ class AccountRecoveryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_account_recovery)
 
-        activity_account_management_id.setOnTouchListener { p0, p1 ->
+        activity_account_recovery_id.setOnTouchListener { p0, p1 ->
             val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
             imm.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
             textInputEditText_password_confirmation_retrieve.clearFocus()

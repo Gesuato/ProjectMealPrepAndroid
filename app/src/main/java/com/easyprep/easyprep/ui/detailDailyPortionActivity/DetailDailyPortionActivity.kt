@@ -1,4 +1,4 @@
-package com.easyprep.easyprep.ui
+package com.easyprep.easyprep.ui.detailDailyPortionActivity
 
 import android.annotation.SuppressLint
 import android.app.Activity
