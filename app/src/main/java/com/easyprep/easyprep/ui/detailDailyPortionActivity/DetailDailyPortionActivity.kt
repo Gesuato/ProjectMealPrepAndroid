@@ -2,9 +2,11 @@ package com.easyprep.easyprep.ui.detailDailyPortionActivity
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.Menu
 import android.view.MenuItem
 import com.easyprep.easyprep.R
 import com.easyprep.easyprep.data.model.Nutriment
@@ -90,18 +92,53 @@ class DetailDailyPortionActivity : AppCompatActivity() {
         }
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.save_menu,menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        if (valuesIsChanged) {
+
+        if(item!!.itemId == R.id.saveMenu){
             val intent = Intent()
             intent.putExtra(DayFragment.EXTRA_DAILYPORTION, this.currentDailyPotion)
             intent.putExtra(DayFragment.EXTRA_VALUE_CHANGE, valuesIsChanged)
             setResult(Activity.RESULT_OK, intent)
+            finish()
+        }else{
+            showAlertDialog()
         }
-        finish()
+
         return super.onOptionsItemSelected(item)
     }
 
     private fun checkValueIsChanged() {
         valuesIsChanged = true
+    }
+
+    private fun showAlertDialog(){
+        val alertDialog = AlertDialog.Builder(this)
+
+        alertDialog.setTitle(
+            resources.getString(R.string.cancelChanges_title
+            )
+        )
+        alertDialog.setMessage(
+            resources.getString(
+                R.string.cancelChanges_message
+            )
+        )
+
+        alertDialog.setPositiveButton(
+            resources.getString(R.string.yes)
+        ) { _, _ ->
+            finish()
+        }
+
+        alertDialog.setNegativeButton(
+            resources.getString(R.string.no)
+        ) { _, _ -> }
+
+        alertDialog.show()
     }
 }

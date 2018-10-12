@@ -3,6 +3,12 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="save">save</string>
+
+
+
+    <string name="cancelChanges_title">Cancel changes</string>
+    <string name="cancelChanges_message">If you select yes, you will lose all modifications made!</string>
 
     <!-- Strings of Nutriments -->
     <string-array name="nutrimentTitles">

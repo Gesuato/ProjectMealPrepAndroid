@@ -2,10 +2,12 @@ package com.easyprep.easyprep.ui
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
+import android.view.Menu
 import android.view.MenuItem
 import com.easyprep.easyprep.R
 import com.easyprep.easyprep.data.model.Meal
@@ -17,7 +19,7 @@ class DetailMealPortionActivity : AppCompatActivity() {
 
     private lateinit var currentMeal: Meal
     private var metalDetailAdapter = MealDetailAdapter()
-    private lateinit var mealTitles : Array<String>
+    private lateinit var mealTitles: Array<String>
 
     @SuppressLint("RestrictedApi")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,13 +43,48 @@ class DetailMealPortionActivity : AppCompatActivity() {
         recycleViewDetailId.adapter = metalDetailAdapter
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.save_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        val intent = Intent()
-        if (currentMeal.valueIsChanged) {
+
+        if (item!!.itemId == R.id.saveMenu) {
+            val intent = Intent()
             intent.putExtra(DayFragment.EXTRA_MEAL, this.currentMeal)
             setResult(Activity.RESULT_OK, intent)
+            finish()
+        }else{
+            showAlertDialog()
         }
-        finish()
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun showAlertDialog() {
+        val alertDialog = AlertDialog.Builder(this)
+
+        alertDialog.setTitle(
+            resources.getString(
+                R.string.cancelChanges_title
+            )
+        )
+        alertDialog.setMessage(
+            resources.getString(
+                R.string.cancelChanges_message
+            )
+        )
+
+        alertDialog.setPositiveButton(
+            resources.getString(R.string.yes)
+        ) { _, _ ->
+            finish()
+        }
+
+        alertDialog.setNegativeButton(
+            resources.getString(R.string.no)
+        ) { _, _ -> }
+
+        alertDialog.show()
     }
 }
