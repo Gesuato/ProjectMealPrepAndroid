@@ -1,6 +1,7 @@
 package com.easyprep.easyprep.ui.supermarketActivity
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
@@ -43,7 +44,8 @@ class SupermarketListActivity : AppCompatActivity() {
         }
 
         if (!::weekMealPlan.isInitialized) {
-            weekMealPlan = intent.getSerializableExtra(MainActivity.EXTRA_SUPERMARKETLIST) as WeekMealPlan
+            weekMealPlan =
+                    intent.getSerializableExtra(MainActivity.EXTRA_SUPERMARKETLIST) as WeekMealPlan
         }
         if (!::nutrimentTitles.isInitialized) {
             this.nutrimentTitles = resources.getStringArray(R.array.nutrimentTitles)
@@ -179,10 +181,59 @@ class SupermarketListActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         if (item!!.itemId == R.id.shareSupermarketListMenu) {
-
+            shareSupermarketList()
         } else {
             finish()
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun shareSupermarketList() {
+        val intent = Intent(Intent.ACTION_SEND)
+        val subject =
+            resources.getString(R.string.app_name) + " " + resources.getString(R.string.supermarketList)
+        val message = formatedSupermarketListForEmail()
+
+        intent.putExtra(Intent.EXTRA_SUBJECT, subject)
+        intent.putExtra(Intent.EXTRA_TEXT, message)
+        intent.type = "message/rfc822"
+        startActivity(
+            Intent.createChooser(
+                intent,
+                resources.getString(R.string.choose_email_client)
+            )
+        )
+    }
+
+    private fun formatedSupermarketListForEmail(): String {
+        var messageSupermarketList = ""
+        val titles = resources.getStringArray(R.array.nutrimentTitles)
+        val colorTitles = arrayOf(R.color.vegetableColor)
+
+        for ((index, supermarketItems) in supermarketList.withIndex()) {
+            val title = titles[index].toUpperCase()
+            if (index != 0) {
+                messageSupermarketList = messageSupermarketList + "\n" +
+                        title + "\n"
+            } else {
+                messageSupermarketList = messageSupermarketList +
+                        title + "\n"
+            }
+            for ((i, item) in supermarketItems.withIndex()) {
+
+                if (i != supermarketItems.size - 1) {
+                    messageSupermarketList = messageSupermarketList + item.name + " (" +
+                            item.quantity +
+                            "),\n"
+                } else {
+                    messageSupermarketList = messageSupermarketList + item.name + " (" +
+                            item.quantity +
+                            ")"
+                    messageSupermarketList += "\n"
+                }
+            }
+        }
+
+        return messageSupermarketList
     }
 }

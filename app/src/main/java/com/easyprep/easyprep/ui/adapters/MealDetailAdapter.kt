@@ -91,6 +91,7 @@ class MealDetailAdapter : RecyclerView.Adapter<MealDetailAdapter.MealDetailHolde
         holder.btnQuantityNutriment.text = currentMeal.nutriments[position].quantity.toString()
         holder.editextNutriment.hint = hints[position]
         holder.editextNutriment.setText(currentMeal.nutriments[position].items)
+
     }
 
     class MealDetailHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

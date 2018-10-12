@@ -15,8 +15,6 @@ class AccountRecoveryActivity : AppCompatActivity() {
 
     private var typeManagement = 0
     private var mAuth: FirebaseAuth? = null
-    private lateinit var password: TextInputEditText
-    private lateinit var passwordConfirmation: TextInputEditText
     private lateinit var email: TextInputEditText
 
     @SuppressLint("WrongViewCast")
